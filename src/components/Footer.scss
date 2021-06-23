@@ -1,0 +1,14 @@
+.footer {
+  height: 75px;
+  width: 100%;
+}
+.footer,
+p {
+  margin: 0;
+  padding: 0 1rem;
+}
+@media (max-width: 700px) {
+  .footer {
+    justify-content: center;
+  }
+}

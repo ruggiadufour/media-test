@@ -1,0 +1,71 @@
+.header {
+  background-color: black;
+  height: 70px;
+  padding: 1rem 1.5rem;
+}
+
+.menu-container {
+  position: relative;
+  margin-left: 2rem;
+}
+.menu-btn {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 40px;
+}
+
+.menu-btn:before,
+.menu-btn:after,
+.menu-btn div {
+  background: #707070;
+  content: "";
+  display: none;
+  height: 4px;
+  border-radius: 3px;
+  margin: 7px 0;
+  transition: 0.5s;
+}
+.menu-btn-clicked:before {
+  transform: translateY(12px) rotate(135deg);
+}
+.menu-btn-clicked:after {
+  transform: translateY(-12px) rotate(-135deg);
+}
+.menu-btn-clicked div {
+  transform: scale(0);
+}
+
+.brand {
+  color: #5a5555;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .brand {
+    margin-left: auto;
+  }
+}
+
+.avatar {
+  width: 40px;
+}
+
+.right-elements {
+  margin-left: auto;
+}
+
+.user-name,
+.user-admin {
+  border-radius: 30px;
+  padding: 0 18px;
+}
+.user-name {
+  background-color: white;
+}
+.user-admin {
+  background-color: dodgerblue;
+  color: white;
+}

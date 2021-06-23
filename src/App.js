@@ -1,5 +1,4 @@
 import {useState} from 'react'
-import './App.css';
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import Footer from './components/Footer'
@@ -10,11 +9,11 @@ function App() {
   return (
     <div className="app">
       <Header menu={menu} setMenu={setMenu} />
-      <div className=" d-flex h-100">
+      <div className="container-2">
         <aside className={`left-side menu ${menu?"open-menu":""}`}>
           <Sidebar/>
         </aside>
-        <div hidden={menu} className="right-side h-100 w-100 ">
+        <div hidden={menu} className="right-side w-100 ">
           <Content/>
           <Footer/>
         </div>
