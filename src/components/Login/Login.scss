@@ -1,0 +1,85 @@
+.login-container {
+  color: aliceblue;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.login-section {
+  background-color: black;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  font-family: "CircularStd-Book_1";
+  padding: 3rem 15px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+  max-width: 350px;
+  width: 100%;
+}
+.login-button {
+  background-color: #1ba1fc;
+  color: #fff;
+  font-family: "CircularStd-Book_1";
+  border: none;
+  padding: 10px 0;
+}
+.login-button:hover {
+  background-color: #6fc2fa;
+}
+.login-input {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+.login-form > a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.login-image {
+  background-image: url(../../assets/images/login-background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 60%;
+  height: 100%;
+}
+
+@media (max-width: 900px) {
+  .login-section {
+    width: 60%;
+  }
+  .login-image {
+    width: 40%;
+  }
+}
+@media (max-width: 600px) {
+  .login-section {
+    width: 100%;
+    background-image: url(../../assets/images/login-background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: 2;
+  }
+  .login-section::after {
+    position: absolute;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    top: 0;
+  }
+  .login-image {
+    width: 0%;
+  }
+}

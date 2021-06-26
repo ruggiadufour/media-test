@@ -7,26 +7,26 @@ export default function Sidebar() {
     return (
         <>
             <div className="d-flex flex-column align-items-center">
-                <img className="logo-brand" src="/assets/svgs/logo.svg" alt="Logo Template"
+                <img className="logo-brand" src="assets/svgs/logo.svg" alt="Logo Template"
                  width="100%" />
 
                 <SidebarButton text={"MediaHost®"} onClick={()=>{setDeploy(d=>!d)}}/>
 
                 <div className={`deploy w-100 ${deploy?"deployed":"undeployed"}`}>
-                    <DeployableButton text={"Acerca de MH"} icon="/assets/svgs/about-doc.svg"/>
-                    <DeployableButton text={"Soporte"} icon="/assets/svgs/gear.svg"/>
+                    <DeployableButton text={"Acerca de MH"} icon="assets/svgs/about-doc.svg"/>
+                    <DeployableButton text={"Soporte"} icon="assets/svgs/gear.svg"/>
                 </div>
                 <SidebarButton text={"MediaSEO®"}/>
-                <SidebarButton text={"MediaBlog®"} icon="/assets/svgs/lock.svg" />
-                <SidebarButton text={"MediaInvestor®"} icon="/assets/svgs/lock.svg"/>
+                <SidebarButton text={"MediaBlog®"} icon="assets/svgs/lock.svg" />
+                <SidebarButton text={"MediaInvestor®"} icon="assets/svgs/lock.svg"/>
                 <SidebarButton text={"MediaBroker®"}/>
                 <SidebarButton text={"Más Servicios"}/>
             </div>
             
             <div className="d-flex flex-column">
-                <AccountButton icon="/assets/svgs/profile.svg" text={"Mi perfil"}></AccountButton>
-                <AccountButton icon="/assets/svgs/account.svg" text={"Mi cuenta"}></AccountButton>
-                <AccountButton icon="/assets/svgs/close-session.svg" text={"Cerrar sesión"}></AccountButton>
+                <AccountButton icon="assets/svgs/profile.svg" text={"Mi perfil"}></AccountButton>
+                <AccountButton icon="assets/svgs/account.svg" text={"Mi cuenta"}></AccountButton>
+                <AccountButton icon="assets/svgs/close-session.svg" text={"Cerrar sesión"}></AccountButton>
             </div>
         </>
     )
