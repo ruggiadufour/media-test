@@ -20,8 +20,9 @@
   align-items: center;
 }
 
-.sidebar-button,
-.deployable-button {
+.sidebar-button {
+  background-color: dodgerblue;
+  color: white;
   width: 100%;
   border: solid thin black;
   padding: 0.75rem;
@@ -32,21 +33,19 @@
   gap: 15px;
   justify-content: center;
   align-items: center;
-}
-.sidebar-button,
-.deployable-button > span {
-  font: bold Helvetica;
-}
-.sidebar-button > :nth-child(2) {
-  position: absolute;
-  right: 20px;
-}
-.sidebar-button {
-  background-color: dodgerblue;
-  color: white;
+
+  span {
+    font: bold Helvetica;
+    margin-left: .5rem;
+  }
+
+  > :nth-child(2) {
+    position: absolute;
+    right: 20px;
+  }
 }
 
-.deployable-button {
+.deployable {
   background-color: gray;
   color: white;
 }
@@ -62,23 +61,13 @@
   height: 0;
 }
 
-.text-gray {
-  color: #747171;
-}
 
+// Hamburger menu open sidebar in mobile
 .menu {
   width: 15rem;
 }
+
 @media (max-width: 700px) {
-  .user-name,
-  .user-admin {
-    display: none;
-  }
-  .menu-btn:before,
-  .menu-btn:after,
-  .menu-btn div {
-    display: block;
-  }
   .menu {
     margin-left: -100%;
     position: absolute;

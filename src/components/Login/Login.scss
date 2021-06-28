@@ -1,5 +1,5 @@
 .login-container {
-  color: aliceblue;
+  color: #fff;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -24,6 +24,11 @@
   gap: 1rem;
   max-width: 350px;
   width: 100%;
+
+  > a {
+    color: #fff;
+    text-decoration: underline;
+  }
 }
 .login-button {
   background-color: #1ba1fc;
@@ -31,18 +36,20 @@
   font-family: "CircularStd-Book_1";
   border: none;
   padding: 10px 0;
+
+  &:hover {
+    background-color: #6fc2fa;
+  }
 }
-.login-button:hover {
-  background-color: #6fc2fa;
-}
+
 .login-input {
   padding: 10px;
   border-radius: 5px;
   border: none;
-}
-.login-form > a {
-  color: #fff;
-  text-decoration: underline;
+
+  &::placeholder {
+    color: #fff;
+  }
 }
 
 .login-image {
@@ -61,6 +68,7 @@
     width: 40%;
   }
 }
+
 @media (max-width: 600px) {
   .login-section {
     width: 100%;
@@ -69,17 +77,30 @@
     background-repeat: no-repeat;
     background-position: center center;
     z-index: 2;
+
+    &::after {
+      position: absolute;
+      content: "";
+      background-color: rgba(0, 0, 0, 0.7);
+      width: 100%;
+      height: 100vh;
+      z-index: -1;
+      top: 0;
+    }
   }
-  .login-section::after {
-    position: absolute;
-    content: "";
-    background-color: rgba(0, 0, 0, 0.7);
-    width: 100%;
-    height: 100vh;
-    z-index: -1;
-    top: 0;
-  }
+
   .login-image {
     width: 0%;
+  }
+
+  .login-form label {
+    display: none;
+  }
+
+  .login-input {
+    margin-top: 1.3rem;
+    &::placeholder {
+      color: gray;
+    }
   }
 }

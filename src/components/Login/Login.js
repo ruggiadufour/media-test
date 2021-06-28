@@ -20,6 +20,7 @@ export default function Login() {
         <Link to="/">
           <img src="assets/svgs/brand-logo.svg" alt="brand logo" />
         </Link>
+
         <form className="login-form" action="">
           <h1 className="mb-4">
             Acceso privado <Link to="/">MediaCore®</Link>
@@ -33,6 +34,7 @@ export default function Login() {
               required
               className="login-input"
               type="text"
+              placeholder="Usuario"
             />
           </div>
           <div className="d-flex flex-column gap-2">
@@ -44,6 +46,7 @@ export default function Login() {
               required
               className="login-input"
               type="password"
+              placeholder="Contraseña"
             />
           </div>
           <button className="mt-4 login-button" type="submit">
@@ -51,11 +54,13 @@ export default function Login() {
           </button>
           <a href="#">Olvidé mi contraseña</a>
         </form>
+        
         <p>
           Plataforma MediaCore® by <a href="#">MediaHaus</a> 2021. Todos los
           derechos reservados.
         </p>
       </div>
+
       <div className="login-image"></div>
     </div>
   );

@@ -95,3 +95,8 @@ a:any-link {
   font-family: "Helvetica";
 }
 
+@media (max-width: 700px){
+  .hidde-right-side{
+    display: none;
+  }
+}

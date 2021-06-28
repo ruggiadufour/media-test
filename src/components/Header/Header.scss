@@ -69,3 +69,15 @@
   background-color: dodgerblue;
   color: white;
 }
+
+@media (max-width: 700px) {
+  .user-name,
+  .user-admin {
+    display: none;
+  }
+  .menu-btn:before,
+  .menu-btn:after,
+  .menu-btn div {
+    display: block;
+  }
+}

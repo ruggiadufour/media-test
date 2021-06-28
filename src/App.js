@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import './index.scss'
 import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Footer from "./components/Footer/Footer";
@@ -18,10 +19,10 @@ function App() {
               <aside className={`left-side menu ${menu ? "open-menu" : ""}`}>
                 <Sidebar />
               </aside>
-              <div hidden={menu} className="right-side w-100 ">
+              <article className={`right-side w-100 ${menu?"hidde-right-side":""}`}>
                 <Content />
                 <Footer />
-              </div>
+              </article>
             </div>
           </Route>
           <Route exact path="/login">
