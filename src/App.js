@@ -13,7 +13,7 @@ function App() {
     <div className="app">
       <Router>
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/clientes/mediacore">
             <Header menu={menu} setMenu={setMenu} />
             <div className="container-2">
               <aside className={`left-side menu ${menu ? "open-menu" : ""}`}>
@@ -25,7 +25,7 @@ function App() {
               </article>
             </div>
           </Route>
-          <Route exact path="/login">
+          <Route  path="/clientes/mediacore/login">
             <Login />
           </Route>
         </Switch>

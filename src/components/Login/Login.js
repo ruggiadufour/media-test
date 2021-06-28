@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Login.scss";
+const assets_path = "/clientes/mediacore/assets"
 
 export default function Login() {
   const [data, setData] = useState({
@@ -17,13 +18,13 @@ export default function Login() {
   return (
     <div className="login-container">
       <div className="login-section">
-        <Link to="/">
-          <img src="assets/svgs/brand-logo.svg" alt="brand logo" />
+        <Link to="/clientes/mediacore">
+          <img src={`${assets_path}/svgs/brand-logo.svg`} alt="brand logo" />
         </Link>
 
         <form className="login-form" action="">
           <h1 className="mb-4">
-            Acceso privado <Link to="/">MediaCore®</Link>
+            Acceso privado <Link to="/clientes/mediacore">MediaCore®</Link>
           </h1>
           <div className="d-flex flex-column gap-2">
             <label>Usuario</label>
@@ -56,7 +57,7 @@ export default function Login() {
         </form>
         
         <p>
-          Plataforma MediaCore® by <a href="#">MediaHaus</a> 2021. Todos los
+          Plataforma MediaCore® by <a href="https://www.mediahaus.com.ar" target="_blank">MediaHaus</a> 2021. Todos los
           derechos reservados.
         </p>
       </div>
