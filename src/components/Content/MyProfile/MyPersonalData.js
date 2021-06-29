@@ -1,8 +1,9 @@
 import React, { useState, useRef } from "react";
 import "./MyProfile.scss";
 import "../Content.scss";
-
-const assets_path = "/clientes/mediacore/assets";
+import PencilIcon from '../../../assets/svgs/pencil-icon.svg'
+import Avatar from '../../../assets/images/avatar.png'
+import Background from '../../../assets/images/login-background.png'
 
 export default function MyPersonalData() {
   const inputFileProfile = useRef(null);
@@ -48,13 +49,13 @@ export default function MyPersonalData() {
         <div className="images-container">
           <img
             className="banner-image"
-            src={`${assets_path}/login-background.png`}
+            src={Background}
             alt="perfil de usuario"
             width="75px"
           />
           <button className="edit-banner" onClick={getFileBanner}>
             <img
-              src={`${assets_path}/svgs/pencil-icon.svg`}
+              src={PencilIcon}
               width="20px"
               alt="edit banner image icon"
             />
@@ -62,13 +63,13 @@ export default function MyPersonalData() {
           <div className="profile-wrapper">
             <img
               className="profile-image"
-              src={`${assets_path}/avatar.png`}
+              src={Avatar}
               alt="perfil de usuario"
               width="75px"
             />
             <button className="edit-profile" onClick={getFileProfile}>
               <img
-                src={`${assets_path}/svgs/pencil-icon.svg`}
+                src={PencilIcon}
                 width="20px"
                 alt="edit profile image icon"
               />

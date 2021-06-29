@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Login.scss";
-const assets_path = "assets"
+import LogoIcon from '../../assets/svgs/brand-logo.svg'
 
 export default function Login() {
   const [data, setData] = useState({
@@ -19,7 +19,7 @@ export default function Login() {
     <div className="login-container">
       <div className="login-section">
         <Link to="/clientes/mediacore">
-          <img src={`${assets_path}/svgs/brand-logo.svg`} alt="brand logo" />
+          <img src={LogoIcon} alt="brand logo" />
         </Link>
 
         <form className="login-form" action="">

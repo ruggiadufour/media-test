@@ -1,5 +1,14 @@
 import React, { useState } from "react";
 import "./Sidebar.scss";
+
+import LogoImage from "../../assets/svgs/logo.svg";
+import LockIcon from "../../assets/svgs/lock-icon.svg";
+import CloseIcon from "../../assets/svgs/close-session-icon.svg";
+import ProfileIcon from "../../assets/svgs/profile-icon.svg";
+import AboutIcon from "../../assets/svgs/about-doc-icon.svg";
+import AccountIcon from "../../assets/svgs/account-icon.svg";
+import GearIcon from "../../assets/svgs/gear-icon.svg";
+
 const assets_path = "assets";
 
 export default function Sidebar() {
@@ -10,7 +19,7 @@ export default function Sidebar() {
       <div className="d-flex flex-column align-items-center">
         <img
           className="logo-brand"
-          src={`${assets_path}/svgs/logo.svg`}
+          src={LogoImage}
           alt="Logo Template"
           width="100%"
         />
@@ -26,22 +35,22 @@ export default function Sidebar() {
           <SidebarButton
             text="Acerca de MH"
             type="deployable"
-            leftIcon={`${assets_path}/svgs/about-doc.svg`}
+            leftIcon={AboutIcon}
           />
           <SidebarButton
             text="Soporte"
             type="deployable"
-            leftIcon={`${assets_path}/svgs/gear.svg`}
+            leftIcon={GearIcon}
           />
         </div>
         <SidebarButton text={"MediaSEO®"} />
         <SidebarButton
           text={"MediaBlog®"}
-          rightIcon={`${assets_path}/svgs/lock.svg`}
+          rightIcon={LockIcon}
         />
         <SidebarButton
           text="MediaInvestor®"
-          rightIcon={`${assets_path}/svgs/lock.svg`}
+          rightIcon={LockIcon}
         />
         <SidebarButton text={"MediaBroker®"} />
         <SidebarButton text={"Más Servicios"} />
@@ -49,15 +58,15 @@ export default function Sidebar() {
 
       <div className="d-flex flex-column">
         <AccountButton
-          icon={`${assets_path}/svgs/profile.svg`}
+          icon={ProfileIcon}
           text={"Mi perfil"}
         ></AccountButton>
         <AccountButton
-          icon={`${assets_path}/svgs/account.svg`}
+          icon={AccountIcon}
           text={"Mi cuenta"}
         ></AccountButton>
         <AccountButton
-          icon={`${assets_path}/svgs/close-session.svg`}
+          icon={CloseIcon}
           text={"Cerrar sesión"}
         ></AccountButton>
       </div>
