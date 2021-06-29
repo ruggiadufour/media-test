@@ -1,0 +1,164 @@
+.my-profile-content {
+  & h1 {
+    background: #fff;
+    margin-bottom: 0;
+    padding: 2rem 2rem 0 2rem;
+    @media (max-width: 600px) {
+      padding: 0;
+    }
+  }
+}
+
+.my-data {
+  background-color: #fff;
+  width: 100%;
+  padding: 2rem;
+
+  & h2 {
+    display: none;
+  }
+
+  & input::placeholder,
+  & textarea::placeholder {
+    color: transparent;
+  }
+
+  @media (max-width: 600px) {
+    background-color: #f6f6f6;
+    padding: 0 0 2rem 0;
+    height: 100%;
+    & > h1,
+    & > .input-grid {
+      padding: 0 2rem;
+    }
+
+    & input::placeholder,
+    & textarea::placeholder {
+      color: #bcbcbc;
+    }
+
+    & label {
+      display: none;
+    }
+
+    & h2 {
+      display: block;
+    }
+  }
+}
+.save-button-wrapper {
+  width: 100%;
+  padding: 0;
+  @media (max-width: 600px) {
+    padding: 0 2rem;
+  }
+}
+.save-data-button {
+  background-color: #1ba1fc;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  padding: 7px 15px;
+  margin-top: 2.5rem;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+}
+.save-data-button:hover {
+  opacity: 0.8;
+}
+
+.images-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  padding: 1rem;
+  margin: 0 0 2.5rem 0;
+
+  .banner-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+  }
+
+  .profile-image,
+  button {
+    position: relative;
+  }
+  .profile-image {
+    height: 100%;
+    width: auto;
+    border-radius: 50%;
+  }
+
+  & button {
+    border: none;
+    background-color: #000;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+  }
+
+  & button:focus{
+    opacity: .75;
+    outline: none;
+  }
+
+  .edit-banner {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 30;
+  }
+
+  @media (max-width: 600px) {
+    text-align: center;
+
+    .edit-banner {
+      bottom: 1rem;
+      left: 1rem;
+    }
+  }
+}
+
+.profile-wrapper {
+  width: auto;
+  height: 100%;
+  position: relative;
+
+  .edit-profile {
+    left: -15px;
+  }
+}
+
+.input-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+
+  div:last-child {
+    grid-column: 1/3;
+  }
+  @media (max-width: 1000px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 600px) {
+    grid-template-columns: 100%;
+    div:last-child {
+      grid-column: 1/2;
+    }
+  }
+
+  input,
+  textarea {
+    border-radius: 5px;
+    border: solid thin #d6d6d6;
+    background-color: #fff;
+    padding: 10px;
+  }
+}

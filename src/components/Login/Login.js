@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Login.scss";
-const assets_path = "/clientes/mediacore/assets"
+const assets_path = "assets"
 
 export default function Login() {
   const [data, setData] = useState({

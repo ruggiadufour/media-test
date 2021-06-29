@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Sidebar.scss";
-const assets_path = "mediacore/assets";
+const assets_path = "assets";
 
 export default function Sidebar() {
   const [deploy, setDeploy] = useState(false);
@@ -65,22 +65,27 @@ export default function Sidebar() {
   );
 }
 
-function AccountButton({ text, icon, onClick = () => {} }) {
+export const AccountButton = ({
+  text,
+  icon,
+  onClick = () => {},
+  className = "",
+}) => {
   return (
-    <button className="account-button" onClick={onClick}>
+    <button className={`account-button ${className}`} onClick={onClick}>
       {icon && <img src={icon} alt="icon button" width="15px" />}
       <span>{text}</span>
     </button>
   );
-}
+};
 
-function SidebarButton({
+export const SidebarButton = ({
   text,
   leftIcon,
   rightIcon,
   type = "",
   onClick = () => {},
-}) {
+}) => {
   return (
     <button className={`sidebar-button ${type}`} onClick={onClick}>
       <div>
@@ -90,4 +95,4 @@ function SidebarButton({
       {rightIcon && <img src={rightIcon} alt="right icon button" />}
     </button>
   );
-}
+};

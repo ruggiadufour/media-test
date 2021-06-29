@@ -6,7 +6,7 @@
 
 .menu-container {
   position: relative;
-  margin-left: 2rem;
+  margin-left: 1.5rem;
 }
 .menu-btn {
   top: 50%;
@@ -14,6 +14,7 @@
   transform: translate(-50%, -50%);
   position: absolute;
   width: 40px;
+  height: 40px;
 }
 
 .menu-btn:before,
@@ -51,6 +52,59 @@
 
 .avatar {
   width: 40px;
+}
+
+.avatar-button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  position: relative;
+}
+.avatar-button:focus {
+  outline: none;
+}
+.avatar-button:hover {
+  cursor: pointer;
+}
+.account-settings-deployable {
+  background-color: #fff;
+  padding: 15px;
+  border: solid thin #dbdbdb;
+  border-radius: 0 0 0 15px;
+  position: absolute;
+  width: 200px;
+  min-height: 200px;
+  top: 55px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  z-index: 40;
+
+  .arrow-avatar {
+    position: absolute;
+    clip-path: polygon(48% 27%, 0% 100%, 100% 100%);
+    background-color: #fff;
+    width: 15px;
+    height: 15px;
+    top: -15px;
+    right: 10px;
+  }
+
+  & div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  & div:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+  }
+  & a{
+    width: 100%;
+  }
 }
 
 .right-elements {
