@@ -46,6 +46,7 @@
     }
   }
 }
+
 .save-button-wrapper {
   width: 100%;
   padding: 0;
@@ -97,10 +98,11 @@
 
   & button {
     border: none;
-    background-color: #000;
+    background-color: #9D9D9D;
     border-radius: 50%;
     height: 30px;
     width: 30px;
+    
   }
 
   & button:focus{
@@ -159,6 +161,6 @@
     border-radius: 5px;
     border: solid thin #d6d6d6;
     background-color: #fff;
-    padding: 10px;
+    padding: 5px;
   }
 }

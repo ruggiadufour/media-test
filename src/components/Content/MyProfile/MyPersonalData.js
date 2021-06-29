@@ -56,7 +56,7 @@ export default function MyPersonalData() {
           <button className="edit-banner" onClick={getFileBanner}>
             <img
               src={PencilIcon}
-              width="20px"
+              width="15px"
               alt="edit banner image icon"
             />
           </button>
@@ -70,7 +70,7 @@ export default function MyPersonalData() {
             <button className="edit-profile" onClick={getFileProfile}>
               <img
                 src={PencilIcon}
-                width="20px"
+                width="15px"
                 alt="edit profile image icon"
               />
             </button>

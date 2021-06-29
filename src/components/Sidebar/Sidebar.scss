@@ -1,11 +1,13 @@
 .left-side {
   background-color: black;
   min-height: 100%;
+  min-width: 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding-bottom: 1.5rem;
   transition: margin-left 0.5s;
+  z-index: 80;
 }
 
 .account-button {
@@ -31,17 +33,22 @@
   position: relative;
   display: flex;
   gap: 15px;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
+  font-weight: 700;
 
   span {
     font: bold Helvetica;
-    margin-left: .5rem;
+    margin-left: 0.5rem;
   }
 
   > :nth-child(2) {
     position: absolute;
     right: 20px;
+  }
+
+  @media (max-width: 700px) {
+    justify-content: center;
   }
 }
 
@@ -61,7 +68,6 @@
   height: 0;
 }
 
-
 // Hamburger menu open sidebar in mobile
 .menu {
   width: 15rem;
@@ -77,4 +83,14 @@
 }
 .open-menu {
   margin-left: 0;
+}
+
+.account-buttons {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  
+  @media (max-width:700px){
+    align-items: center;
+  }
 }

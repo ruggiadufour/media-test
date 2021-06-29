@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Header.scss";
-import { Link } from "react-router-dom";
+import { useHistory, Link, NavLink } from "react-router-dom";
 import { AccountButton } from "../Sidebar/Sidebar";
 
 import Avatar from "../../assets/images/avatar.png";
@@ -11,23 +11,27 @@ import ProfileIcon from "../../assets/svgs/profile-icon.svg";
 
 export default function Header({ setMenu, menu }) {
   const [openAccount, setOpenAccount] = useState(false);
+  const router = useHistory();
+
+  function pushUrl(url) {
+    router.push("/clientes/mediacore" + url);
+  }
 
   return (
     <header className="header d-flex align-items-center">
       <div
-        className="menu-container"
+        className={`${menu ? "menu-btn menu-btn-clicked" : "menu-btn"}`}
         onClick={() => {
           setMenu((m) => !m);
         }}
       >
-        <div className={`${menu ? "menu-btn menu-btn-clicked" : "menu-btn"}`}>
-          <div></div>
-        </div>
+        <div></div>
       </div>
 
-      <Link to="/clientes/mediacore">
-        <p className="brand mx-2">MediaCore®</p>
-      </Link>
+      <NavLink className="brand" to="/clientes/mediacore">
+        MediaCore®
+      </NavLink>
+
       <div className="d-flex gap-3 align-items-center right-elements">
         <img src={BellIcon} alt="avatar administrador" />
         <span className="user-name">Rubén Fuenzalida</span>
@@ -46,13 +50,13 @@ export default function Header({ setMenu, menu }) {
           >
             <div className="arrow-avatar"></div>
             <div>
-              <Link to="/clientes/mediacore/contenido/mi-perfil/mis-datos">
-                <AccountButton
-                  icon={ProfileIcon}
-                  text={"Mi perfil"}
-                  className="text-gray w-100"
-                ></AccountButton>
-              </Link>
+              <AccountButton
+                icon={ProfileIcon}
+                text={"Mi perfil"}
+                className="text-gray w-100"
+                onClick={() => pushUrl("/contenido/mi-perfil/mis-datos")}
+              ></AccountButton>
+
               <AccountButton
                 icon={AccountIcon}
                 text={"Mi cuenta"}
@@ -65,12 +69,11 @@ export default function Header({ setMenu, menu }) {
                 icon={CloseIcon}
                 text={"Cerrar sesión"}
                 className="text-gray"
+                onClick={() => pushUrl("/login")}
               ></AccountButton>
             </div>
           </div>
         </div>
-
-        <Link to="/clientes/mediacore/login">LogIn</Link>
       </div>
     </header>
   );

@@ -19,7 +19,7 @@ function App() {
             <Header menu={menu} setMenu={setMenu} />
             <div className="container-2">
               <aside className={`left-side menu ${menu ? "open-menu" : ""}`}>
-                <Sidebar />
+                <Sidebar setMenu={setMenu}/>
               </aside>
               <article
                 className={`right-side w-100 ${menu ? "hidde-right-side" : ""}`}

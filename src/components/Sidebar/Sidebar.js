@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import "./Sidebar.scss";
 
 import LogoImage from "../../assets/svgs/logo.svg";
@@ -11,8 +12,14 @@ import GearIcon from "../../assets/svgs/gear-icon.svg";
 
 const assets_path = "assets";
 
-export default function Sidebar() {
+export default function Sidebar({setMenu}) {
   const [deploy, setDeploy] = useState(false);
+  const router = useHistory();
+
+  function pushUrl(url) {
+    router.push("/clientes/mediacore" + url);
+    setMenu(false)
+  }
 
   return (
     <>
@@ -37,37 +44,30 @@ export default function Sidebar() {
             type="deployable"
             leftIcon={AboutIcon}
           />
-          <SidebarButton
-            text="Soporte"
-            type="deployable"
-            leftIcon={GearIcon}
-          />
+          <SidebarButton text="Soporte" type="deployable" leftIcon={GearIcon} />
         </div>
         <SidebarButton text={"MediaSEO®"} />
-        <SidebarButton
-          text={"MediaBlog®"}
-          rightIcon={LockIcon}
-        />
-        <SidebarButton
-          text="MediaInvestor®"
-          rightIcon={LockIcon}
-        />
+        <SidebarButton text={"MediaBlog®"} rightIcon={LockIcon} />
+        <SidebarButton text="MediaInvestor®" rightIcon={LockIcon} />
         <SidebarButton text={"MediaBroker®"} />
         <SidebarButton text={"Más Servicios"} />
       </div>
 
-      <div className="d-flex flex-column">
+      <div className="account-buttons d-flex flex-column">
         <AccountButton
           icon={ProfileIcon}
           text={"Mi perfil"}
+          onClick={() => {
+            pushUrl("/contenido/mi-perfil/mis-datos");
+          }}
         ></AccountButton>
-        <AccountButton
-          icon={AccountIcon}
-          text={"Mi cuenta"}
-        ></AccountButton>
+        <AccountButton icon={AccountIcon} text={"Mi cuenta"}></AccountButton>
         <AccountButton
           icon={CloseIcon}
           text={"Cerrar sesión"}
+          onClick={() => {
+            pushUrl("/login");
+          }}
         ></AccountButton>
       </div>
     </>

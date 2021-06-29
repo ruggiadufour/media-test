@@ -35,7 +35,6 @@
   src: url("./assets/fonts/CircularStd-Book.otf");
 }
 
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -60,8 +59,8 @@ code {
   font-family: Helvetica, Arial, sans-serif;
 }
 
-.container-2{
-  flex:1;
+.container-2 {
+  flex: 1;
   display: flex;
   justify-content: stretch;
 }
@@ -74,23 +73,29 @@ code {
 }
 
 h1 {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 500;
 }
 h2 {
   color: #707070;
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-family: "CircularStd-Bold";
 }
 p {
   color: #707070;
   font-family: "CircularStd-Book";
+  font-size: 0.8rem;
 }
 ul {
   list-style-type: none;
   color: #707070;
   padding: 0;
   font-family: "CircularStd-Book";
+  font-size: 0.8rem;
+}
+li,
+a {
+  font-size: 0.8rem;
 }
 
 a:any-link {
@@ -99,14 +104,13 @@ a:any-link {
   font-family: "Helvetica";
 }
 
-@media (max-width: 700px){
-  .hidde-right-side{
+@media (max-width: 700px) {
+  .hidde-right-side {
     display: none;
   }
 }
 
 // colors
-
-.text-gray{
-  color: #747171!important;
+.text-gray {
+  color: #747171 !important;
 }

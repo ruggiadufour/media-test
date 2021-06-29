@@ -4,17 +4,15 @@
   padding: 1rem 1.5rem;
 }
 
-.menu-container {
-  position: relative;
-  margin-left: 1.5rem;
-}
+
 .menu-btn {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  width: 40px;
+  width: 30px;
   height: 40px;
+  display: none;
+
+  @media (max-width:700px){
+    display: block;
+  }
 }
 
 .menu-btn:before,
@@ -29,7 +27,7 @@
   transition: 0.5s;
 }
 .menu-btn-clicked:before {
-  transform: translateY(12px) rotate(135deg);
+  transform: translateY(10px) rotate(135deg);
 }
 .menu-btn-clicked:after {
   transform: translateY(-12px) rotate(-135deg);
@@ -39,13 +37,13 @@
 }
 
 .brand {
-  color: #5a5555;
+  color: #5a5555!important;
   font-size: 1.5rem;
+  font-weight: 700;
   cursor: pointer;
-}
+  margin-left: 0;
 
-@media (max-width: 700px) {
-  .brand {
+  @media (max-width: 700px){
     margin-left: auto;
   }
 }
@@ -60,13 +58,18 @@
   border: none;
   border-radius: 50%;
   position: relative;
+
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  @media(max-width: 700px){
+    cursor: none;
+  }
 }
-.avatar-button:focus {
-  outline: none;
-}
-.avatar-button:hover {
-  cursor: pointer;
-}
+
 .account-settings-deployable {
   background-color: #fff;
   padding: 15px;
@@ -102,8 +105,12 @@
     display: flex;
     flex-direction: column;
   }
-  & a{
+  & a {
     width: 100%;
+  }
+
+  @media(max-width: 700px){
+    display: none;
   }
 }
 
