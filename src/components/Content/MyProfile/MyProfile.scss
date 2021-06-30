@@ -35,6 +35,7 @@
     & input::placeholder,
     & textarea::placeholder {
       color: #bcbcbc;
+      font-size: 13px;
     }
 
     & label {
@@ -161,6 +162,6 @@
     border-radius: 5px;
     border: solid thin #d6d6d6;
     background-color: #fff;
-    padding: 5px;
+    padding: 5px 13px;
   }
 }

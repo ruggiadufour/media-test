@@ -96,7 +96,7 @@ export default function MyPersonalData() {
             <input
               onChange={handleChange}
               value={data.email}
-              type="text"
+              type="email"
               name="email"
               placeholder="E-mail*"
             />
@@ -127,7 +127,7 @@ export default function MyPersonalData() {
             <input
               onChange={handleChange}
               value={data.password}
-              type="text"
+              type="password"
               name="password"
               placeholder="Contraseña*"
             />
@@ -137,7 +137,7 @@ export default function MyPersonalData() {
             <input
               onChange={handleChange}
               value={data.repassword}
-              type="text"
+              type="password"
               name="repassword"
               placeholder="Reingrese Contraseña*"
             />
