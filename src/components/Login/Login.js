@@ -57,7 +57,7 @@ export default function Login() {
         </form>
         
         <p>
-          Plataforma MediaCore® by <a href="https://www.mediahaus.com.ar" target="_blank">MediaHaus</a> 2021. Todos los
+          Plataforma <span className="text-blue">MediaCore®</span> by <a href="https://www.mediahaus.com.ar" target="_blank">MediaHaus</a> 2021. Todos los
           derechos reservados.
         </p>
       </div>

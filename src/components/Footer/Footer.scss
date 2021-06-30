@@ -1,6 +1,10 @@
 .footer {
   height: 75px;
   width: 100%;
+
+  & a {
+    font-family: "CircularStd-Book" ;
+  }
 }
 .footer,
 p {
