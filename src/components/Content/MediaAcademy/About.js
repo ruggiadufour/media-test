@@ -1,20 +1,21 @@
 import React from "react";
+import Breadcrumb from "../Breadcrumb";
 import PlayIcon from "../../../assets/svgs/play-icon.svg";
 import BlueScreen from "../../../assets/images/temporal/blue-screen.svg";
 
 export default function About() {
+  const breadcrumb_items = [
+    {
+      text: "MediaAcademy®",
+    },
+    {
+      text: "Servicio MediaAcademy®",
+    },
+  ];
   return (
     <div className="content">
       <div>
-        <ol className="breadcrumb text-gray">
-          <li className="breadcrumb-item">
-            <a href="#" className="link-1">MediaAcademy®</a>
-          </li>
-          <li className="breadcrumb-item active paragraph-1" aria-current="page">
-            Servicio MediaAcademy®
-          </li>
-        </ol>
-
+        <Breadcrumb items={breadcrumb_items} />
         <h1 className="title-1 font-2">Acerca de MediaAcademy®</h1>
       </div>
 
@@ -26,7 +27,7 @@ export default function About() {
             <img src={PlayIcon} alt="play" width="100px" />
           </div>
 
-          <div className="description">
+          <div className="ma-description">
             <h2 className="title-2 font-2">Acerca de MediaAcademy®</h2>
             <p className="paragraph-1">
               Lorem ipsum dolor sit amet consectetur adipiscing elit diam nibh,
@@ -35,7 +36,7 @@ export default function About() {
               tortor sociis dapibus metus commodo feugiat, luctus ornare
               lobortis habitasse curae mattis.
             </p>
-            <h2  className="title-2 font-2">Alcance</h2>
+            <h2 className="title-2 font-2">Alcance</h2>
             <p className="paragraph-1">
               Lorem ipsum dolor sit amet consectetur adipiscing elit diam nibh,
               feugiat curae in euismod auctor neque lacus ornare, sapien fusce

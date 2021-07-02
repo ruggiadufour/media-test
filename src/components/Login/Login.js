@@ -49,7 +49,7 @@ export default function Login() {
               placeholder="Contraseña"
             />
           </div>
-          <button className="mt-4 login-button" type="submit">
+          <button className="blue-button mt-4 p-2" type="submit">
             Entrar
           </button>
           <a href="#">Olvidé mi contraseña</a>

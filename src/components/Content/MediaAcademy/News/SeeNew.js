@@ -1,4 +1,5 @@
 import React from "react";
+import Breadcrumb from "../../Breadcrumb";
 import { Link } from "react-router-dom";
 import CardNew from "./CardNew";
 import ImageInstagram from "../../../../assets/images/temporal/instagram-post.png";
@@ -7,22 +8,19 @@ import ImageBuilding from "../../../../assets/images/temporal/build.png";
 import Logo from "../../../../assets/svgs/brand-logo.svg";
 import DownloadIcon from "../../../../assets/svgs/download-icon.svg";
 export default function SeeNew() {
+  const breadcrumb_items = [
+    {
+      text: "MediaAcademy®",
+    },
+    {
+      text: "Novedades",
+    },
+  ];
+
   return (
     <div className="content">
       <div>
-        <ol className="breadcrumb text-gray">
-          <li className="breadcrumb-item">
-            <a href="#" className="link-1">
-              MediaAcademy®
-            </a>
-          </li>
-          <li
-            className="breadcrumb-item active paragraph-1"
-            aria-current="page"
-          >
-            Novedades
-          </li>
-        </ol>
+        <Breadcrumb items={breadcrumb_items} />
       </div>
 
       <div className="ma-see-news">

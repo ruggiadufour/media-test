@@ -1,4 +1,5 @@
 import React from "react";
+import Breadcrumb from "../../Breadcrumb";
 import CardNew from "./CardNew";
 import InstagramImage from "../../../../assets/images/temporal/instagram-post.png";
 import BuildingImage from "../../../../assets/images/temporal/build.png";
@@ -46,22 +47,18 @@ const news = [
 ];
 
 export default function News() {
+  const breadcrumb_items = [
+    {
+      text: "MediaAcademy®",
+    },
+    {
+      text: "Novedades",
+    },
+  ];
   return (
     <div className="content ma-news-container">
       <div>
-        <ol className="breadcrumb text-gray">
-          <li className="breadcrumb-item">
-            <a href="#" className="link-1">
-              MediaAcademy®
-            </a>
-          </li>
-          <li
-            className="breadcrumb-item active paragraph-1"
-            aria-current="page"
-          >
-            Novedades
-          </li>
-        </ol>
+        <Breadcrumb items={breadcrumb_items}/>
 
         <h1 className="title-1 font-2">Novedades</h1>
       </div>

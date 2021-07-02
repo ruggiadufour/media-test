@@ -15,8 +15,19 @@ const assets_path = "assets";
 
 const DeployableButtons = [
   {
-    text: "MediaCore®",
-    subButtons: [],
+    text: "MediaHost®",
+    deployed: true,
+    subButtons: [
+      {
+        text: "Acerca de MH®",
+        leftIcon: AboutIcon,
+        route: "/clientes/mediacore/contenido"
+      },
+      {
+        text: "Soporte",
+        leftIcon: GearIcon,
+      },
+    ],
   },
   {
     text: "MediaAcademy®",
@@ -30,19 +41,6 @@ const DeployableButtons = [
         text: "Acerca de MA®",
         leftIcon: DocIcon,
         route: "/clientes/mediacore/contenido/media-academy/acerca",
-      },
-    ],
-  },
-  {
-    text: "MediaHost®",
-    subButtons: [
-      {
-        text: "Acerca de MH®",
-        leftIcon: AboutIcon,
-      },
-      {
-        text: "Soporte",
-        leftIcon: GearIcon,
       },
     ],
   },

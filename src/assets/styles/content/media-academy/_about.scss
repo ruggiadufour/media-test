@@ -8,7 +8,7 @@
     & hr {
       display: none;
     }
-    .description {
+    .ma-description {
       padding: 0.5rem;
     }
   }
@@ -20,16 +20,10 @@
   gap: 1.5rem;
   align-items: center;
 
-  // & h2 {
-  //   font-family: "Helvetica";
-  //   font-size: 1.25rem;
-  // }
-  // & p {
-  //   margin: 1rem 0 2rem 0;
-  //   padding: 0;
-  //   font-size: 1rem;
-  //   font-family: "Helvetica";
-  // }
+  & div:nth-child(2) {
+    align-self: flex-start;
+    padding-top: 1.5rem;
+  }
 
   @media (max-width: $break-desktop) {
     grid-template-columns: 1fr;

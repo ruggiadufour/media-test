@@ -1,17 +1,19 @@
 import React from "react";
+import Breadcrumb from "../Breadcrumb";
 
 export default function About() {
+  const breadcrumb_items = [
+    {
+      text: "MediaHost®",
+    },
+    {
+      text: "Acerca de MediaHost®",
+    },
+  ];
   return (
     <div className="content">
       <div>
-        <ol className="breadcrumb text-gray-1">
-          <li className="breadcrumb-item">
-            <a href="#" className="link-1">MediaHost®</a>
-          </li>
-          <li className="breadcrumb-item active paragraph-1" aria-current="page">
-            Acerca de MediaHost®
-          </li>
-        </ol>
+        <Breadcrumb items={breadcrumb_items} />
 
         <h1 className="title-1 font-2">Acerca de MediaHost®</h1>
       </div>
@@ -73,7 +75,9 @@ export default function About() {
           <li>- Incluye código amigable SEO ( para motores de búsqueda). </li>
           <li>
             - Para mayor customizacion SEO, consulte el módulo Modulo MediaSEO®{" "}
-            <a href="#" className="link-1">aquí.</a>
+            <a href="#" className="link-1">
+              aquí.
+            </a>
           </li>
         </ul>
       </div>

@@ -36,6 +36,11 @@
   justify-content: left;
   align-items: center;
   font-weight: 700;
+  text-decoration: none;
+
+  &:hover{
+    color: #fff;
+  }
 
   span {
     font: bold Helvetica;
@@ -55,7 +60,7 @@
 }
 
 .deployable {
-  background-color: $gray-1;
+  background-color: $gray-9;
   color: white;
 }
 

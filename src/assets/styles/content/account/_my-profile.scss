@@ -54,6 +54,13 @@
   @media (max-width: $break-tablet) {
     padding: 0 2rem;
   }
+  
+  > button {
+    margin-top: 2.5rem;
+    @media (max-width: $break-tablet) {
+      width: 100%;
+    }
+  }
 }
 .save-data-button {
   background-color: $blue-1;
@@ -103,11 +110,10 @@
     border-radius: 50%;
     height: 30px;
     width: 30px;
-    
   }
- 
-  & button:focus{
-    opacity: .75;
+
+  & button:focus {
+    opacity: 0.75;
     outline: none;
   }
 
@@ -166,9 +172,10 @@
   }
 }
 
-.edit-banner, .edit-profile {
-  transition: background-color .3s;
-  &:hover{
+.edit-banner,
+.edit-profile {
+  transition: background-color 0.3s;
+  &:hover {
     background-color: $blue-1;
   }
 }

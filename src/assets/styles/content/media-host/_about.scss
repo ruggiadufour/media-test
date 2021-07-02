@@ -1,5 +1,5 @@
 .about-wrapper {
-  @media (max-width: 600px) {
+  @media (max-width: $break-tablet) {
     border-top: solid thin lightgray;
     padding: 2rem;
     height: 100%;

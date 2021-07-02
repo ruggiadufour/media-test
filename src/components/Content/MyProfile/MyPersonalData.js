@@ -1,7 +1,9 @@
 import React, { useState, useRef } from "react";
-import PencilIcon from '../../../assets/svgs/pencil-icon.svg'
-import Avatar from '../../../assets/images/avatar.png'
-import Background from '../../../assets/images/login-background.png'
+import Breadcrumb from "../Breadcrumb";
+
+import PencilIcon from "../../../assets/svgs/pencil-icon.svg";
+import Avatar from "../../../assets/images/avatar.png";
+import Background from "../../../assets/images/login-background.png";
 
 export default function MyPersonalData() {
   const inputFileProfile = useRef(null);
@@ -15,6 +17,15 @@ export default function MyPersonalData() {
     repassword: "",
     aboutme: "",
   });
+
+  const breadcrumb_items = [
+    {
+      text: "Mi Perfil",
+    },
+    {
+      text: "Mis datos personales",
+    },
+  ];
 
   function getFileProfile() {
     inputFileProfile.current.click();
@@ -32,14 +43,8 @@ export default function MyPersonalData() {
   return (
     <div className="content my-profile-content">
       <div>
-        <ol className="breadcrumb text-gray-1">
-          <li className="breadcrumb-item">
-            <a className="link-1" href="#">Mi Perfil</a>
-          </li>
-          <li className="breadcrumb-item active" aria-current="page">
-            Mis datos personales
-          </li>
-        </ol>
+        <Breadcrumb items={breadcrumb_items} />
+        
         <h1 className="title-1 font-2">Hola, Rubén!</h1>
       </div>
 
@@ -52,11 +57,7 @@ export default function MyPersonalData() {
             width="75px"
           />
           <button className="edit-banner" onClick={getFileBanner}>
-            <img
-              src={PencilIcon}
-              width="15px"
-              alt="edit banner image icon"
-            />
+            <img src={PencilIcon} width="15px" alt="edit banner image icon" />
           </button>
           <div className="profile-wrapper">
             <img
@@ -152,7 +153,7 @@ export default function MyPersonalData() {
         </div>
 
         <div className="save-button-wrapper">
-          <button className="save-data-button">Guardar</button>
+          <button className="blue-button">Guardar</button>
         </div>
       </div>
     </div>
