@@ -95,36 +95,6 @@ export default function Sidebar({ setMenu }) {
         {DeployableButtons.map((buttonData, i) => (
           <DeployableButton key={i} {...buttonData} onClick={closeMenu} />
         ))}
-        {/* <SidebarButton text="MediaCore®" />
-        <SidebarButton text="MediaAcademy®" />
-        <div className={`deploy w-100 ${deploy ? "deployed" : "undeployed"}`}>
-          <SidebarButton
-            text="Acerca de MH"
-            type="deployable"
-            leftIcon={AboutIcon}
-          />
-          <SidebarButton text="Soporte" type="deployable" leftIcon={GearIcon} />
-        </div>
-        <SidebarButton
-          text="MediaHost®"
-          onClick={() => {
-            setDeploy((d) => !d);
-          }}
-        />
-
-        <div className={`deploy w-100 ${deploy ? "deployed" : "undeployed"}`}>
-          <SidebarButton
-            text="Acerca de MH"
-            type="deployable"
-            leftIcon={AboutIcon}
-          />
-          <SidebarButton text="Soporte" type="deployable" leftIcon={GearIcon} />
-        </div>
-        <SidebarButton text={"MediaSEO®"} />
-        <SidebarButton text={"MediaBlog®"} rightIcon={LockIcon} />
-        <SidebarButton text="MediaInvestor®" rightIcon={LockIcon} />
-        <SidebarButton text={"MediaBroker®"} />
-        <SidebarButton text={"Más Servicios"} /> */}
       </div>
 
       <div className="account-buttons d-flex flex-column">
