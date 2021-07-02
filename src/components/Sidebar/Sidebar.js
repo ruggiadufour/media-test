@@ -8,6 +8,7 @@ import ProfileIcon from "../../assets/svgs/profile-icon.svg";
 import AboutIcon from "../../assets/svgs/about-doc-icon.svg";
 import AccountIcon from "../../assets/svgs/account-icon.svg";
 import GearIcon from "../../assets/svgs/gear-icon.svg";
+import DocIcon from "../../assets/svgs/doc-icon.svg";
 
 import DeployableButton from "./DeployableButton";
 const assets_path = "assets";
@@ -22,12 +23,12 @@ const DeployableButtons = [
     subButtons: [
       {
         text: "Novedades",
-        leftIcon: CloseIcon,
+        leftIcon: DocIcon,
         route: "/clientes/mediacore/contenido/media-academy/novedades",
       },
       {
         text: "Acerca de MA®",
-        leftIcon: CloseIcon,
+        leftIcon: DocIcon,
         route: "/clientes/mediacore/contenido/media-academy/acerca",
       },
     ],
@@ -52,14 +53,17 @@ const DeployableButtons = [
   {
     text: "MediaBlog®",
     subButtons: [],
+    rightIcon: LockIcon,
   },
   {
     text: "MediaInvestor®",
     subButtons: [],
+    rightIcon: LockIcon,
   },
   {
     text: "MediaBroker®",
     subButtons: [],
+    rightIcon: LockIcon,
   },
   {
     text: "Más Servicios",
@@ -68,11 +72,13 @@ const DeployableButtons = [
 ];
 
 export default function Sidebar({ setMenu }) {
-  const [deploy, setDeploy] = useState(false);
   const router = useHistory();
 
   function pushUrl(url) {
+    closeMenu();
     router.push("/clientes/mediacore" + url);
+  }
+  function closeMenu() {
     setMenu(false);
   }
 
@@ -86,8 +92,8 @@ export default function Sidebar({ setMenu }) {
           width="100%"
         />
 
-        {DeployableButtons.map((buttonData) => (
-          <DeployableButton {...buttonData} />
+        {DeployableButtons.map((buttonData, i) => (
+          <DeployableButton key={i} {...buttonData} onClick={closeMenu} />
         ))}
         {/* <SidebarButton text="MediaCore®" />
         <SidebarButton text="MediaAcademy®" />

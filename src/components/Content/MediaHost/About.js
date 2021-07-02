@@ -73,7 +73,7 @@ export default function About() {
           <li>- Incluye código amigable SEO ( para motores de búsqueda). </li>
           <li>
             - Para mayor customizacion SEO, consulte el módulo Modulo MediaSEO®{" "}
-            <a href="#">aquí.</a>
+            <a href="#" className="link-1">aquí.</a>
           </li>
         </ul>
       </div>

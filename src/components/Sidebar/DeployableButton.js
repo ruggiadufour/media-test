@@ -22,8 +22,8 @@ export default function Deployable({
 
       {subButtons.length !== 0 && (
         <div className={`deploy w-100 ${deploy ? "deployed" : "undeployed"}`}>
-          {subButtons.map((btn) => (
-            <SidebarButton {...btn} />
+          {subButtons.map((btn,i) => (
+            <SidebarButton key={i} {...btn} onClick={onClick} />
           ))}
         </div>
       )}
@@ -31,9 +31,10 @@ export default function Deployable({
   );
 }
 
-export const SidebarButton = ({ text, leftIcon, rightIcon, route = "/" }) => {
+export const SidebarButton = ({ text, leftIcon, rightIcon,onClick, route = "/" }) => {
   const router = useHistory();
   function handleClick() {
+    onClick()
     router.push(route);
   }
   return (

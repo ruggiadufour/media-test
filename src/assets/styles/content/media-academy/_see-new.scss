@@ -61,6 +61,11 @@
   flex-direction: column;
   justify-content: space-between;
   @media (max-width: 1550px) {
-    justify-content: space-evenly;
+    justify-content: flex-start;
   }
+}
+
+.go-back-link{
+  right: 15px;
+  bottom: 15px;
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import CardNew from "./CardNew";
 import ImageInstagram from "../../../../assets/images/temporal/instagram-post.png";
 import ImageVideo from "../../../../assets/images/temporal/video.png";
@@ -26,8 +27,10 @@ export default function SeeNew() {
 
       <div className="ma-see-news">
         <div className="position-relative">
-          <span id="fake-title" className="title-1 font-2">Novedades</span>
-          <div className="ma-see-container-left mt-2">
+          <span id="fake-title" className="title-1 font-2">
+            Novedades
+          </span>
+          <div className="ma-see-container-left mt-2 ">
             <div className="position-relative">
               <img
                 className="brand-logo-in-banner"
@@ -35,10 +38,16 @@ export default function SeeNew() {
                 src={Logo}
                 alt="mediahaus logo"
               />
-              <img className="new-image-banner" src={ImageInstagram} alt={`banner`} />
+              <img
+                className="new-image-banner"
+                src={ImageInstagram}
+                alt={`banner`}
+              />
             </div>
-            <div className="content-new">
-              <h1 className="title-2 font-1">Ultimas tendencias en Marketing inmobiliario.</h1>
+            <div className="content-new position-relative">
+              <h1 className="title-2 font-1">
+                Ultimas tendencias en Marketing inmobiliario.
+              </h1>
               <span className="text-blue-1 font-1">5 de Abril 2021</span>
               <br />
               <br />
@@ -81,9 +90,17 @@ export default function SeeNew() {
                   width="18px"
                 />
               </button>
+
+              <Link
+                className="text-decoration-none text-gray-1 position-absolute go-back-link "
+                to="/clientes/mediacore/contenido/media-academy/novedades"
+              >
+                {"< Volver"}
+              </Link>
             </div>
           </div>
         </div>
+
         <div className="d-flex flex-column">
           <h2 className="title-1 font-2 mb-3">Novedades Destacadas</h2>
           <div className="right-cards">
