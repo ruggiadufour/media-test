@@ -1,6 +1,4 @@
 import React, { useState, useRef } from "react";
-import "./MyProfile.scss";
-import "../Content.scss";
 import PencilIcon from '../../../assets/svgs/pencil-icon.svg'
 import Avatar from '../../../assets/images/avatar.png'
 import Background from '../../../assets/images/login-background.png'
@@ -34,15 +32,15 @@ export default function MyPersonalData() {
   return (
     <div className="content my-profile-content">
       <div>
-        <ol className="breadcrumb text-gray">
+        <ol className="breadcrumb text-gray-1">
           <li className="breadcrumb-item">
-            <a href="#">Mi Perfil</a>
+            <a className="link-1" href="#">Mi Perfil</a>
           </li>
           <li className="breadcrumb-item active" aria-current="page">
             Mis datos personales
           </li>
         </ol>
-        <h1>Hola, Rubén!</h1>
+        <h1 className="title-1 font-2">Hola, Rubén!</h1>
       </div>
 
       <div className="my-data">
@@ -81,7 +79,7 @@ export default function MyPersonalData() {
 
         <div className="input-grid">
           <div className="d-flex flex-column">
-            <h2>Datos personales</h2>
+            <h2 className="title-2 text-gray-1 font-0">Datos personales</h2>
             <label>Nombre y Apellido*</label>
             <input
               onChange={handleChange}
@@ -112,7 +110,7 @@ export default function MyPersonalData() {
             />
           </div>
           <div className="d-flex flex-column">
-            <h2>Datos de acceso</h2>
+            <h2 className="title-2 text-gray-1 font-0">Datos de acceso</h2>
             <label>Usuario</label>
             <input
               onChange={handleChange}

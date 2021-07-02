@@ -1,0 +1,53 @@
+@import "../global/variables";
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+  min-height: 100vh;
+  height: 100%;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.container-2 {
+  flex: 1;
+  display: flex;
+  justify-content: stretch;
+}
+
+.right-side {
+  display: flex;
+  min-height: 100%;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+@media (max-width: 700px) {
+  .hidde-right-side {
+    display: none;
+  }
+}
+
+.blue-button {
+  background-color: $blue-1;
+  color: #fff !important;
+  padding: 8px 1.25rem;
+  border: none;
+  &:hover {
+    opacity: 0.8;
+  }
+}

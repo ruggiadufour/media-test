@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import "./Sidebar.scss";
 
 import LogoImage from "../../assets/svgs/logo.svg";
 import LockIcon from "../../assets/svgs/lock-icon.svg";
@@ -10,15 +9,71 @@ import AboutIcon from "../../assets/svgs/about-doc-icon.svg";
 import AccountIcon from "../../assets/svgs/account-icon.svg";
 import GearIcon from "../../assets/svgs/gear-icon.svg";
 
+import DeployableButton from "./DeployableButton";
 const assets_path = "assets";
 
-export default function Sidebar({setMenu}) {
+const DeployableButtons = [
+  {
+    text: "MediaCore®",
+    subButtons: [],
+  },
+  {
+    text: "MediaAcademy®",
+    subButtons: [
+      {
+        text: "Novedades",
+        leftIcon: CloseIcon,
+        route: "/clientes/mediacore/contenido/media-academy/novedades",
+      },
+      {
+        text: "Acerca de MA®",
+        leftIcon: CloseIcon,
+        route: "/clientes/mediacore/contenido/media-academy/acerca",
+      },
+    ],
+  },
+  {
+    text: "MediaHost®",
+    subButtons: [
+      {
+        text: "Acerca de MH®",
+        leftIcon: AboutIcon,
+      },
+      {
+        text: "Soporte",
+        leftIcon: GearIcon,
+      },
+    ],
+  },
+  {
+    text: "MediaSEO®",
+    subButtons: [],
+  },
+  {
+    text: "MediaBlog®",
+    subButtons: [],
+  },
+  {
+    text: "MediaInvestor®",
+    subButtons: [],
+  },
+  {
+    text: "MediaBroker®",
+    subButtons: [],
+  },
+  {
+    text: "Más Servicios",
+    subButtons: [],
+  },
+];
+
+export default function Sidebar({ setMenu }) {
   const [deploy, setDeploy] = useState(false);
   const router = useHistory();
 
   function pushUrl(url) {
     router.push("/clientes/mediacore" + url);
-    setMenu(false)
+    setMenu(false);
   }
 
   return (
@@ -31,6 +86,19 @@ export default function Sidebar({setMenu}) {
           width="100%"
         />
 
+        {DeployableButtons.map((buttonData) => (
+          <DeployableButton {...buttonData} />
+        ))}
+        {/* <SidebarButton text="MediaCore®" />
+        <SidebarButton text="MediaAcademy®" />
+        <div className={`deploy w-100 ${deploy ? "deployed" : "undeployed"}`}>
+          <SidebarButton
+            text="Acerca de MH"
+            type="deployable"
+            leftIcon={AboutIcon}
+          />
+          <SidebarButton text="Soporte" type="deployable" leftIcon={GearIcon} />
+        </div>
         <SidebarButton
           text="MediaHost®"
           onClick={() => {
@@ -50,7 +118,7 @@ export default function Sidebar({setMenu}) {
         <SidebarButton text={"MediaBlog®"} rightIcon={LockIcon} />
         <SidebarButton text="MediaInvestor®" rightIcon={LockIcon} />
         <SidebarButton text={"MediaBroker®"} />
-        <SidebarButton text={"Más Servicios"} />
+        <SidebarButton text={"Más Servicios"} /> */}
       </div>
 
       <div className="account-buttons d-flex flex-column">

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./Header.scss";
 import { useHistory, Link, NavLink } from "react-router-dom";
 import { AccountButton } from "../Sidebar/Sidebar";
 
@@ -28,7 +27,7 @@ export default function Header({ setMenu, menu }) {
         <div></div>
       </div>
 
-      <NavLink className="brand" to="/clientes/mediacore">
+      <NavLink className="brand text-decoration-none" to="/clientes/mediacore">
         MediaCore®
       </NavLink>
 
@@ -53,14 +52,14 @@ export default function Header({ setMenu, menu }) {
               <AccountButton
                 icon={ProfileIcon}
                 text={"Mi perfil"}
-                className="text-gray w-100"
+                className="text-gray-1 w-100"
                 onClick={() => pushUrl("/contenido/mi-perfil/mis-datos")}
               ></AccountButton>
 
               <AccountButton
                 icon={AccountIcon}
                 text={"Mi cuenta"}
-                className="text-gray"
+                className="text-gray-1"
               ></AccountButton>
             </div>
             <div>
@@ -68,7 +67,7 @@ export default function Header({ setMenu, menu }) {
               <AccountButton
                 icon={CloseIcon}
                 text={"Cerrar sesión"}
-                className="text-gray"
+                className="text-gray-1"
                 onClick={() => pushUrl("/login")}
               ></AccountButton>
             </div>

@@ -1,16 +1,17 @@
+@import "../global/variables";
+
 .header {
-  background-color: black;
+  background-color: #000;
   height: 70px;
   padding: 1rem 1.5rem;
 }
-
 
 .menu-btn {
   width: 30px;
   height: 40px;
   display: none;
 
-  @media (max-width:700px){
+  @media (max-width: $break-tablet) {
     display: block;
   }
 }
@@ -18,7 +19,7 @@
 .menu-btn:before,
 .menu-btn:after,
 .menu-btn div {
-  background: #707070;
+  background: $gray-2;
   content: "";
   display: none;
   height: 4px;
@@ -37,13 +38,13 @@
 }
 
 .brand {
-  color: #5a5555!important;
+  color: $gray-3 !important;
   font-size: 1.5rem;
   font-weight: 700;
   cursor: pointer;
   margin-left: 0;
 
-  @media (max-width: 700px){
+  @media (max-width: 700px) {
     margin-left: auto;
   }
 }
@@ -65,15 +66,17 @@
   &:hover {
     cursor: pointer;
   }
-  @media(max-width: 700px){
-    cursor: none;
+  @media (max-width: $break-tablet) {
+    &:hover {
+      cursor: default;
+    }
   }
 }
 
 .account-settings-deployable {
   background-color: #fff;
   padding: 15px;
-  border: solid thin #dbdbdb;
+  border: solid thin $gray-0;
   border-radius: 0 0 0 15px;
   position: absolute;
   width: 200px;
@@ -109,7 +112,7 @@
     width: 100%;
   }
 
-  @media(max-width: 700px){
+  @media (max-width: $break-tablet) {
     display: none;
   }
 }
@@ -124,14 +127,14 @@
   padding: 0 18px;
 }
 .user-name {
-  background-color: white;
+  background-color: #fff;
 }
 .user-admin {
-  background-color: dodgerblue;
-  color: white;
+  background-color: $blue-1;
+  color: #fff;
 }
 
-@media (max-width: 700px) {
+@media (max-width: $break-tablet) {
   .user-name,
   .user-admin {
     display: none;

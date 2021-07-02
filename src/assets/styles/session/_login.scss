@@ -57,7 +57,7 @@
 }
 
 .login-image {
-  background-image: url(../../assets/images/login-background.png);
+  background-image: url(../../images/login-background.png);
   background-size: cover;
   background-repeat: no-repeat;
   width: 60%;
@@ -76,7 +76,7 @@
 @media (max-width: 600px) {
   .login-section {
     width: 100%;
-    background-image: url(../../assets/images/login-background.png);
+    background-image: url(../../images/login-background.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

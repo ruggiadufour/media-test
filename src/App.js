@@ -1,12 +1,15 @@
 import { useState,useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
-import "./index.scss";
+import "./assets/styles/App.scss";
 import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Footer from "./components/Footer/Footer";
 import Login from "./components/Login/Login";
 import AboutMediaHost from "./components/Content/MediaHost/About";
 import MyPersonalData from "./components/Content/MyProfile/MyPersonalData";
+import AboutMediaAcademy from "./components/Content/MediaAcademy/About";
+import NewsMediaAcademy from "./components/Content/MediaAcademy/News/News";
+import SeeNewMediaAcademy from "./components/Content/MediaAcademy/News/SeeNew";
 
 function App() {
   const [menu, setMenu] = useState(false);
@@ -30,6 +33,9 @@ function App() {
                   component={MyPersonalData}
                 />
                 <Route exact path="/clientes/mediacore/contenido" component={AboutMediaHost} />
+                <Route exact path="/clientes/mediacore/contenido/media-academy/acerca" component={AboutMediaAcademy} />
+                <Route exact path="/clientes/mediacore/contenido/media-academy/novedades" component={NewsMediaAcademy} />
+                <Route exact path="/clientes/mediacore/contenido/media-academy/novedades/titulo-novedad" component={SeeNewMediaAcademy} />
                 <Footer />
               </article>
             </div>

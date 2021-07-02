@@ -1,0 +1,50 @@
+.ma-about {
+  & hr {
+    margin: 2rem 0;
+  }
+  @media (max-width: $break-tablet) {
+    padding: 2rem;
+
+    & hr {
+      display: none;
+    }
+    .description {
+      padding: 0.5rem;
+    }
+  }
+}
+
+.ma-about-grid {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  gap: 1.5rem;
+  align-items: center;
+
+  // & h2 {
+  //   font-family: "Helvetica";
+  //   font-size: 1.25rem;
+  // }
+  // & p {
+  //   margin: 1rem 0 2rem 0;
+  //   padding: 0;
+  //   font-size: 1rem;
+  //   font-family: "Helvetica";
+  // }
+
+  @media (max-width: $break-desktop) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.video {
+  width: 100%;
+  height: auto;
+  position: relative;
+
+  img:nth-child(2) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

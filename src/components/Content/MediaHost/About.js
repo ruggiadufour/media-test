@@ -1,20 +1,19 @@
 import React from "react";
-import './MediaHost.scss'
 
 export default function About() {
   return (
     <div className="content">
       <div>
-        <ol className="breadcrumb text-gray">
+        <ol className="breadcrumb text-gray-1">
           <li className="breadcrumb-item">
-            <a href="#">MediaHost®</a>
+            <a href="#" className="link-1">MediaHost®</a>
           </li>
-          <li className="breadcrumb-item active" aria-current="page">
+          <li className="breadcrumb-item active paragraph-1" aria-current="page">
             Acerca de MediaHost®
           </li>
         </ol>
 
-        <h1>Acerca de MediaHost®</h1>
+        <h1 className="title-1 font-2">Acerca de MediaHost®</h1>
       </div>
 
       <div className="about-wrapper">
@@ -29,7 +28,7 @@ export default function About() {
             encuentre accesibles, segura e integrada correctamente.{" "}
           </li>
         </ul>
-        <h2>Hosting</h2>
+        <h2 className="title-3 font-0 text-gray-2 fw-bold">Hosting</h2>
         <ul>
           <li>- Alta y configuración de presencia web en Server CloudOS.</li>
           <li>- 30 GB de almacenamiento SSD.</li>
@@ -37,7 +36,7 @@ export default function About() {
           <li>- 99.9% de Uptime. - Bases de datos MySQL.</li>
         </ul>
 
-        <h2>Seguridad</h2>
+        <h2 className="title-3 font-0 text-gray-2 fw-bold">Seguridad</h2>
         <ul>
           <li>
             - Protección de la infraestructura a través de diagnósticos y
@@ -56,7 +55,7 @@ export default function About() {
           <li>- Filtros activos avanzados Anti-SPAM + Anti-Virus. </li>
         </ul>
 
-        <h2>Soporte Técnico</h2>
+        <h2 className="title-3 font-0 text-gray-2 fw-bold">Soporte Técnico</h2>
         <ul>
           <li>- Atención 24/7/365 </li>
           <li>
@@ -69,7 +68,7 @@ export default function About() {
           <li>- HelpDesk para generar tickets de consultas. </li>
         </ul>
 
-        <h2>SEO</h2>
+        <h2 className="title-3 font-0 text-gray-2 fw-bold">SEO</h2>
         <ul>
           <li>- Incluye código amigable SEO ( para motores de búsqueda). </li>
           <li>

@@ -1,0 +1,103 @@
+$small: 0.8rem;
+
+.title-1 {
+  font-size: 22px;
+  font-family: "Helvetica";
+}
+.title-2 {
+  font-size: 18px;
+}
+.title-3 {
+  font-size: 16px;
+}
+.title-4 {
+  font-size: 14px;
+}
+.paragraph-1 {
+  font-size: 14px;
+}
+.link-1 {
+  font-size: $small;
+}
+.link-1:any-link {
+  color: $blue-1;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  color: $gray-2;
+  padding: 0;
+  font-size: $small;
+  font-family: "CircularStd-Book";
+}
+li {
+  font-size: $small;
+}
+
+// Colors
+.text-gray-1 {
+  color: $gray-1 !important;
+}
+.text-gray-2 {
+  color: $gray-2;
+}
+
+.text-blue-1 {
+  color: $blue-1 !important;
+}
+
+// Fonts
+.font-0 {
+  font-family: "CircularStd-Bold";
+}
+.font-1 {
+  font-family: "CircularStd-Book";
+}
+.font-2 {
+  font-family: "Helvetica";
+}
+
+// Size
+.small-font {
+  font-size: $small;
+}
+
+//
+
+// h1 {
+//   font-size: 22px;
+//   font-weight: 500;
+// }
+// h2 {
+//   color: $gray-2;
+//   font-size: 1rem;
+//   font-family: "CircularStd-Bold";
+// }
+// h3 {
+//   color: $gray-2;
+//   font-size: 15px;
+//   font-family: "CircularStd-Bold";
+// }
+// p {
+//   color: $gray-2;
+//   font-family: "CircularStd-Book";
+//   font-size: 0.8rem;
+// }
+// ul {
+//   list-style-type: none;
+//   color: $gray-2;
+//   padding: 0;
+//   font-family: "CircularStd-Book";
+//   font-size: 0.8rem;
+// }
+// li,
+// a {
+//   font-size: 0.8rem;
+// }
+
+// a:any-link {
+//   color: $blue-1;
+//   text-decoration: none;
+//   font-family: "Helvetica";
+// }

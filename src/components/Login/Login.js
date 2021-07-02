@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./Login.scss";
 import LogoIcon from '../../assets/svgs/brand-logo.svg'
 
 export default function Login() {
@@ -23,8 +22,8 @@ export default function Login() {
         </Link>
 
         <form className="login-form" action="">
-          <h1 className="mb-4">
-            Acceso privado <Link to="/clientes/mediacore">MediaCore®</Link>
+          <h1 className="title-1 font-1 mb-4">
+            Acceso privado <Link className="text-decoration-none text-blue-1" to="/clientes/mediacore">MediaCore®</Link>
           </h1>
           <div className="d-flex flex-column gap-2">
             <label>Usuario</label>
@@ -56,8 +55,8 @@ export default function Login() {
           <a href="#">Olvidé mi contraseña</a>
         </form>
         
-        <p>
-          Plataforma <span className="text-blue">MediaCore®</span> by <a href="https://www.mediahaus.com.ar" target="_blank">MediaHaus</a> 2021. Todos los
+        <p className="font-1 small-font text-gray-2">
+          Plataforma <span className="text-blue-1">MediaCore®</span> by <a className="link-1" href="https://www.mediahaus.com.ar" target="_blank">MediaHaus</a> 2021. Todos los
           derechos reservados.
         </p>
       </div>
