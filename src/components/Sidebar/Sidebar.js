@@ -10,8 +10,12 @@ import AccountIcon from "../../assets/svgs/account-icon.svg";
 import GearIcon from "../../assets/svgs/gear-icon.svg";
 import DocIcon from "../../assets/svgs/doc-icon.svg";
 import BillingIcon from "../../assets/svgs/billing-icon.svg";
+import ArrowUpIcon from "../../assets/svgs/arrow-up-gray-icon.svg";
+import ArrowDownIcon from "../../assets/svgs/arrow-down-gray-icon.svg";
 
 import DeployableButton from "./DeployableButton";
+import { DeployableSettings } from "../Header/Header";
+
 const assets_path = "assets";
 
 const DeployableButtons = [
@@ -72,6 +76,7 @@ const DeployableButtons = [
 
 export default function Sidebar({ setMenu }) {
   const router = useHistory();
+  const [openAccount, setOpenAccount] = useState(false);
 
   function pushUrl(url) {
     closeMenu();
@@ -104,14 +109,47 @@ export default function Sidebar({ setMenu }) {
             pushUrl("/contenido/mi-perfil/mis-datos");
           }}
         ></AccountButton>
-        <AccountButton icon={AccountIcon} text="Mi cuenta"></AccountButton>
         <AccountButton
+          icon={AccountIcon}
+          rightIcon={openAccount ? ArrowUpIcon : ArrowDownIcon}
+          text={"Mi cuenta"}
+          
+          onClick={() => {
+            setOpenAccount((oa) => !oa);
+          }}
+        ></AccountButton>
+        <div className="ms-3" hidden={!openAccount}>
+          <AccountButton
+            icon={BillingIcon}
+           
+            text="Facturación"
+            onClick={() => {
+              pushUrl("/contenido/facturacion/datos-de-facturacion");
+            }}
+          ></AccountButton>
+          <AccountButton
+            icon={BillingIcon}
+            className="mt-3"
+            text="Estado de cuenta"
+            onClick={() => {
+              pushUrl("/contenido/facturacion/estado-de-cuenta");
+            }}
+          ></AccountButton>
+        </div>
+        {/* <AccountButton
           icon={BillingIcon}
           text="Facturación"
           onClick={() => {
-            pushUrl("/contenido/facturacion/estado-de-cuenta");
+            pushUrl("/contenido/facturacion/datos-de-facturacion");
           }}
         ></AccountButton>
+        <AccountButton
+          icon={BillingIcon}
+          text="Estado de cuenta"
+          onClick={() => {
+            pushUrl("/contenido/facturacion/estado-de-cuenta");
+          }}
+        ></AccountButton> */}
         <AccountButton
           icon={CloseIcon}
           text={"Cerrar sesión"}
@@ -127,6 +165,7 @@ export default function Sidebar({ setMenu }) {
 export const AccountButton = ({
   text,
   icon,
+  rightIcon,
   onClick = () => {},
   className = "",
 }) => {
@@ -134,6 +173,7 @@ export const AccountButton = ({
     <button className={`account-button ${className}`} onClick={onClick}>
       {icon && <img src={icon} alt="icon button" width="15px" />}
       <span>{text}</span>
+      {rightIcon && <img src={rightIcon} alt="icon button" />}
     </button>
   );
 };

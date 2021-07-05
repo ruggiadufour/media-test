@@ -1,7 +1,7 @@
 .left-side {
   background-color: black;
   min-height: 100%;
-  min-width: 200px;
+  min-width: max-content;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

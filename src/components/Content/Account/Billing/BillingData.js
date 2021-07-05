@@ -10,7 +10,7 @@ export default function BillingData() {
       text: "Mi Perfil",
     },
     {
-      text: "Estado de facturación",
+      text: "Datos de facturación",
     },
   ];
 
@@ -38,6 +38,7 @@ export default function BillingData() {
               name="condicion_fiscal"
               value=""
               placeholder="Condición Fiscal"
+              onChange={()=>{}}
             >
               <option value="value1">IVA Responsable Inscripto</option>
             </select>
@@ -47,6 +48,7 @@ export default function BillingData() {
             <select
               name="regimen_ingresos"
               placeholder="Régimen de Ingresos Brutos"
+              onChange={()=>{}}
             >
               <option value="value1">Multilateral</option>
             </select>
@@ -54,14 +56,14 @@ export default function BillingData() {
         </div>
 
         <div className="billing-subtitle">
-          <h2 className="title-2 font-2">Domicilio Fiscal</h2>
+          <h2 className="title-2 text-gray-1 font-0">Domicilio Fiscal</h2>
           <hr />
         </div>
 
         <div className="billing-input-grid mb-5">
           <div className="d-flex flex-column">
             <label>Pais</label>
-            <select name="pais" placeholder="Pais">
+            <select name="pais" placeholder="Pais" onChange={()=>{}}>
               <option value="value1">Argentina</option>
             </select>
           </div>
@@ -96,7 +98,7 @@ export default function BillingData() {
         </div>
 
         <div className="billing-subtitle">
-          <h2 className="title-2 font-2">Tarjetas asociadas</h2>
+          <h2 className="title-2 text-gray-1 font-0">Tarjetas asociadas</h2>
           <hr />
         </div>
 

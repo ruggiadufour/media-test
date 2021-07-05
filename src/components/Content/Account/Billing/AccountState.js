@@ -6,6 +6,7 @@ import DownloadGrayIcon from "../../../../assets/svgs/download-gray-icon.svg";
 import EyeIcon from "../../../../assets/svgs/eye-icon.svg";
 import EyeGrayIcon from "../../../../assets/svgs/eye-gray-icon.svg";
 import ArrowUpIcon from "../../../../assets/svgs/arrow-up-icon.svg";
+import ArrowDownIcon from "../../../../assets/svgs/arrow-down-icon.svg";
 import SearchIcon from "../../../../assets/svgs/search-icon.svg";
 import CheckedIcon from "../../../../assets/svgs/checked-icon.svg";
 
@@ -118,7 +119,7 @@ const AccountState = () => {
         </div>
 
         <hr />
-        <div className="text-center">
+        <div className="text-center mt-4">
           <a href="#" className="text-dark font-1">
             VER MÁS
           </a>
@@ -137,24 +138,26 @@ function PeriodTable({ period }) {
 
   return (
     <table className="period-table">
-      <tr onClick={handleOpen} className="period-table-header">
-        <th >
-          <button className="arrow-icon-button">
-            <img
-              className={`${open ? "" : "rotate-icon-180"}`}
-              src={ArrowUpIcon}
-              alt="abrir tabla"
-            />
-          </button>
-          Período <span className="text-gray-4">( 4 )</span>
-        </th>
-        <th>Monto Final</th>
-        <th>Estado</th>
-        <th>Fecha de envio FC</th>
-        <th>Vencimiento FC</th>
-        <th>Fecha Imputación</th>
-        <th>Acciones</th>
-      </tr>
+      <thead>
+        <tr onClick={handleOpen} className="period-table-header">
+          <th>
+            <button className="arrow-icon-button">
+              <img
+                className={`${open ? "" : "rotate-icon-180"}`}
+                src={ArrowUpIcon}
+                alt="abrir tabla"
+              />
+            </button>
+            Período <span className="text-gray-4">( 4 )</span>
+          </th>
+          <th>Monto Final</th>
+          <th>Estado</th>
+          <th>Fecha de envio FC</th>
+          <th>Vencimiento FC</th>
+          <th>Fecha Imputación</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
 
       <tbody
         hidden={!open}
@@ -162,7 +165,9 @@ function PeriodTable({ period }) {
       >
         {period.map((data, i) => (
           <tr key={i}>
-            <td className={`${data.state?"":"text-blue-1 fw-bold"}`}>{data.period}</td>
+            <td className={`${data.state ? "" : "text-blue-1 fw-bold"}`}>
+              {data.period}
+            </td>
             <td>{data.price}</td>
             <td>
               <span className={`period-state-${data.state}`}>
