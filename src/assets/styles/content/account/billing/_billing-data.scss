@@ -1,0 +1,121 @@
+.billing-data {
+  background-color: #fff;
+  width: 100%;
+  padding: 2rem;
+
+  & input,
+  & select,
+  & textarea {
+    color: $gray-9;
+  }
+  & input::placeholder,
+  & select::placeholder,
+  & textarea::placeholder {
+    color: transparent;
+  }
+
+  @media (max-width: $break-tablet) {
+    background-color: $gray-5;
+    padding: 0;
+    height: 100%;
+
+    & h1 {
+      background-color: #fff;
+      width: 100%;
+      padding: 0 2rem 1rem 2rem;
+      margin-top: -1rem;
+    }
+
+    & input::placeholder,
+    & select::placeholder,
+    & textarea::placeholder {
+      //   color: $gray-6;
+      color: transparent;
+      font-size: 13px;
+    }
+
+    & button {
+      margin: 0 2rem;
+      margin-top: 3rem;
+    }
+  }
+}
+
+.billing-input-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+
+  @media (max-width: $break-laptop) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: $break-tablet) {
+    grid-template-columns: 100%;
+    padding: 1rem 2rem;
+    div:last-child {
+      grid-column: 1/2;
+    }
+  }
+
+  input,
+  textarea,
+  select {
+    border-radius: 5px;
+    border: solid thin $gray-4;
+    background-color: #fff;
+    padding: 5px 13px;
+  }
+  select {
+    height: 36px;
+  }
+}
+
+.credit-card {
+  position: relative;
+  border-radius: 15px;
+  width: max-content;
+  border: solid thin $gray-11;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1.75rem;
+  gap: 1rem;
+
+  img:nth-child(1) {
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    height: 15px;
+  }
+  img:nth-child(2) {
+    width: 100px;
+    border: solid thin $gray-11;
+    border-radius: 50%;
+  }
+
+  & span {
+    font-size: 14px;
+    font-family: "CircularStd-Book";
+  }
+}
+
+.credit-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+
+  @media (max-width: $break-laptop) {
+    justify-content: center;
+  }
+}
+
+.billing-subtitle {
+  & hr {
+    margin: 1.5rem 0;
+  }
+  @media (max-width: $break-tablet) {
+    padding: 0 2rem;
+  }
+}

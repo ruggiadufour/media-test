@@ -9,6 +9,7 @@ import AboutIcon from "../../assets/svgs/about-doc-icon.svg";
 import AccountIcon from "../../assets/svgs/account-icon.svg";
 import GearIcon from "../../assets/svgs/gear-icon.svg";
 import DocIcon from "../../assets/svgs/doc-icon.svg";
+import BillingIcon from "../../assets/svgs/billing-icon.svg";
 
 import DeployableButton from "./DeployableButton";
 const assets_path = "assets";
@@ -21,7 +22,7 @@ const DeployableButtons = [
       {
         text: "Acerca de MH®",
         leftIcon: AboutIcon,
-        route: "/clientes/mediacore/contenido"
+        route: "/clientes/mediacore/contenido",
       },
       {
         text: "Soporte",
@@ -95,7 +96,7 @@ export default function Sidebar({ setMenu }) {
         ))}
       </div>
 
-      <div className="account-buttons d-flex flex-column">
+      <div className="account-buttons d-flex flex-column gap-4">
         <AccountButton
           icon={ProfileIcon}
           text={"Mi perfil"}
@@ -103,7 +104,14 @@ export default function Sidebar({ setMenu }) {
             pushUrl("/contenido/mi-perfil/mis-datos");
           }}
         ></AccountButton>
-        <AccountButton icon={AccountIcon} text={"Mi cuenta"}></AccountButton>
+        <AccountButton icon={AccountIcon} text="Mi cuenta"></AccountButton>
+        <AccountButton
+          icon={BillingIcon}
+          text="Facturación"
+          onClick={() => {
+            pushUrl("/contenido/facturacion/estado-de-cuenta");
+          }}
+        ></AccountButton>
         <AccountButton
           icon={CloseIcon}
           text={"Cerrar sesión"}

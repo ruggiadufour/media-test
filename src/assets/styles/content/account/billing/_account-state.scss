@@ -1,0 +1,123 @@
+.account-state {
+  margin-top: 2.5rem;
+  overflow-y: auto;
+
+  @media (max-width: $break-tablet) {
+    margin: 0 2rem;
+    padding: 15px;
+  }
+}
+
+.input-search-period {
+  width: 50%;
+  background: #fff;
+  display: flex;
+  margin-bottom: 2rem;
+  padding: 5px 10px 5px 5px;
+  border: solid thin $gray-4;
+  border-radius: 5px;
+
+  @media (max-width: $break-tablet) {
+    width: 100%;
+  }
+
+  & > input {
+    background-color: transparent;
+    border: none;
+    flex: 1;
+    margin-right: 10px;
+    padding-left: 10px;
+
+    &::placeholder {
+      font-size: 13px;
+      color: $gray-2;
+    }
+  }
+}
+
+.period-tables {
+  width: 100%;
+  overflow: auto;
+  margin: auto;
+
+  @media (max-width: $break-desktop) {
+    width: 700px;
+  }
+  @media (max-width: $break-laptop) {
+    width: 500px;
+  }
+  @media (max-width: $break-tablet) {
+    width: 100%;
+  }
+}
+
+.period-table {
+  width: 100%;
+  text-align: center;
+  font-family: "CircularStd-Book";
+  margin-bottom: 2rem;
+
+  //   Header
+  th {
+    border-top: solid thin $gray-4;
+    border-bottom: solid thin $gray-4;
+    padding: 0.5rem 25px;
+    font-weight: 400;
+    white-space: nowrap;
+    position: relative;
+
+    & button{
+      position: absolute;
+      left: 0;
+    }
+  }
+
+  & td:nth-child(1),
+  & th:nth-child(1) {
+    text-align: left;
+    padding: 0.5rem 25px;
+  }
+  //   Rows
+  & td {
+    padding: 1rem 5px;
+  }
+}
+
+.arrow-icon-button {
+  border: none;
+  background-color: transparent;
+
+  & > img {
+    transition: transform 0.4s;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+.rotate-icon-180 {
+  transform: rotate(180deg);
+  transition: transform 0.4s;
+}
+
+.open-table-content {
+  transition: height 0.5s;
+}
+.close-table-content {
+  height: 0;
+}
+
+.period-state-true,
+.period-state-false {
+  font-family: "Helvetica";
+  color: #fff;
+  font-weight: 700;
+  font-size: 11px;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+.period-state-true {
+  background-color: $green-1;
+}
+.period-state-false {
+  background-color: $gray-10;
+}

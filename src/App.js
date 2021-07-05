@@ -6,10 +6,12 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import Footer from "./components/Footer/Footer";
 import Login from "./components/Login/Login";
 import AboutMediaHost from "./components/Content/MediaHost/About";
-import MyPersonalData from "./components/Content/MyProfile/MyPersonalData";
+import MyPersonalData from "./components/Content/Account/MyProfile/MyPersonalData";
 import AboutMediaAcademy from "./components/Content/MediaAcademy/About";
 import NewsMediaAcademy from "./components/Content/MediaAcademy/News/News";
 import SeeNewMediaAcademy from "./components/Content/MediaAcademy/News/SeeNew";
+import AccountState from "./components/Content/Account/Billing/AccountState";
+import BillingData from "./components/Content/Account/Billing/BillingData";
 
 function App() {
   const [menu, setMenu] = useState(false);
@@ -36,6 +38,9 @@ function App() {
                 <Route exact path="/clientes/mediacore/contenido/media-academy/acerca" component={AboutMediaAcademy} />
                 <Route exact path="/clientes/mediacore/contenido/media-academy/novedades" component={NewsMediaAcademy} />
                 <Route exact path="/clientes/mediacore/contenido/media-academy/novedades/titulo-novedad" component={SeeNewMediaAcademy} />
+                
+                <Route exact path="/clientes/mediacore/contenido/facturacion/estado-de-cuenta" component={AccountState} />
+                <Route exact path="/clientes/mediacore/contenido/facturacion/datos-de-facturacion" component={BillingData} />
                 <Footer />
               </article>
             </div>

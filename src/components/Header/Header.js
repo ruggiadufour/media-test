@@ -7,6 +7,7 @@ import AccountIcon from "../../assets/svgs/account-icon.svg";
 import BellIcon from "../../assets/svgs/bell-icon.svg";
 import CloseIcon from "../../assets/svgs/close-session-icon.svg";
 import ProfileIcon from "../../assets/svgs/profile-icon.svg";
+import BillingIcon from "../../assets/svgs/billing-icon.svg";
 
 export default function Header({ setMenu, menu }) {
   const [openAccount, setOpenAccount] = useState(false);
@@ -60,6 +61,18 @@ export default function Header({ setMenu, menu }) {
                 icon={AccountIcon}
                 text={"Mi cuenta"}
                 className="text-gray-1"
+              ></AccountButton>
+              <AccountButton
+                icon={BillingIcon}
+                text={"Facturación"}
+                className="text-gray-1"
+                onClick={() => pushUrl("/contenido/facturacion/estado-de-cuenta")}
+              ></AccountButton>
+              <AccountButton
+                icon={BillingIcon}
+                text={"Datos de facturación"}
+                className="text-gray-1"
+                onClick={() => pushUrl("/contenido/facturacion/datos-de-facturacion")}
               ></AccountButton>
             </div>
             <div>

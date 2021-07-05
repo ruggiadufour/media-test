@@ -1,9 +1,9 @@
 import React, { useState, useRef } from "react";
-import Breadcrumb from "../Breadcrumb";
+import Breadcrumb from "../../Breadcrumb";
 
-import PencilIcon from "../../../assets/svgs/pencil-icon.svg";
-import Avatar from "../../../assets/images/avatar.png";
-import Background from "../../../assets/images/login-background.png";
+import PencilIcon from "../../../../assets/svgs/pencil-icon.svg";
+import Avatar from "../../../../assets/images/avatar.png";
+import Background from "../../../../assets/images/login-background.png";
 
 export default function MyPersonalData() {
   const inputFileProfile = useRef(null);
