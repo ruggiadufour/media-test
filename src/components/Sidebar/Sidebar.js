@@ -31,6 +31,7 @@ const DeployableButtons = [
       {
         text: "Soporte",
         leftIcon: GearIcon,
+        route: "/clientes/mediacore/contenido/media-host/soporte"
       },
     ],
   },

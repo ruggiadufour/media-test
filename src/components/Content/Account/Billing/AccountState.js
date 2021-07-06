@@ -112,7 +112,7 @@ const AccountState = () => {
           <img src={SearchIcon} alt="buscar periodo" width="15px" />
         </div>
 
-        <div className="period-tables">
+        <div className="tables-wrapper">
           {periods.map((period, i) => (
             <PeriodTable period={period} key={i} />
           ))}
@@ -137,9 +137,9 @@ function PeriodTable({ period }) {
   }
 
   return (
-    <table className="period-table">
+    <table className="common-table">
       <thead>
-        <tr onClick={handleOpen} className="period-table-header">
+        <tr onClick={handleOpen}>
           <th>
             <button className="arrow-icon-button">
               <img
@@ -170,7 +170,7 @@ function PeriodTable({ period }) {
             </td>
             <td>{data.price}</td>
             <td>
-              <span className={`period-state-${data.state}`}>
+              <span className={`state-${data.state}`}>
                 {data.state ? "PAGADA" : "PENDIENTE"}
               </span>
             </td>

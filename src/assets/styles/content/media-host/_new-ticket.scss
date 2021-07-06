@@ -1,0 +1,16 @@
+.new-ticket {
+  > div:nth-child(1) {
+    margin-bottom: 1rem;
+  }
+  @media (max-width: $break-tablet) {
+    > div:nth-child(1) {
+      margin-bottom: 0;
+    }
+    .new-ticket-inputs-1 {
+      padding-top: 1rem;
+    }
+    .new-ticket-inputs-2 {
+      padding: 0 2rem;
+    }
+  }
+}

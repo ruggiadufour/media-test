@@ -7,11 +7,14 @@
 @import './global/texts';
 @import './global/variables';
 @import './global/backgrounds';
+@import './global/table';
+@import './global/spacing.scss';
 
 // Content
 @import './content/content';
 // MediaHost
 @import './content/media-host/about';
+@import './content/media-host/new-ticket';
 // MediaHost
 @import './content/media-academy/about';
 @import './content/media-academy/news';

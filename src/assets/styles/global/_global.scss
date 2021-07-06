@@ -42,7 +42,25 @@ code {
   }
 }
 
-.blue-button {
+.common-input {
+  color: $gray-9;
+  border-radius: 5px;
+  border: solid thin $gray-4;
+  background-color: #fff;
+  padding: 5px 13px;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  @media (max-width: $break-tablet) {
+    //   color: $gray-6;
+    color: transparent;
+    font-size: 13px;
+  }
+}
+
+.blue-button, .bluelight-button {
   background-color: $blue-1;
   color: #fff !important;
   padding: 7px 1.25rem;
@@ -50,5 +68,26 @@ code {
   border: none;
   &:hover {
     opacity: 0.8;
+  }
+}
+
+.bluelight-button{
+  background-color: $blue-2;
+}
+
+.button-no-styled {
+  border: none;
+  background-color: transparent;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+
+// 
+.no-display-tablet{
+  @media (max-width: $break-tablet){
+    display: none;
   }
 }
