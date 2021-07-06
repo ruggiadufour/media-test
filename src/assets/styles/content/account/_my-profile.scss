@@ -32,11 +32,7 @@
       padding: 0 2rem;
     }
 
-    & input::placeholder,
-    & textarea::placeholder {
-      color: $gray-6;
-      font-size: 13px;
-    }
+
 
     // & label {
     //   display: none;
@@ -163,13 +159,7 @@
     }
   }
 
-  input,
-  textarea {
-    border-radius: 5px;
-    border: solid thin $gray-4;
-    background-color: #fff;
-    padding: 5px 13px;
-  }
+ 
 }
 
 .edit-banner,

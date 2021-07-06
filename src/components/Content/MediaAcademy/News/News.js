@@ -50,6 +50,7 @@ export default function News() {
   const breadcrumb_items = [
     {
       text: "MediaAcademy®",
+      route:"/media-academy/acerca"
     },
     {
       text: "Novedades",

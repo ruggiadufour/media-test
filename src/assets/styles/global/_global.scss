@@ -48,15 +48,24 @@ code {
   border: solid thin $gray-4;
   background-color: #fff;
   padding: 5px 13px;
+  font-size: 13px;
+  min-height: 33px;
 
   &::placeholder {
     color: transparent;
   }
 
   @media (max-width: $break-tablet) {
-    //   color: $gray-6;
-    color: transparent;
+    // color: $gray-6;
     font-size: 13px;
+  }
+}
+
+.input-with-placeholder {
+  @media (max-width: $break-tablet) {
+    &::placeholder {
+      color: $gray-6!important;
+    }
   }
 }
 
@@ -110,11 +119,11 @@ code {
   overflow: hidden;
 }
 
-.opacity-transition-0{
+.opacity-transition-0 {
   transition: opacity 1.5s;
   opacity: 0;
 }
-.opacity-transition-100{
+.opacity-transition-100 {
   transition: opacity 1.5s;
   opacity: 1;
 }

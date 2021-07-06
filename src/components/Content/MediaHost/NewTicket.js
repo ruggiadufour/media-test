@@ -1,11 +1,11 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import Breadcrumb from "../Breadcrumb";
 
-import { EditorState, convertToRaw } from 'draft-js';
+import { EditorState, convertToRaw } from "draft-js";
 import { Editor } from "react-draft-wysiwyg";
-import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 // import { draftToMarkdown } from "markdown-draft-js";
 // draftToMarkdown(convertToRaw(editorState.getCurrentContent()))
 
@@ -13,9 +13,11 @@ export default function NewTicket() {
   const breadcrumb_items = [
     {
       text: "MediaHost®",
+      route: "/media-host/acerca",
     },
     {
       text: "Soporte",
+      route: "/media-host/soporte",
     },
     {
       text: "Crear nuevo Ticket",
@@ -23,10 +25,9 @@ export default function NewTicket() {
   ];
 
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
-  const onEditorStateChange = editorState => {
-    setEditorState(editorState)
-  } 
-
+  const onEditorStateChange = (editorState) => {
+    setEditorState(editorState);
+  };
 
   return (
     <div className="content new-ticket">
@@ -46,24 +47,39 @@ export default function NewTicket() {
               onChange={() => {}}
               type="text"
               name="created_by"
-              placeholder="Creado por"
+              className="common-input"
             />
           </div>
           <div className="d-flex flex-column">
             <label>Departamento</label>
-            <select name="department" value="" onChange={() => {}}>
+            <select
+              className="common-input"
+              name="department"
+              value=""
+              onChange={() => {}}
+            >
               <option value="">Soporte Técnico</option>
             </select>
           </div>
           <div className="d-flex flex-column">
             <label>Prioridad</label>
-            <select name="priority" value="" onChange={() => {}}>
+            <select
+              className="common-input"
+              name="priority"
+              value=""
+              onChange={() => {}}
+            >
               <option value="">Urgente</option>
             </select>
           </div>
           <div className="d-flex flex-column">
             <label>Categoría</label>
-            <select name="category" value="" onChange={() => {}}>
+            <select
+              className="common-input"
+              name="category"
+              value=""
+              onChange={() => {}}
+            >
               <option value="">Consulta sobre plan hosting</option>
             </select>
           </div>
@@ -84,7 +100,7 @@ export default function NewTicket() {
 
               <Editor
                 wrapperClassName="common-input pt-3"
-                editorClassName="common-input mb-2"
+                editorClassName="common-input mb-2 mh-200"
                 toolbarClassName="mb-2"
                 onEditorStateChange={onEditorStateChange}
                 editorState={editorState}
@@ -92,8 +108,8 @@ export default function NewTicket() {
             </div>
           </div>
 
-          <button className="blue-button mt-3"> CREAR TICKET</button>
-          <button className="bluelight-button ms-4"> LIMPIAR</button>
+          <button className="blue-button mt-3"> Crear Ticket</button>
+          <button className="bluelight-button ms-4"> Limpiar</button>
         </div>
       </div>
     </div>

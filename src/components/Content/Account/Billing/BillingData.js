@@ -8,6 +8,7 @@ export default function BillingData() {
   const breadcrumb_items = [
     {
       text: "Mi Perfil",
+      route: "/mi-perfil/mis-datos"
     },
     {
       text: "Datos de facturación",
@@ -26,19 +27,30 @@ export default function BillingData() {
         <div className="billing-input-grid mt-4 mb-5">
           <div className="d-flex flex-column">
             <label>CUIT</label>
-            <input type="text" name="cuit" placeholder="CUIT" />
+            <input
+              className="common-input"
+              type="text"
+              name="cuit"
+              placeholder="CUIT"
+            />
           </div>
           <div className="d-flex flex-column">
             <label>Razón Social</label>
-            <input type="text" name="razon_social" placeholder="Razón Social" />
+            <input
+              className="common-input "
+              type="text"
+              name="razon_social"
+              placeholder="Razón Social"
+            />
           </div>
           <div className="d-flex flex-column">
             <label>Condición Fiscal</label>
             <select
+              className="common-input "
               name="condicion_fiscal"
               value=""
               placeholder="Condición Fiscal"
-              onChange={()=>{}}
+              onChange={() => {}}
             >
               <option value="value1">IVA Responsable Inscripto</option>
             </select>
@@ -46,9 +58,10 @@ export default function BillingData() {
           <div className="d-flex flex-column">
             <label>Régimen de Ingresos Brutos</label>
             <select
+              className="common-input "
               name="regimen_ingresos"
               placeholder="Régimen de Ingresos Brutos"
-              onChange={()=>{}}
+              onChange={() => {}}
             >
               <option value="value1">Multilateral</option>
             </select>
@@ -63,33 +76,64 @@ export default function BillingData() {
         <div className="billing-input-grid mb-5">
           <div className="d-flex flex-column">
             <label>Pais</label>
-            <select name="pais" placeholder="Pais" onChange={()=>{}}>
+            <select
+              className="common-input "
+              name="pais"
+              placeholder="Pais"
+              onChange={() => {}}
+            >
               <option value="value1">Argentina</option>
             </select>
           </div>
           <div className="d-flex flex-column">
             <label>Provincia</label>
-            <input type="text" name="provincia" placeholder="Provincia" />
+            <input
+              className="common-input "
+              type="text"
+              name="provincia"
+              placeholder="Provincia"
+            />
           </div>
           <div className="d-flex flex-column">
             <label>Barrio</label>
-            <input type="text" name="barrio" placeholder="Barrio" />
+            <input
+              className="common-input "
+              type="text"
+              name="barrio"
+              placeholder="Barrio"
+            />
           </div>
           <div className="d-flex flex-column">
             <label>Calle</label>
-            <input type="text" name="calle" placeholder="Calle" />
+            <input
+              className="common-input "
+              type="text"
+              name="calle"
+              placeholder="Calle"
+            />
           </div>
           <div className="d-flex flex-column">
             <label>Número</label>
-            <input type="text" name="numero" placeholder="Número" />
+            <input
+              className="common-input "
+              type="text"
+              name="numero"
+              placeholder="Número"
+            />
           </div>
           <div className="d-flex flex-column">
             <label>Depto</label>
-            <input type="text" name="depto" placeholder="Depto" />
+            <input
+              className="common-input "
+              type="text"
+              name="depto"
+              placeholder="Depto"
+            />
           </div>
           <div className="d-flex flex-column">
             <label>Código Postal</label>
             <input
+              className="common-input "
               type="text"
               name="codigo_postal"
               placeholder="Código Postal"

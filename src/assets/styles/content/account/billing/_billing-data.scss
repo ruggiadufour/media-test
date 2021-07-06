@@ -58,18 +58,6 @@
       grid-column: 1/2;
     }
   }
-
-  input,
-  textarea,
-  select {
-    border-radius: 5px;
-    border: solid thin $gray-4;
-    background-color: #fff;
-    padding: 5px 13px;
-  }
-  select {
-    height: 36px;
-  }
 }
 
 .credit-card {

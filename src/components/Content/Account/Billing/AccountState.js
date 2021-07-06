@@ -86,6 +86,7 @@ const AccountState = () => {
   const breadcrumb_items = [
     {
       text: "Mi Perfil",
+      route:"/mi-perfil/mis-datos"
     },
     {
       text: "Estado de cuenta",

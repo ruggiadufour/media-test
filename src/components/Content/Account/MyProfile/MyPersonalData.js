@@ -44,7 +44,7 @@ export default function MyPersonalData() {
     <div className="content my-profile-content">
       <div>
         <Breadcrumb items={breadcrumb_items} />
-        
+
         <h1 className="title-1 font-2">Hola, Rubén!</h1>
       </div>
 
@@ -83,6 +83,7 @@ export default function MyPersonalData() {
             <h2 className="title-2 text-gray-1 font-0">Datos personales</h2>
             <label className="no-display-tablet">Nombre y Apellido*</label>
             <input
+              className="common-input input-with-placeholder"
               onChange={handleChange}
               value={data.fullname}
               type="text"
@@ -93,6 +94,7 @@ export default function MyPersonalData() {
           <div className="d-flex flex-column">
             <label className="no-display-tablet">E-mail*</label>
             <input
+              className="common-input input-with-placeholder"
               onChange={handleChange}
               value={data.email}
               type="email"
@@ -103,6 +105,7 @@ export default function MyPersonalData() {
           <div className="d-flex flex-column">
             <label className="no-display-tablet">Teléfono / Whatsapp</label>
             <input
+              className="common-input input-with-placeholder"
               onChange={handleChange}
               value={data.phone}
               type="text"
@@ -114,6 +117,7 @@ export default function MyPersonalData() {
             <h2 className="title-2 text-gray-1 font-0">Datos de acceso</h2>
             <label className="no-display-tablet">Usuario</label>
             <input
+              className="common-input input-with-placeholder"
               onChange={handleChange}
               value={data.username}
               type="text"
@@ -124,6 +128,7 @@ export default function MyPersonalData() {
           <div className="d-flex flex-column">
             <label className="no-display-tablet">Contraseña*</label>
             <input
+              className="common-input input-with-placeholder"
               onChange={handleChange}
               value={data.password}
               type="password"
@@ -134,6 +139,7 @@ export default function MyPersonalData() {
           <div className="d-flex flex-column">
             <label className="no-display-tablet">Reingrese Contraseña*</label>
             <input
+              className="common-input input-with-placeholder"
               onChange={handleChange}
               value={data.repassword}
               type="password"
@@ -144,6 +150,7 @@ export default function MyPersonalData() {
           <div className="d-flex flex-column">
             <label className="no-display-tablet">Sobre mi</label>
             <textarea
+              className="common-input input-with-placeholder"
               onChange={handleChange}
               value={data.aboutme}
               name="aboutme"

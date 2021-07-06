@@ -45,6 +45,7 @@ export default function Support() {
   const breadcrumb_items = [
     {
       text: "MediaHost®",
+      route:"/media-host/acerca"
     },
     {
       text: "Soporte",
