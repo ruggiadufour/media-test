@@ -42,6 +42,11 @@ export default function Header({ setMenu, menu }) {
             }}
           >
             <img className="avatar" src={Avatar} alt="avatar administrador" />
+            <div
+              className={`arrow-avatar ${
+                openSettings ? "opacity-transition-100" : "opacity-transition-0"
+              } `}
+            ></div>
           </div>
           <DeployableSettings
             openSettings={openSettings}
@@ -68,10 +73,12 @@ export function DeployableSettings({ openSettings, setOpenSettings }) {
 
   return (
     <div
-      className={`${openSettings ? "account-settings-deployable" : "d-none"}`}
+      className={` ${
+        openSettings ? "h-animation-open" : "h-animation-close pb-0 pt-0"
+      } account-settings-deployable`}
     >
-      <div className="arrow-avatar"></div>
-      <div>
+      {/* "height-animation-open" : "height-animation-close" */}
+      <div className="pt-3">
         <AccountButton
           icon={ProfileIcon}
           text={"Mi perfil"}
@@ -80,18 +87,23 @@ export function DeployableSettings({ openSettings, setOpenSettings }) {
         ></AccountButton>
         <AccountButton
           icon={AccountIcon}
-          rightIcon={openAccount?ArrowUpIcon:ArrowDownIcon}
+          rightIcon={openAccount ? ArrowUpIcon : ArrowDownIcon}
           text={"Mi cuenta"}
           className="text-gray-1"
           onClick={() => {
             setOpenAccount((oa) => !oa);
           }}
         ></AccountButton>
-
-        <div className="ms-3" hidden={!openAccount}>
+      </div>
+      <div>
+        <div
+          className={`ms-3 ${
+            openAccount ? "h-animation-open" : "h-animation-close"
+          }`}
+        >
           <AccountButton
             icon={BillingIcon}
-            className="text-gray-1"
+            className="text-gray-1 mt-3 small-font"
             text="Facturación"
             onClick={() => {
               handleClick("/contenido/facturacion/datos-de-facturacion");
@@ -99,20 +111,18 @@ export function DeployableSettings({ openSettings, setOpenSettings }) {
           ></AccountButton>
           <AccountButton
             icon={BillingIcon}
-            className="text-gray-1 mt-3"
+            className="text-gray-1 small-font"
             text="Estado de cuenta"
             onClick={() => {
               handleClick("/contenido/facturacion/estado-de-cuenta");
             }}
           ></AccountButton>
         </div>
-      </div>
-      <div>
         <hr />
         <AccountButton
           icon={CloseIcon}
           text={"Cerrar sesión"}
-          className="text-gray-1"
+          className="text-gray-1 pb-3"
           onClick={() => pushUrl("/login")}
         ></AccountButton>
       </div>

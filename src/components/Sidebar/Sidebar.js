@@ -12,6 +12,7 @@ import DocIcon from "../../assets/svgs/doc-icon.svg";
 import BillingIcon from "../../assets/svgs/billing-icon.svg";
 import ArrowUpIcon from "../../assets/svgs/arrow-up-gray-icon.svg";
 import ArrowDownIcon from "../../assets/svgs/arrow-down-gray-icon.svg";
+import LabelIcon from "../../assets/svgs/label-icon.svg";
 
 import DeployableButton from "./DeployableButton";
 import { DeployableSettings } from "../Header/Header";
@@ -26,12 +27,12 @@ const DeployableButtons = [
       {
         text: "Acerca de MH®",
         leftIcon: AboutIcon,
-        route: "/clientes/mediacore/contenido",
+        route: "/clientes/mediacore/contenido/media-host/acerca",
       },
       {
         text: "Soporte",
         leftIcon: GearIcon,
-        route: "/clientes/mediacore/contenido/media-host/soporte"
+        route: "/clientes/mediacore/contenido/media-host/soporte",
       },
     ],
   },
@@ -58,6 +59,18 @@ const DeployableButtons = [
     text: "MediaBlog®",
     subButtons: [],
     rightIcon: LockIcon,
+    subButtons: [
+      {
+        text: "Novedades",
+        leftIcon: DocIcon,
+        route: "/clientes/mediacore/contenido/media-blog/novedades",
+      },
+      {
+        text: "Filtros",
+        leftIcon: LabelIcon,
+        route: "/clientes/mediacore/contenido/media-blog/filtros",
+      },
+    ],
   },
   {
     text: "MediaInvestor®",
@@ -102,7 +115,7 @@ export default function Sidebar({ setMenu }) {
         ))}
       </div>
 
-      <div className="account-buttons d-flex flex-column gap-4">
+      <div className="account-buttons d-flex flex-column ">
         <AccountButton
           icon={ProfileIcon}
           text={"Mi perfil"}
@@ -114,23 +127,25 @@ export default function Sidebar({ setMenu }) {
           icon={AccountIcon}
           rightIcon={openAccount ? ArrowUpIcon : ArrowDownIcon}
           text={"Mi cuenta"}
-          
+          className="mt-4"
           onClick={() => {
             setOpenAccount((oa) => !oa);
           }}
         ></AccountButton>
-        <div className="ms-3" hidden={!openAccount}>
+        <div className={`ms-3 ${
+            openAccount ? "h-animation-open" : "h-animation-close"
+          }`}>
           <AccountButton
             icon={BillingIcon}
-           
             text="Facturación"
+            className="small-font mt-3"
             onClick={() => {
               pushUrl("/contenido/facturacion/datos-de-facturacion");
             }}
           ></AccountButton>
           <AccountButton
             icon={BillingIcon}
-            className="mt-3"
+            className="mt-3 small-font"
             text="Estado de cuenta"
             onClick={() => {
               pushUrl("/contenido/facturacion/estado-de-cuenta");
@@ -153,6 +168,7 @@ export default function Sidebar({ setMenu }) {
         ></AccountButton> */}
         <AccountButton
           icon={CloseIcon}
+          className="mt-4"
           text={"Cerrar sesión"}
           onClick={() => {
             pushUrl("/login");
@@ -173,7 +189,7 @@ export const AccountButton = ({
   return (
     <button className={`account-button ${className}`} onClick={onClick}>
       {icon && <img src={icon} alt="icon button" width="15px" />}
-      <span>{text}</span>
+      <span>{text}</span> 
       {rightIcon && <img src={rightIcon} alt="icon button" />}
     </button>
   );

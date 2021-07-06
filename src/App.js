@@ -5,16 +5,24 @@ import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Footer from "./components/Footer/Footer";
 import Login from "./components/Login/Login";
+// Media Host
 import AboutMediaHost from "./components/Content/MediaHost/About";
 import SupportMediaHost from "./components/Content/MediaHost/Support";
 import NewTicketMediaHost from "./components/Content/MediaHost/NewTicket";
-
-import MyPersonalData from "./components/Content/Account/MyProfile/MyPersonalData";
+// Media Academy
 import AboutMediaAcademy from "./components/Content/MediaAcademy/About";
 import NewsMediaAcademy from "./components/Content/MediaAcademy/News/News";
 import SeeNewMediaAcademy from "./components/Content/MediaAcademy/News/SeeNew";
+// Account
+import MyPersonalData from "./components/Content/Account/MyProfile/MyPersonalData";
 import AccountState from "./components/Content/Account/Billing/AccountState";
 import BillingData from "./components/Content/Account/Billing/BillingData";
+// Media Bolg
+import FiltersMediaBlog from "./components/Content/MediaBlog/Filters/Filters";
+import NewFilterMediaBlog from "./components/Content/MediaBlog/Filters/NewFilter";
+import NewsMediaBlog from "./components/Content/MediaBlog/News/News";
+import CreateNewMediaBlog from "./components/Content/MediaBlog/News/CreateNew";
+
 
 function App() {
   const [menu, setMenu] = useState(false);
@@ -37,7 +45,7 @@ function App() {
                   path="/clientes/mediacore/contenido/mi-perfil/mis-datos"
                   component={MyPersonalData}
                 />
-                <Route exact path="/clientes/mediacore/contenido" component={AboutMediaHost} />
+                <Route exact path="/clientes/mediacore/contenido/media-host/acerca" component={AboutMediaHost} />
                 <Route exact path="/clientes/mediacore/contenido/media-host/soporte" component={SupportMediaHost} />
                 <Route exact path="/clientes/mediacore/contenido/media-host/soporte/crear-ticket" component={NewTicketMediaHost} />
                 <Route exact path="/clientes/mediacore/contenido/media-academy/acerca" component={AboutMediaAcademy} />
@@ -46,6 +54,11 @@ function App() {
                 
                 <Route exact path="/clientes/mediacore/contenido/facturacion/estado-de-cuenta" component={AccountState} />
                 <Route exact path="/clientes/mediacore/contenido/facturacion/datos-de-facturacion" component={BillingData} />
+
+                <Route exact path="/clientes/mediacore/contenido/media-blog/novedades" component={NewsMediaBlog} />
+                <Route exact path="/clientes/mediacore/contenido/media-blog/novedades/crear-novedad" component={CreateNewMediaBlog} />
+                <Route exact path="/clientes/mediacore/contenido/media-blog/filtros" component={FiltersMediaBlog} />
+                <Route exact path="/clientes/mediacore/contenido/media-blog/filtros/crear-filtro" component={NewFilterMediaBlog} />
                 <Footer />
               </article>
             </div>
@@ -54,7 +67,7 @@ function App() {
           <Route exact path="/clientes/mediacore/login">
             <Login />
           </Route>
-          <Redirect to="/clientes/mediacore/contenido" />
+          <Redirect to="/clientes/mediacore/contenido/media-host/acerca" />
         </Switch>
       </Router>
     </div>

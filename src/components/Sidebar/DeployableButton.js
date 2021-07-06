@@ -46,7 +46,6 @@ export const SidebarButton = ({
   }
   return (
     <NavLink
-      exact
       to={route}
       className={`sidebar-button deployable m-0`}
       activeClassName="bg-gray-1"

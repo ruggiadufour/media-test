@@ -120,7 +120,7 @@ function TicketTable({ tickets }) {
             <td>{ticket.matter}</td>
             <td>
               <span className={`state-${ticket.state}`}>
-                {ticket.state ? "REALIZADO" : "PENDIENTE"}
+                {ticket.state ? "ABIERTO" : "PENDIENTE"}
               </span>
             </td>
             <td>{ticket.last_update}</td>

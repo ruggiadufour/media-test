@@ -5,12 +5,11 @@
   height: 70px;
   padding: 1rem 1.5rem;
 
-  @media(max-width: $break-tablet){
+  @media (max-width: $break-tablet) {
     position: sticky;
     top: 0;
   }
   z-index: 100;
-
 }
 
 .menu-btn {
@@ -76,43 +75,43 @@
 }
 
 .account-settings-deployable {
+  box-sizing: border-box;
   background-color: #fff;
-  padding: 15px;
+  padding: 0 15px;
   border: solid thin $gray-0;
+  border-top: none;
   border-radius: 0 0 0 15px;
   position: absolute;
-  width: max-content;
-  min-height: 200px;
+  width: 210px;
   top: 55px;
   right: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
-  transition: width .3s;
+  z-index: 110;
 
-  .arrow-avatar {
-    position: absolute;
-    clip-path: polygon(48% 27%, 0% 100%, 100% 100%);
-    background-color: #fff;
-    width: 15px;
-    height: 15px;
-    top: -15px;
-    right: 10px;
-  }
-
-  & div:nth-child(2) {
+  & div:nth-child(1) {
     display: flex;
     flex-direction: column;
     gap: 15px;
   }
-  & div:nth-child(3) {
+  & div:nth-child(2) {
     display: flex;
     flex-direction: column;
   }
   & a {
     width: 100%;
   }
+}
+.arrow-avatar {
+  position: absolute;
+  clip-path: polygon(48% 27%, 0% 100%, 100% 100%);
+  background-color: #fff;
+  width: 15px;
+  height: 15px;
+  bottom: -15px;
+  right: 10px;
 }
 
 .right-elements {
