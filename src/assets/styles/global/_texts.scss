@@ -2,10 +2,11 @@ $small: 0.8rem;
 
 .title-1 {
   font-size: 22px;
-  font-family: "Helvetica";
 }
 .title-2 {
   font-size: 18px;
+  font-family: $font-2;
+
 }
 .title-3 {
   font-size: 16px;
@@ -56,13 +57,20 @@ li {
 
 // Fonts
 .font-0 {
-  font-family: "CircularStd-Bold";
+  font-family: $font-1;
 }
 .font-1 {
-  font-family: "CircularStd-Book";
+  font-family: $font-2;
 }
 .font-2 {
-  font-family: "Helvetica";
+  font-family: $font-3;
+}
+.font-3 {
+  font-family: $font-4;
+}
+
+label{
+  color: $gray-9;
 }
 
 // Size

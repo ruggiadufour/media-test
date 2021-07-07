@@ -22,7 +22,7 @@ export default function BillingData() {
       </div>
 
       <div className="billing-data">
-        <h1 className="title-1 font-2">Datos de facturación</h1>
+        <h1 className="title-1">Datos de facturación</h1>
 
         <div className="billing-input-grid mt-4 mb-5">
           <div className="d-flex flex-column">

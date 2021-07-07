@@ -1,5 +1,65 @@
 .grid-checkboxes {
   display: grid;
-  grid-template-columns: max-content max-content max-content;
+  grid-template-columns: repeat(3, max-content);
   gap: 1rem;
+
+  @media (max-width: 1400px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: $break-laptop) {
+    grid-template-columns: 1fr;
+  }
+  @media (max-width: $break-tablet) {
+    grid-template-columns: max-content max-content;
+  }
+}
+
+.mb-input-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+
+  > div:last-child {
+    grid-column: 1/3;
+  }
+
+  @media (max-width: $break-desktop) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: $break-tablet) {
+    grid-template-columns: 100%;
+    padding: 1rem 2rem;
+    > div:last-child {
+      grid-column: 1/2;
+    }
+  }
+}
+
+.active-button-black,
+.active-button-gray {
+  padding: 0.5rem 4rem;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.active-button-black {
+  background-color: #000;
+  color: #fff;
+}
+.active-button-gray {
+  background-color: $gray-5;
+  color: #000;
+  @media (max-width: $break-tablet){
+    background-color: #fff;
+  }
+}
+
+.image-picker-button{
+  background-color: #fff;
+  border: dotted thin $gray-4;
+  min-height: 33px;
+  border-radius: 5px;
+  color: $gray-4;
 }

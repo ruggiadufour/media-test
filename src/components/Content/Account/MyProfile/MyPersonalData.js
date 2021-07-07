@@ -45,7 +45,7 @@ export default function MyPersonalData() {
       <div>
         <Breadcrumb items={breadcrumb_items} />
 
-        <h1 className="title-1 font-2">Hola, Rubén!</h1>
+        <h1 className="title-1">Hola, Rubén!</h1>
       </div>
 
       <div className="my-data">

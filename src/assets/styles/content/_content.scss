@@ -1,16 +1,16 @@
 .content {
   width: 100%;
   background-color: #f6f6f6;
-  flex:1;
+  flex: 1;
   padding: 2rem 3rem;
-  @media (max-width: $break-tablet){
+  @media (max-width: $break-tablet) {
     padding: 2rem 0;
     background-color: #fff;
 
-    >div:nth-child(1){
+    > div:nth-child(1) {
       padding: 0 2rem 1rem 2rem;
     }
-    >div:nth-child(2){
+    > div:nth-child(2) {
       background-color: #f6f6f6;
       height: 100%;
       padding-bottom: 3rem;
@@ -18,3 +18,35 @@
   }
 }
 
+.container2 {
+  margin-top: 2.5rem;
+  overflow-y: auto;
+
+  @media (max-width: $break-tablet) {
+    margin: 0 2rem;
+    padding: 15px;
+  }
+}
+
+.container1 {
+  background-color: red;
+  margin-top: 1rem;
+
+  @media (max-width: $break-tablet) {
+    margin-top: -1rem;
+    & > h1 {
+      background-color: #fff;
+      padding-bottom: 1rem !important;
+    }
+  }
+}
+
+.container1-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 1.5rem;
+  @media (max-width: $break-tablet) {
+    padding: 0 2rem;
+  }
+}

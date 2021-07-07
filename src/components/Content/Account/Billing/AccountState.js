@@ -99,7 +99,7 @@ const AccountState = () => {
         <Breadcrumb items={breadcrumb_items} />
 
         <div className="d-flex flex-wrap justify-content-between">
-          <h1 className="title-1 font-2">Estado de cuenta</h1>
+          <h1 className="title-1">Estado de cuenta</h1>
           <span className="font-1">
             <img src={CheckedIcon} alt="estás al día con tus pagos" />
             <strong> ¡Estás al día con tus Pagos!</strong>
@@ -171,9 +171,9 @@ function PeriodTable({ period }) {
             </td>
             <td>{data.price}</td>
             <td>
-              <span className={`state-${data.state}`}>
+              <div className={`state-${data.state}`}>
                 {data.state ? "PAGADA" : "PENDIENTE"}
-              </span>
+              </div> 
             </td>
             <td>{data.date}</td>
             <td>{data.expiration}</td>

@@ -8,7 +8,7 @@ export default function Breadcrumb({ items }) {
     <>
       <ul className="text-gray-1 d-flex">
         {items.map((item, i) => (
-          <li className="link-1 font-2" key={i}>
+          <li className="link-1 font-1" key={i}>
             <Link
               to={item.route && `${base_url}/contenido${item.route}`}
               className={`text-decoration-none ${

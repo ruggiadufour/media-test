@@ -15,7 +15,7 @@ export default function About() {
       <div>
         <Breadcrumb items={breadcrumb_items} />
 
-        <h1 className="title-1 font-2">Acerca de MediaHost®</h1>
+        <h1 className="title-1">Acerca de MediaHost®</h1>
       </div>
 
       <div className="about-wrapper">
@@ -30,7 +30,7 @@ export default function About() {
             encuentre accesibles, segura e integrada correctamente.{" "}
           </li>
         </ul>
-        <h2 className="title-3 font-0 text-gray-2 fw-bold">Hosting</h2>
+        <h2 className="title-3 font-0 text-gray-2 fw-bold">Hosting</h2> 
         <ul>
           <li>- Alta y configuración de presencia web en Server CloudOS.</li>
           <li>- 30 GB de almacenamiento SSD.</li>

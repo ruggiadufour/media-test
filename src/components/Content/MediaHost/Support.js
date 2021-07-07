@@ -57,7 +57,7 @@ export default function Support() {
         <Breadcrumb items={breadcrumb_items} />
 
         <div className="d-flex flex-wrap justify-content-between">
-          <h1 className="title-1 font-2 m-0">Soporte</h1>
+          <h1 className="title-1 m-0">Soporte</h1>
 
           <Link
             to="/clientes/mediacore/contenido/media-host/soporte/crear-ticket"
@@ -95,7 +95,7 @@ function TicketTable({ tickets }) {
     <table className="common-table">
       <thead>
         <tr onClick={handleOpen}>
-          <th>
+          <th className="width-100">
             <button className="arrow-icon-button">
               <img
                 className={`${open ? "" : "rotate-icon-180"}`}
@@ -103,7 +103,7 @@ function TicketTable({ tickets }) {
                 alt="abrir tabla"
               />
             </button>
-            Número de Ticket
+            Número de Ticket 
           </th>
           <th>Asunto</th>
           <th>Estado</th>
@@ -117,12 +117,12 @@ function TicketTable({ tickets }) {
       >
         {tickets.map((ticket, i) => (
           <tr key={i}>
-            <td>{ticket.number}</td>
+            <td >{ticket.number}</td>
             <td>{ticket.matter}</td>
             <td>
-              <span className={`state-${ticket.state}`}>
+              <div className={`font-1 state-${ticket.state}`}>
                 {ticket.state ? "ABIERTO" : "PENDIENTE"}
-              </span>
+              </div>
             </td>
             <td>{ticket.last_update}</td>
           </tr>

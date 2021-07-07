@@ -13,6 +13,7 @@ import BillingIcon from "../../assets/svgs/billing-icon.svg";
 import ArrowUpIcon from "../../assets/svgs/arrow-up-gray-icon.svg";
 import ArrowDownIcon from "../../assets/svgs/arrow-down-gray-icon.svg";
 import LabelIcon from "../../assets/svgs/label-icon.svg";
+import Gear2Icon from "../../assets/svgs/gear-2-icon.svg";
 
 import DeployableButton from "./DeployableButton";
 import { DeployableSettings } from "../Header/Header";
@@ -26,12 +27,12 @@ const DeployableButtons = [
     subButtons: [
       {
         text: "Acerca de MH®",
-        leftIcon: AboutIcon,
+        rightIcon: AboutIcon,
         route: "/clientes/mediacore/contenido/media-host/acerca",
       },
       {
         text: "Soporte",
-        leftIcon: GearIcon,
+        rightIcon: GearIcon,
         route: "/clientes/mediacore/contenido/media-host/soporte",
       },
     ],
@@ -41,12 +42,12 @@ const DeployableButtons = [
     subButtons: [
       {
         text: "Novedades",
-        leftIcon: DocIcon,
+        rightIcon: DocIcon,
         route: "/clientes/mediacore/contenido/media-academy/novedades",
       },
       {
         text: "Acerca de MA®",
-        leftIcon: DocIcon,
+        rightIcon: DocIcon,
         route: "/clientes/mediacore/contenido/media-academy/acerca",
       },
     ],
@@ -62,12 +63,12 @@ const DeployableButtons = [
     subButtons: [
       {
         text: "Novedades",
-        leftIcon: DocIcon,
+        rightIcon: DocIcon,
         route: "/clientes/mediacore/contenido/media-blog/novedades",
       },
       {
         text: "Filtros",
-        leftIcon: LabelIcon,
+        rightIcon: LabelIcon,
         route: "/clientes/mediacore/contenido/media-blog/filtros",
       },
     ],
@@ -117,14 +118,14 @@ export default function Sidebar({ setMenu }) {
 
       <div className="account-buttons d-flex flex-column ">
         <AccountButton
-          icon={ProfileIcon}
+          floatIcon={ProfileIcon}
           text={"Mi perfil"}
           onClick={() => {
             pushUrl("/contenido/mi-perfil/mis-datos");
           }}
         ></AccountButton>
         <AccountButton
-          icon={AccountIcon}
+          floatIcon={Gear2Icon}
           rightIcon={openAccount ? ArrowUpIcon : ArrowDownIcon}
           text={"Mi cuenta"}
           className="mt-4"
@@ -132,21 +133,19 @@ export default function Sidebar({ setMenu }) {
             setOpenAccount((oa) => !oa);
           }}
         ></AccountButton>
-        <div className={`ms-3 ${
+        <div className={`ms-1 ${
             openAccount ? "h-animation-open" : "h-animation-close"
           }`}>
           <AccountButton
-            icon={BillingIcon}
-            text="Facturación"
+            text="- Facturación"
             className="small-font mt-3"
             onClick={() => {
               pushUrl("/contenido/facturacion/datos-de-facturacion");
             }}
           ></AccountButton>
           <AccountButton
-            icon={BillingIcon}
             className="mt-3 small-font"
-            text="Estado de cuenta"
+            text="- Estado de cuenta"
             onClick={() => {
               pushUrl("/contenido/facturacion/estado-de-cuenta");
             }}
@@ -167,7 +166,7 @@ export default function Sidebar({ setMenu }) {
           }}
         ></AccountButton> */}
         <AccountButton
-          icon={CloseIcon}
+          floatIcon={CloseIcon}
           className="mt-4"
           text={"Cerrar sesión"}
           onClick={() => {
@@ -183,32 +182,17 @@ export const AccountButton = ({
   text,
   icon,
   rightIcon,
+  floatIcon,
   onClick = () => {},
   className = "",
 }) => {
   return (
-    <button className={`account-button ${className}`} onClick={onClick}>
+    <button className={`account-button position-relative ${className}`} onClick={onClick}>
       {icon && <img src={icon} alt="icon button" width="15px" />}
       <span>{text}</span> 
       {rightIcon && <img src={rightIcon} alt="icon button" />}
+      {floatIcon && <img className="position-absolute end-0 me-2" src={floatIcon} alt="icon button" />}
     </button>
   );
 };
 
-export const SidebarButton = ({
-  text,
-  leftIcon,
-  rightIcon,
-  type = "",
-  onClick = () => {},
-}) => {
-  return (
-    <button className={`sidebar-button ${type}`} onClick={onClick}>
-      <div>
-        {leftIcon && <img src={leftIcon} alt="left icon button" width="18px" />}
-        <span>{text}</span>
-      </div>
-      {rightIcon && <img src={rightIcon} alt="right icon button" />}
-    </button>
-  );
-};

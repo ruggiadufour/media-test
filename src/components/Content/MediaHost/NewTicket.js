@@ -35,14 +35,14 @@ export default function NewTicket() {
         <Breadcrumb items={breadcrumb_items} />
 
         <div className="d-flex flex-wrap justify-content-between">
-          <h1 className="title-1 font-2 m-0">Crear nuevo Ticket</h1>
+          <h1 className="title-1 m-0">Crear nuevo Ticket</h1>
         </div>
       </div>
 
       <div className="my-data new-ticket-inputs-1">
         <div className="billing-input-grid">
           <div className="d-flex flex-column ">
-            <label>Creado por</label>
+            <label className="font-1">Creado por</label>
             <input
               onChange={() => {}}
               type="text"
@@ -51,7 +51,7 @@ export default function NewTicket() {
             />
           </div>
           <div className="d-flex flex-column">
-            <label>Departamento</label>
+            <label className="font-1">Departamento</label>
             <select
               className="common-input"
               name="department"
@@ -62,7 +62,7 @@ export default function NewTicket() {
             </select>
           </div>
           <div className="d-flex flex-column">
-            <label>Prioridad</label>
+            <label className="font-1">Prioridad</label>
             <select
               className="common-input"
               name="priority"
@@ -73,7 +73,7 @@ export default function NewTicket() {
             </select>
           </div>
           <div className="d-flex flex-column">
-            <label>Categoría</label>
+            <label className="font-1">Categoría</label>
             <select
               className="common-input"
               name="category"
@@ -87,7 +87,7 @@ export default function NewTicket() {
 
         <div className="new-ticket-inputs-2">
           <div className="d-flex flex-column mt-3 mb-4">
-            <label>Mensaje</label>
+            <label className="font-1">Mensaje</label>
             <div>
               {/* <CKEditor
                 editor={ClassicEditor}

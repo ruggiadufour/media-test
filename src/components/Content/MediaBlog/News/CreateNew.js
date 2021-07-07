@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import Breadcrumb from "../../Breadcrumb";
@@ -9,40 +9,53 @@ import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 // import { draftToMarkdown } from "markdown-draft-js";
 // draftToMarkdown(convertToRaw(editorState.getCurrentContent()))
 
-export default function CreateNew() {
-  console.log("hola");
-  const breadcrumb_items = [
-    {
-      text: "MediaBlog®",
-    },
-    {
-      text: "Novedades",
-    },
-    {
-      text: "Nueva novedad",
-    },
-  ];
+const breadcrumb_items = [
+  {
+    text: "MediaBlog®",
+  },
+  {
+    text: "Novedades",
+    route: "/media-blog/novedades",
+  },
+  {
+    text: "Nueva novedad",
+  },
+];
 
+// Mock data
+const filters = [
+  "Arquitectura sustentable",
+  "Apto Crédito",
+  "Departamentos",
+  "Desarrollos",
+  "Emprendimientos",
+  "Multiuso",
+];
+export default function CreateNew() {
+  const inputImage = useRef(null);
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
   const onEditorStateChange = (editorState) => {
     setEditorState(editorState);
   };
+  const [active, setActive] = useState(false);
+
+  function getImageFile() {
+    inputImage.current.click();
+  }
 
   return (
     <div className="content new-ticket">
       <div>
         <Breadcrumb items={breadcrumb_items} />
-
-        <div className="d-flex flex-wrap justify-content-between">
-          <h1 className="title-1 font-2 m-0">Nueva novedad</h1>
-        </div>
       </div>
 
-      <div className="my-data new-ticket-inputs-1">
-        <div className="billing-input-grid">
+      <div className="my-data container1">
+        <h1 className="title-1 m-0">Nueva novedad</h1>
+        <div className="mb-input-grid container1-content">
           <div className="d-flex flex-column ">
-            <label>Título</label>
+            <label className="font-1">Título</label>
             <input
+              className="common-input"
               onChange={() => {}}
               type="text"
               name="title"
@@ -50,8 +63,9 @@ export default function CreateNew() {
             />
           </div>
           <div className="d-flex flex-column ">
-            <label>Subtítulo</label>
+            <label className="font-1">Subtítulo</label>
             <input
+              className="common-input"
               onChange={() => {}}
               type="text"
               name="subtitle"
@@ -59,57 +73,41 @@ export default function CreateNew() {
             />
           </div>
           <div className="d-flex flex-column ">
-            <label>Fecha de la nota</label>
-            <input onChange={() => {}} type="date" name="date" />
+            <label className="font-1">Fecha de la nota</label>
+            <input
+              className="common-input"
+              onChange={() => {}}
+              type="date"
+              name="date"
+            />
           </div>
           <div className="d-flex flex-column">
-            <label>Imagen de portada</label>
-            <input onChange={() => {}} type="file" name="image" />
+            <label className="font-1">Imagen de portada</label>
+            <button className="image-picker-button small-font" onClick={getImageFile}>
+              AGREGAR IMAGEN (JPG, PNG 1200x900)
+            </button>
+            <input type="file" ref={inputImage} className="d-none" />
           </div>
           <div className="d-flex flex-column ">
-            <label>Pié de imagen principal</label>
-            <input onChange={() => {}} type="text" name="image_footh" />
+            <label className="font-1">Pié de imagen principal</label>
+            <input
+              className="common-input"
+              onChange={() => {}}
+              type="text"
+              name="image_footh"
+            />
           </div>
           <div className="d-flex flex-column">
-            <label>Filtros</label>
+            <label className="font-1">Filtros</label>
             <div className="grid-checkboxes">
-              <div className="d-flex">
-                <input type="checkbox" className="checkbox me-1" />
-                <label>Arquitectura sustentable</label>
-              </div>
-              <div className="d-flex">
-                <input type="checkbox" className="checkbox me-1" />
-                <label>Apto Crédito</label>
-              </div>
-              <div className="d-flex">
-                <input type="checkbox" className="checkbox me-1" />
-                <label>Departamentos</label>
-              </div>
-              <div className="d-flex">
-                <input type="checkbox" className="checkbox me-1" />
-                <label>Desarrollos</label>
-              </div>
-              <div className="d-flex">
-                <input type="checkbox" className="checkbox me-1" />
-                <label>Emprendimientos</label>
-              </div>
-              <div className="d-flex">
-                <input type="checkbox" className="checkbox me-1" />
-                <label>Multiuso</label>
-              </div>
+              {filters.map((filter, i) => (
+                <Checkbox key={i} text={filter} />
+              ))}
             </div>
           </div>
-          <div className="d-flex flex-column">
-            <label>Categoría</label>
-            <select name="category" value="" onChange={() => {}}>
-              <option value="">Consulta sobre plan hosting</option>
-            </select>
-          </div>
-        </div>
 
-        <div className="new-ticket-inputs-2">
           <div className="d-flex flex-column mt-3 mb-4">
-            <label>Mensaje</label>
+            <label className="font-1">Mensaje</label>
             <div>
               {/* <CKEditor
                 editor={ClassicEditor}
@@ -122,23 +120,55 @@ export default function CreateNew() {
 
               <Editor
                 wrapperClassName="common-input pt-3"
-                editorClassName="common-input mb-2"
+                editorClassName="common-input mb-2 mh-200"
                 toolbarClassName="mb-2"
                 onEditorStateChange={onEditorStateChange}
                 editorState={editorState}
               />
             </div>
           </div>
+        </div>
 
-          <label>Activo</label>
-          <div>
-            <span>Si</span>
-            <span>No</span>
+        <div className="new-ticket-inputs-2">
+          <label className="font-1">Activo</label>
+          <div className="mt-2 mb-4">
+            <span
+              className={`font-1 active-button-${active ? "black" : "gray"}`}
+              onClick={() => {
+                setActive((a) => true);
+              }}
+            >
+              Si
+            </span>
+            <span
+              className={`font-1 active-button-${active ? "gray" : "black"}`}
+              onClick={() => {
+                setActive((a) => false);
+              }}
+            >
+              No
+            </span>
           </div>
 
           <button className="blue-button mt-3">Guardar</button>
         </div>
       </div>
+    </div>
+  );
+}
+
+function Checkbox({ is = false, text }) {
+  const [checked, setChecked] = useState(is);
+
+  return (
+    <div className="d-flex">
+      <input
+        type="checkbox"
+        defaultChecked={checked}
+        onChange={() => setChecked(!checked)}
+        className="checkbox me-1"
+      />
+      <label className={`small-font  ${checked?"font-0":"font-1"}`}>{text}</label>
     </div>
   );
 }

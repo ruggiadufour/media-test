@@ -8,3 +8,29 @@
 .mh-200{
   min-height: 200px;
 }
+.mh-300{
+  min-height: 300px;
+}
+
+// Width
+.width-100{
+  width: 100px;
+}
+.miw-100{
+  min-width: 100px;
+  width: 100%;
+}
+.mxw-300{
+  max-width: 300px;
+}
+.mxw-500{
+  max-width: 500px;
+}
+
+.w-max-content{
+  width: max-content;
+}
+.w-min-content{
+  width: min-content;
+  background: red;
+}

@@ -53,7 +53,7 @@ export const SidebarButton = ({
     >
       <div>
         {leftIcon && <img src={leftIcon} alt="left icon button" width="18px" />}
-        <span>{text}</span>
+        <span className="ms-3">{text}</span>
       </div>
       {rightIcon && <img src={rightIcon} alt="right icon button" />}
     </NavLink>

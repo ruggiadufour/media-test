@@ -76,7 +76,7 @@ export default function News() {
         <Breadcrumb items={breadcrumb_items} />
 
         <div className="d-flex flex-wrap justify-content-between">
-          <h1 className="title-1 font-2 m-0">Novedades</h1>
+          <h1 className="title-1 m-0">Novedades</h1>
 
           <Link
             to="/clientes/mediacore/contenido/media-blog/novedades/crear-novedad"
@@ -119,7 +119,7 @@ function NewsTable({ news, isFinished = false }) {
       <thead>
         {isFinished ? (
           <tr onClick={handleOpen}>
-            <th>
+            <th className="width-100">
               <button className="arrow-icon-button">
                 <img
                   className={`${open ? "" : "rotate-icon-180"}`}
@@ -136,7 +136,7 @@ function NewsTable({ news, isFinished = false }) {
           </tr>
         ) : (
           <tr onClick={handleOpen}>
-            <th>
+            <th className="width-100">
               <button className="arrow-icon-button">
                 <img
                   className={`${open ? "" : "rotate-icon-180"}`}
@@ -169,11 +169,21 @@ function NewsTable({ news, isFinished = false }) {
           <tr key={i} className="text-nowrap">
             <td>{new_.title}</td>
             <td>
-              <input type="checkbox" className="checkbox" checked={new_.important} onChange={()=>{}} />
+              <input
+                type="checkbox"
+                className="checkbox"
+                checked={new_.important}
+                onChange={() => {}}
+              />
             </td>
             <td>
-                <img src={Avatar} alt="creador de la novedad" className="me-2" width="35px" />
-                {new_.creator}
+              <img
+                src={Avatar}
+                alt="creador de la novedad"
+                className="me-2"
+                width="35px"
+              />
+              {new_.creator}
             </td>
             <td>{new_.date}</td>
             <td>

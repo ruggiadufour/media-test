@@ -25,7 +25,7 @@ export default function SeeNew() {
 
       <div className="ma-see-news">
         <div className="position-relative">
-          <span id="fake-title" className="title-1 font-2">
+          <span id="fake-title" className="title-1">
             Novedades
           </span>
           <div className="ma-see-container-left mt-2 ">
@@ -100,7 +100,7 @@ export default function SeeNew() {
         </div>
 
         <div className="d-flex flex-column">
-          <h2 className="title-1 font-2 mb-3">Novedades Destacadas</h2>
+          <h2 className="title-1 mb-3">Novedades Destacadas</h2>
           <div className="right-cards">
             <CardNew
               title="Ultimas tendencias"

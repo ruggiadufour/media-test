@@ -61,7 +61,7 @@ export default function News() {
       <div>
         <Breadcrumb items={breadcrumb_items}/>
 
-        <h1 className="title-1 font-2">Novedades</h1>
+        <h1 className="title-1">Novedades</h1>
       </div>
 
       <div className="ma-news">

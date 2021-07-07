@@ -10,6 +10,7 @@ import ProfileIcon from "../../assets/svgs/profile-icon.svg";
 import BillingIcon from "../../assets/svgs/billing-icon.svg";
 import ArrowUpIcon from "../../assets/svgs/arrow-up-gray-icon.svg";
 import ArrowDownIcon from "../../assets/svgs/arrow-down-gray-icon.svg";
+import Gear2Icon from "../../assets/svgs/gear-2-icon.svg";
 
 export default function Header({ setMenu, menu }) {
   const [openSettings, setOpenSettings] = useState(false);
@@ -86,7 +87,7 @@ export function DeployableSettings({ openSettings, setOpenSettings }) {
           onClick={() => handleClick("/contenido/mi-perfil/mis-datos")}
         ></AccountButton>
         <AccountButton
-          icon={AccountIcon}
+          icon={Gear2Icon}
           rightIcon={openAccount ? ArrowUpIcon : ArrowDownIcon}
           text={"Mi cuenta"}
           className="text-gray-1"
@@ -102,7 +103,7 @@ export function DeployableSettings({ openSettings, setOpenSettings }) {
           }`}
         >
           <AccountButton
-            icon={BillingIcon}
+            icon={AccountIcon}
             className="text-gray-1 mt-3 small-font"
             text="Facturación"
             onClick={() => {
