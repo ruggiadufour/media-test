@@ -32,56 +32,57 @@ export default function NewTicket() {
 
   return (
     <Wrapper_1 title="Crear nuevo Ticket" breadcrumbItems={breadcrumbItems}>
-      <div className="grid-3-col mt-1r">
-        <div className="d-flex flex-column ">
-          <label className="font-1">Creado por</label>
-          <input
-            onChange={() => {}}
-            type="text"
-            name="created_by"
-            className="common-input"
-          />
+      <div className="content-mobile-padding">
+        <div className="grid-3-col">
+          <div className="d-flex flex-column ">
+            <label className="font-1">Creado por</label>
+            <input
+              onChange={() => {}}
+              type="text"
+              name="created_by"
+              className="common-input"
+            />
+          </div>
+          <div className="d-flex flex-column">
+            <label className="font-1">Departamento</label>
+            <select
+              className="common-input"
+              name="department"
+              value=""
+              onChange={() => {}}
+            >
+              <option value="">Soporte Técnico</option>
+            </select>
+          </div>
+          <div className="d-flex flex-column">
+            <label className="font-1">Prioridad</label>
+            <select
+              className="common-input"
+              name="priority"
+              value=""
+              onChange={() => {}}
+            >
+              <option value="">Urgente</option>
+            </select>
+          </div>
+          <div className="d-flex flex-column">
+            <label className="font-1">Categoría</label>
+            <select
+              className="common-input"
+              name="category"
+              value=""
+              onChange={() => {}}
+            >
+              <option value="">Consulta sobre plan hosting</option>
+            </select>
+          </div>
         </div>
-        <div className="d-flex flex-column">
-          <label className="font-1">Departamento</label>
-          <select
-            className="common-input"
-            name="department"
-            value=""
-            onChange={() => {}}
-          >
-            <option value="">Soporte Técnico</option>
-          </select>
-        </div>
-        <div className="d-flex flex-column">
-          <label className="font-1">Prioridad</label>
-          <select
-            className="common-input"
-            name="priority"
-            value=""
-            onChange={() => {}}
-          >
-            <option value="">Urgente</option>
-          </select>
-        </div>
-        <div className="d-flex flex-column">
-          <label className="font-1">Categoría</label>
-          <select
-            className="common-input"
-            name="category"
-            value=""
-            onChange={() => {}}
-          >
-            <option value="">Consulta sobre plan hosting</option>
-          </select>
-        </div>
-      </div>
 
-      <div className="new-ticket-inputs-2">
-        <div className="d-flex flex-column mt-3 mb-4">
-          <label className="font-1">Mensaje</label>
-          <div>
-            {/* <CKEditor
+        <div className="new-ticket-inputs-2">
+          <div className="d-flex flex-column mt-3 mb-4">
+            <label className="font-1">Mensaje</label>
+            <div>
+              {/* <CKEditor
                 editor={ClassicEditor}
                 data=""
                 onReady={(editor) => {}}
@@ -90,18 +91,19 @@ export default function NewTicket() {
                 }}
               /> */}
 
-            <Editor
-              wrapperClassName="common-input pt-3"
-              editorClassName="common-input mb-2 mh-200"
-              toolbarClassName="mb-2"
-              onEditorStateChange={onEditorStateChange}
-              editorState={editorState}
-            />
+              <Editor
+                wrapperClassName="common-input pt-3"
+                editorClassName="common-input mb-2 mh-200"
+                toolbarClassName="mb-2"
+                onEditorStateChange={onEditorStateChange}
+                editorState={editorState}
+              />
+            </div>
           </div>
-        </div>
 
-        <button className="blue-button mt-3"> Crear Ticket</button>
-        <button className="bluelight-button ms-4"> Limpiar</button>
+          <button className="blue-button mt-3"> Crear Ticket</button>
+          <button className="bluelight-button ms-4"> Limpiar</button>
+        </div>
       </div>
     </Wrapper_1>
   );

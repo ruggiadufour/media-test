@@ -27,7 +27,9 @@ import AboutMediaBroker from "./components/Content/MediaBroker/About";
 import EventsMediaBroker from "./components/Content/MediaBroker/Events/Events";
 import CreateEventMediaBroker from "./components/Content/MediaBroker/Events/CreateEvent";
 import RoomsMediaBroker from "./components/Content/MediaBroker/Rooms/Rooms";
+import CreateRoomMediaBroker from "./components/Content/MediaBroker/Rooms/CreateRoom";
 import UsersMediaBroker from "./components/Content/MediaBroker/Users/Users";
+import CreateUserMediaBroker from "./components/Content/MediaBroker/Users/CreateUser";
 
 
 function App() {
@@ -70,7 +72,9 @@ function App() {
                 <Route exact path="/clientes/mediacore/contenido/media-broker/eventos" component={EventsMediaBroker} />
                 <Route exact path="/clientes/mediacore/contenido/media-broker/eventos/crear-evento" component={CreateEventMediaBroker} />
                 <Route exact path="/clientes/mediacore/contenido/media-broker/salas" component={RoomsMediaBroker} />
+                <Route exact path="/clientes/mediacore/contenido/media-broker/salas/crear-sala" component={CreateRoomMediaBroker} />
                 <Route exact path="/clientes/mediacore/contenido/media-broker/usuarios" component={UsersMediaBroker} />
+                <Route exact path="/clientes/mediacore/contenido/media-broker/usuarios/crear-usuario" component={CreateUserMediaBroker} />
                 <Footer />
               </article>
             </div>

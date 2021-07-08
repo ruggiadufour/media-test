@@ -70,7 +70,7 @@ export default function CreateNew() {
           <div className="d-flex flex-column ">
             <label className="font-1">Fecha de la nota</label>
             <input
-              className="common-input"
+              className="common-input w-100p"
               onChange={() => {}}
               type="date"
               name="date"
@@ -129,9 +129,9 @@ export default function CreateNew() {
 
         <div className="new-ticket-inputs-2">
           <label className="font-1">Activo</label>
-          <div className="mt-2 mb-4">
+          <div className="mt-2 mb-4 d-flex">
             <span
-              className={`font-1 active-button-${active ? "black" : "gray"}`}
+              className={`font-1 small-font active-button-${active ? "black" : "gray"}`}
               onClick={() => {
                 setActive((a) => true);
               }}
@@ -139,7 +139,7 @@ export default function CreateNew() {
               Si
             </span>
             <span
-              className={`font-1 active-button-${active ? "gray" : "black"}`}
+              className={`font-1 small-font active-button-${active ? "gray" : "black"}`}
               onClick={() => {
                 setActive((a) => false);
               }}

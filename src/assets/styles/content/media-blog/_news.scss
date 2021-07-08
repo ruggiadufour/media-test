@@ -35,26 +35,6 @@
   }
 }
 
-.active-button-black,
-.active-button-gray {
-  padding: 0.5rem 4rem;
-  &:hover {
-    cursor: pointer;
-  }
-}
-
-.active-button-black {
-  background-color: #000;
-  color: #fff;
-}
-.active-button-gray {
-  background-color: $gray-5;
-  color: #000;
-  @media (max-width: $break-tablet){
-    background-color: #fff;
-  }
-}
-
 .image-picker-button{
   background-color: #fff;
   border: dotted thin $gray-4;

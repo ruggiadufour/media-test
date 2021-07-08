@@ -31,8 +31,13 @@
   min-width: 100px;
   width: 100%;
 }
+.mxw-200{
+  max-width: 200px;
+  width: 100%;
+}
 .mxw-300{
   max-width: 300px;
+  width: 100%;
 }
 .mxw-500{
   max-width: 500px;
@@ -46,6 +51,9 @@
   background: red;
 }
 
+.w-25p{
+  width: 25%;
+}
 .w-50p{
   width: 50%;
 }

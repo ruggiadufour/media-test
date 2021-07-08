@@ -1,9 +1,8 @@
 @import "../global/variables";
 body {
   margin: 0;
-  font-family: $font-2, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: $font-2, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -58,11 +57,12 @@ body {
 .input-with-placeholder {
   @media (max-width: $break-tablet) {
     &::placeholder {
-      color: $gray-6!important;
+      color: $gray-6 !important;
     }
   }
 }
 
+// Buttons --------------------------------------------------------------------------
 .blue-button,
 .bluelight-button {
   background-color: $blue-1;
@@ -87,6 +87,35 @@ body {
 
   &:focus {
     outline: none;
+  }
+}
+
+.active-button-black,
+.active-button-gray,
+.active-button-blue {
+  padding: 0.5rem;
+  display: inline-block;
+  max-width: 160px;
+  width: 100%;
+  text-align: center;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.active-button-black {
+  background-color: #000;
+  color: #fff;
+}
+.active-button-blue {
+  background-color: $blue-1;
+  color: #fff;
+}
+.active-button-gray {
+  background-color: $gray-5;
+  color: #000;
+  @media (max-width: $break-tablet) {
+    background-color: #fff;
   }
 }
 
@@ -124,13 +153,12 @@ body {
   opacity: 1;
 }
 
-
-.no-display-tablet{
-  @media (max-width: $break-tablet){
+.no-display-tablet {
+  @media (max-width: $break-tablet) {
     display: none;
   }
 }
 
-.overflow-hidden{
+.overflow-hidden {
   overflow: hidden;
 }

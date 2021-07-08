@@ -1,13 +1,8 @@
 import React, { useRef } from "react";
-import EditIcon from "../../../../assets/svgs/edit-icon.svg";
-import ArrowUpIcon from "../../../../assets/svgs/arrow-up-icon.svg";
-import DeleteIcon from "../../../../assets/svgs/delete-icon.svg";
-import AddIcon from "../../../../assets/svgs/add-icon.svg";
-import SearchIcon from "../../../../assets/svgs/search-icon.svg";
 import Wrapper_1 from "../../Wrapper_1";
-import Avatar from "../../../../assets/images/avatar.png";
+import InputDate from "../../../Globals/InputDate";
 
-export default function Events() {
+export default function CreateEvent() {
   const descriptionRef = useRef();
 
   const breadcrumbItems = [
@@ -57,16 +52,17 @@ export default function Events() {
           <div className="d-flex flex-column w-100p">
             <label className="font-1">Fecha del Evento/Capacitación</label>
             <input
-              className="common-input"
+              className="common-input w-100p"
               onChange={() => {}}
               type="date"
               name="event_name"
             />
+            {/* <InputDate /> */}
           </div>
           <div className="d-flex flex-column w-100p">
             <label className="font-1">Hora del Evento/Capacitación</label>
             <input
-              className="common-input"
+              className="common-input w-100"
               onChange={() => {}}
               type="time"
               name="event_name"

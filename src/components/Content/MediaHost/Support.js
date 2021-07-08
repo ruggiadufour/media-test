@@ -4,7 +4,7 @@ import Breadcrumb from "../Breadcrumb";
 import SearchIcon from "../../../assets/svgs/search-icon.svg";
 import ArrowUpIcon from "../../../assets/svgs/arrow-up-icon.svg";
 import AddIcon from "../../../assets/svgs/add-icon.svg";
-
+import Wrapper_2 from "../Wrapper_2";
 // Mock data
 const tables = [
   [
@@ -42,34 +42,26 @@ const tables = [
 ];
 
 export default function Support() {
-  const breadcrumb_items = [
+  const breadcrumbItems = [
     {
       text: "MediaHost®",
-      route:"/media-host/acerca"
+      route: "/media-host/acerca",
     },
     {
       text: "Soporte",
     },
   ];
   return (
-    <div className="content">
-      <div>
-        <Breadcrumb items={breadcrumb_items} />
-
-        <div className="d-flex flex-wrap justify-content-between">
-          <h1 className="title-1 m-0">Soporte</h1>
-
-          <Link
-            to="/clientes/mediacore/contenido/media-host/soporte/crear-ticket"
-            className="text-decoration-none text-gray-9 d-flex justify-content-center align-items-center gap-2"
-          >
-            <img src={AddIcon} alt="abrir nuevo ticket" />
-            <p className="font-1 p-0 m-0">Abrir nuevo Ticket</p>
-          </Link>
-        </div>
-      </div>
-
-      <div className="account-state">
+    <Wrapper_2
+      title="Soporte"
+      breadcrumbItems={breadcrumbItems}
+      rightLink={{
+        route: "/media-host/soporte/crear-ticket",
+        text: "Abrir nuevo Ticket",
+        icon: AddIcon,
+      }}
+    >
+      <div className="content-mobile-padding w-100p">
         <div className="input-search-period w-50p mb-2r">
           <input type="text" placeholder="Buscar" />
           <img src={SearchIcon} alt="buscar periodo" width="15px" />
@@ -81,7 +73,7 @@ export default function Support() {
           ))}
         </div>
       </div>
-    </div>
+    </Wrapper_2>
   );
 }
 
@@ -103,7 +95,7 @@ function TicketTable({ tickets }) {
                 alt="abrir tabla"
               />
             </button>
-            Número de Ticket 
+            Número de Ticket
           </th>
           <th>Asunto</th>
           <th>Estado</th>
@@ -117,7 +109,7 @@ function TicketTable({ tickets }) {
       >
         {tickets.map((ticket, i) => (
           <tr key={i}>
-            <td >{ticket.number}</td>
+            <td>{ticket.number}</td>
             <td>{ticket.matter}</td>
             <td>
               <div className={`font-1 state-${ticket.state}`}>
