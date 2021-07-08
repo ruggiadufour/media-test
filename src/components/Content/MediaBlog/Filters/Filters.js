@@ -1,12 +1,9 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import Breadcrumb from "../../Breadcrumb";
-import SearchIcon from "../../../../assets/svgs/search-icon.svg";
-import ArrowUpIcon from "../../../../assets/svgs/arrow-up-icon.svg";
+import React from "react";
 import AddIcon from "../../../../assets/svgs/add-icon.svg";
 import EditIcon from "../../../../assets/svgs/edit-icon.svg";
 import DeleteIcon from "../../../../assets/svgs/delete-icon.svg";
 import Avatar from "../../../../assets/images/avatar.png";
+import Wrapper_2 from "../../Wrapper_2";
 
 // Mock data
 const filters = [
@@ -48,7 +45,7 @@ const filters = [
 ];
 
 export default function News() {
-  const breadcrumb_items = [
+  const breadcrumbItems = [
     {
       text: "MediaBlog®",
     },
@@ -57,29 +54,21 @@ export default function News() {
     },
   ];
   return (
-    <div className="content">
-      <div>
-        <Breadcrumb items={breadcrumb_items} />
-
-        <div className="d-flex flex-wrap justify-content-between">
-          <h1 className="title-1 m-0">Filtros</h1>
-
-          <Link
-            to="/clientes/mediacore/contenido/media-blog/filtros/crear-filtro"
-            className="text-decoration-none text-gray-9 d-flex justify-content-center align-items-center gap-2"
-          >
-            <img src={AddIcon} alt="abrir nuevo ticket" />
-            <p className="font-1 p-0 m-0">Nuevo Filtro</p>
-          </Link>
-        </div>
-      </div>
-
-      <div className="account-state">
+    <Wrapper_2
+      breadcrumbItems={breadcrumbItems}
+      title="Filtros"
+      rightLink={{
+        text: "Nuevo Filtro",
+        icon: AddIcon,
+        route: "/media-blog/filtros/crear-filtro",
+      }}
+    >
+      <div className="content-mobile-padding w-100">
         <div className="tables-wrapper">
           <FiltersTable filters={filters} />
         </div>
       </div>
-    </div>
+    </Wrapper_2>
   );
 }
 

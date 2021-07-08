@@ -14,6 +14,9 @@ import ArrowUpIcon from "../../assets/svgs/arrow-up-gray-icon.svg";
 import ArrowDownIcon from "../../assets/svgs/arrow-down-gray-icon.svg";
 import LabelIcon from "../../assets/svgs/label-icon.svg";
 import Gear2Icon from "../../assets/svgs/gear-2-icon.svg";
+import CalendarIcon from "../../assets/svgs/calendar-icon.svg";
+import RoomIcon from "../../assets/svgs/room-icon.svg";
+import PeopleIcon from "../../assets/svgs/people-icon.svg";
 
 import DeployableButton from "./DeployableButton";
 import { DeployableSettings } from "../Header/Header";
@@ -82,6 +85,28 @@ const DeployableButtons = [
     text: "MediaBroker®",
     subButtons: [],
     rightIcon: LockIcon,
+    subButtons: [
+      {
+        text: "Acerca de MB®",
+        rightIcon: DocIcon,
+        route: "/clientes/mediacore/contenido/media-broker/acerca",
+      },
+      {
+        text: "Eventos",
+        rightIcon: CalendarIcon,
+        route: "/clientes/mediacore/contenido/media-broker/eventos",
+      },
+      {
+        text: "Salas",
+        rightIcon: RoomIcon,
+        route: "/clientes/mediacore/contenido/media-broker/salas",
+      },
+      {
+        text: "Usuarios",
+        rightIcon: PeopleIcon,
+        route: "/clientes/mediacore/contenido/media-broker/usuarios",
+      },
+    ],
   },
   {
     text: "Más Servicios",
@@ -133,9 +158,11 @@ export default function Sidebar({ setMenu }) {
             setOpenAccount((oa) => !oa);
           }}
         ></AccountButton>
-        <div className={`ms-1 ${
+        <div
+          className={`ms-1 ${
             openAccount ? "h-animation-open" : "h-animation-close"
-          }`}>
+          }`}
+        >
           <AccountButton
             text="- Facturación"
             className="small-font mt-3"
@@ -187,12 +214,20 @@ export const AccountButton = ({
   className = "",
 }) => {
   return (
-    <button className={`account-button position-relative ${className}`} onClick={onClick}>
+    <button
+      className={`account-button position-relative ${className}`}
+      onClick={onClick}
+    >
       {icon && <img src={icon} alt="icon button" width="15px" />}
-      <span>{text}</span> 
+      <span>{text}</span>
       {rightIcon && <img src={rightIcon} alt="icon button" />}
-      {floatIcon && <img className="position-absolute end-0 me-2" src={floatIcon} alt="icon button" />}
+      {floatIcon && (
+        <img
+          className="position-absolute end-0 me-2"
+          src={floatIcon}
+          alt="icon button"
+        />
+      )}
     </button>
   );
 };
-

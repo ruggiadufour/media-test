@@ -6,7 +6,7 @@ import BuildingImage from "../../../../assets/images/temporal/build.png";
 import MarketingImage from "../../../../assets/images/temporal/marketing.png";
 import VideoImage from "../../../../assets/images/temporal/video.png";
 import SocialMediaImage from "../../../../assets/images/temporal/socialmedia.png";
-
+import Wrapper_2 from "../../Wrapper_2";
 // Mock data
 const news = [
   {
@@ -47,30 +47,27 @@ const news = [
 ];
 
 export default function News() {
-  const breadcrumb_items = [
+  const breadcrumbItems = [
     {
       text: "MediaAcademy®",
-      route:"/media-academy/acerca"
+      route: "/media-academy/acerca",
     },
     {
       text: "Novedades",
     },
   ];
   return (
-    <div className="content ma-news-container">
-      <div>
-        <Breadcrumb items={breadcrumb_items}/>
-
-        <h1 className="title-1">Novedades</h1>
-      </div>
-
-      <div className="ma-news">
-        <div className="ma-news-grid">
-          {news.map((new_, i) => (
-            <CardNew key={i} {...new_} isFirst={i === 0} />
-          ))}
+    // <div className="content ma-news-container">
+    <Wrapper_2 breadcrumbItems={breadcrumbItems} title="Novedades">
+      <div className="content-mobile-padding">
+        <div className="ma-news">
+          <div className="ma-news-grid">
+            {news.map((new_, i) => (
+              <CardNew key={i} {...new_} isFirst={i === 0} />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </Wrapper_2>
   );
 }

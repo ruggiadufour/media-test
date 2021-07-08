@@ -1,7 +1,9 @@
-.mx-2rem {
-  margin: 0 2rem;
+// Height
+@for $i from 1 through 20 {
+  .h-#{$i}r {
+    height: #{$i}rem;
+  }
 }
-
 .mh-100{
   min-height: 100px;
 }
@@ -11,8 +13,17 @@
 .mh-300{
   min-height: 300px;
 }
+.h-100p{
+  height: 100%;
+}
 
 // Width
+@for $i from 1 through 20 {
+  .w-#{$i}r {
+    width: #{$i}rem;
+  }
+}
+
 .width-100{
   width: 100px;
 }
@@ -33,4 +44,24 @@
 .w-min-content{
   width: min-content;
   background: red;
+}
+
+.w-50p{
+  width: 50%;
+}
+.w-100p{
+  width: 100%;
+}
+
+
+// Margin
+@for $i from 1 through 10 {
+  .mt-#{$i}r {
+    margin-top: #{$i}rem;
+  }
+}
+@for $i from 1 through 10 {
+  .mb-#{$i}r {
+    margin-bottom: #{$i}rem;
+  }
 }

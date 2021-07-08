@@ -29,7 +29,6 @@
   }
   @media (max-width: $break-tablet) {
     grid-template-columns: 100%;
-    padding: 1rem 2rem;
     > div:last-child {
       grid-column: 1/2;
     }

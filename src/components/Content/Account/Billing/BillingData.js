@@ -4,11 +4,13 @@ import ThreeDotsIcon from "../../../../assets/svgs/three-dots-icon.svg";
 import AmericanEIcon from "../../../../assets/svgs/american-express-icon.svg";
 import VisaIcon from "../../../../assets/svgs/visa-icon.svg";
 
+import Wrapper_1 from "../../Wrapper_1";
+
 export default function BillingData() {
-  const breadcrumb_items = [
+  const breadcrumbItems = [
     {
       text: "Mi Perfil",
-      route: "/mi-perfil/mis-datos"
+      route: "/mi-perfil/mis-datos",
     },
     {
       text: "Datos de facturación",
@@ -16,15 +18,9 @@ export default function BillingData() {
   ];
 
   return (
-    <div className="content">
-      <div>
-        <Breadcrumb items={breadcrumb_items} />
-      </div>
-
-      <div className="billing-data">
-        <h1 className="title-1">Datos de facturación</h1>
-
-        <div className="billing-input-grid mt-4 mb-5">
+    <Wrapper_1 title="Datos de facturación" breadcrumbItems={breadcrumbItems}>
+      <div className="content-mobile-padding w-100p">
+        <div className="billing-input-grid mb-5">
           <div className="d-flex flex-column">
             <label>CUIT</label>
             <input
@@ -165,7 +161,7 @@ export default function BillingData() {
 
         <button className="blue-button mt-4">Guardar</button>
       </div>
-    </div>
+    </Wrapper_1>
   );
 }
 

@@ -1,0 +1,48 @@
+.about-page {
+  & hr {
+    margin: 2rem 0;
+  }
+  @media (max-width: $break-tablet) {
+    padding: 2rem;
+
+    & hr {
+      display: none;
+    }
+    .about-page-description {
+      padding: 0;
+    }
+  }
+}
+
+.about-page-video {
+  width: 100%;
+  height: auto;
+  position: relative;
+
+  img:nth-child(2) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.about-page-grid {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  align-items: center;
+
+  & div:nth-child(2) {
+    align-self: flex-start;
+    padding-top: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  @media (max-width: $break-desktop) {
+    grid-template-columns: 1fr;
+
+    & div:nth-child(2) {
+      padding-left: 0;
+    }
+  }
+}

@@ -22,6 +22,12 @@ import FiltersMediaBlog from "./components/Content/MediaBlog/Filters/Filters";
 import NewFilterMediaBlog from "./components/Content/MediaBlog/Filters/NewFilter";
 import NewsMediaBlog from "./components/Content/MediaBlog/News/News";
 import CreateNewMediaBlog from "./components/Content/MediaBlog/News/CreateNew";
+// Media Broker
+import AboutMediaBroker from "./components/Content/MediaBroker/About";
+import EventsMediaBroker from "./components/Content/MediaBroker/Events/Events";
+import CreateEventMediaBroker from "./components/Content/MediaBroker/Events/CreateEvent";
+import RoomsMediaBroker from "./components/Content/MediaBroker/Rooms/Rooms";
+import UsersMediaBroker from "./components/Content/MediaBroker/Users/Users";
 
 
 function App() {
@@ -59,6 +65,12 @@ function App() {
                 <Route exact path="/clientes/mediacore/contenido/media-blog/novedades/crear-novedad" component={CreateNewMediaBlog} />
                 <Route exact path="/clientes/mediacore/contenido/media-blog/filtros" component={FiltersMediaBlog} />
                 <Route exact path="/clientes/mediacore/contenido/media-blog/filtros/crear-filtro" component={NewFilterMediaBlog} />
+                
+                <Route exact path="/clientes/mediacore/contenido/media-broker/acerca" component={AboutMediaBroker} />
+                <Route exact path="/clientes/mediacore/contenido/media-broker/eventos" component={EventsMediaBroker} />
+                <Route exact path="/clientes/mediacore/contenido/media-broker/eventos/crear-evento" component={CreateEventMediaBroker} />
+                <Route exact path="/clientes/mediacore/contenido/media-broker/salas" component={RoomsMediaBroker} />
+                <Route exact path="/clientes/mediacore/contenido/media-broker/usuarios" component={UsersMediaBroker} />
                 <Footer />
               </article>
             </div>

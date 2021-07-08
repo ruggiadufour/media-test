@@ -1,0 +1,24 @@
+.grid-3-col {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+
+  @media (max-width: $break-laptop) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: $break-tablet) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.grid-2-col {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+
+  @media (max-width: $break-tablet) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

@@ -125,3 +125,12 @@ body {
 }
 
 
+.no-display-tablet{
+  @media (max-width: $break-tablet){
+    display: none;
+  }
+}
+
+.overflow-hidden{
+  overflow: hidden;
+}

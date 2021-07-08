@@ -1,28 +1,43 @@
 import React from "react";
 import Breadcrumb from "./Breadcrumb";
+import { Link } from "react-router-dom";
 
-export default function Wrapper_1({ breadcrumbItems, rightLink }) {
+export default function Wrapper_1({
+  title,
+  breadcrumbItems,
+  rightLink,
+  rightMessage,
+  children,
+}) {
   return (
     <div className="content">
       <div>
-        <Breadcrumb items={breadcrumb_items} />
+        <Breadcrumb items={breadcrumbItems} />
+      </div>
 
-        <div className="d-flex flex-wrap justify-content-between">
-          <h1 className="title-1 m-0">Filtros</h1>
+      <div className="container1">
+        <div className="wrapper-title d-flex flex-wrap justify-content-between align-items-center">
+          <h1 className="title-1 m-0">{title}</h1>
 
           {rightLink && (
             <Link
-              to="/clientes/mediacore/contenido/media-blog/filtros/crear-filtro"
+              to={`/clientes/mediacore/contenido${rightLink.route}`}
               className="text-decoration-none text-gray-9 d-flex justify-content-center align-items-center gap-2"
             >
-              <img src={AddIcon} alt="abrir nuevo ticket" />
-              <p className="font-1 p-0 m-0">Nuevo Filtro</p>
+              <img src={rightLink.icon} alt={rightLink.text} />
+              <p className="font-1 p-0 m-0">{rightLink.text}</p>
             </Link>
           )}
+          {rightMessage && (
+            <span className="font-1">
+              <img src={rightMessage.icon} alt={rightMessage.text} />
+              <strong> {rightMessage.text}</strong>
+            </span>
+          )}
         </div>
+        
+        <div className="container1-content">{children}</div>
       </div>
-
-      <div className="container2">{children}</div>
     </div>
   );
 }

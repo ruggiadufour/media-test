@@ -9,6 +9,7 @@ import ArrowUpIcon from "../../../../assets/svgs/arrow-up-icon.svg";
 import ArrowDownIcon from "../../../../assets/svgs/arrow-down-icon.svg";
 import SearchIcon from "../../../../assets/svgs/search-icon.svg";
 import CheckedIcon from "../../../../assets/svgs/checked-icon.svg";
+import Wrapper_2 from "../../Wrapper_2";
 
 // mock data
 const periods = [
@@ -83,10 +84,10 @@ const periods = [
 ];
 
 const AccountState = () => {
-  const breadcrumb_items = [
+  const breadcrumbItems = [
     {
       text: "Mi Perfil",
-      route:"/mi-perfil/mis-datos"
+      route: "/mi-perfil/mis-datos",
     },
     {
       text: "Estado de cuenta",
@@ -94,21 +95,16 @@ const AccountState = () => {
   ];
 
   return (
-    <div className="content">
-      <div>
-        <Breadcrumb items={breadcrumb_items} />
-
-        <div className="d-flex flex-wrap justify-content-between">
-          <h1 className="title-1">Estado de cuenta</h1>
-          <span className="font-1">
-            <img src={CheckedIcon} alt="estás al día con tus pagos" />
-            <strong> ¡Estás al día con tus Pagos!</strong>
-          </span>
-        </div>
-      </div>
-
-      <div className="account-state">
-        <div className="input-search-period">
+    <Wrapper_2
+      breadcrumbItems={breadcrumbItems}
+      title="Estado de cuenta"
+      rightMessage={{
+        text: "¡Estás al día con tus Pagos!",
+        icon: CheckedIcon,
+      }}
+    >
+      <div className="content-mobile-padding">
+        <div className="input-search-period w-50p mb-2r">
           <input type="text" placeholder="Buscar" />
           <img src={SearchIcon} alt="buscar periodo" width="15px" />
         </div>
@@ -126,7 +122,7 @@ const AccountState = () => {
           </a>
         </div>
       </div>
-    </div>
+    </Wrapper_2>
   );
 };
 
@@ -173,7 +169,7 @@ function PeriodTable({ period }) {
             <td>
               <div className={`state-${data.state}`}>
                 {data.state ? "PAGADA" : "PENDIENTE"}
-              </div> 
+              </div>
             </td>
             <td>{data.date}</td>
             <td>{data.expiration}</td>

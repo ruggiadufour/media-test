@@ -8,12 +8,12 @@
   }
 
   @media (max-width: $break-tablet) {
-    padding: 0.75rem 1rem;
+    padding: 1.5rem 2rem;
     margin-top: 1.5rem;
     & #fake-title {
       position: absolute;
-      top: -3.5rem;
-      left: 1rem;
+      top: -4.25rem;
+      left: 0;
     }
     
     & hr {

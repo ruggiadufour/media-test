@@ -70,7 +70,7 @@ export default function Support() {
       </div>
 
       <div className="account-state">
-        <div className="input-search-period">
+        <div className="input-search-period w-50p mb-2r">
           <input type="text" placeholder="Buscar" />
           <img src={SearchIcon} alt="buscar periodo" width="15px" />
         </div>

@@ -2,14 +2,14 @@ import React, { useState, useRef } from "react";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import Breadcrumb from "../../Breadcrumb";
-
+import Wrapper_1 from "../../Wrapper_1";
 import { EditorState, convertToRaw } from "draft-js";
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 // import { draftToMarkdown } from "markdown-draft-js";
 // draftToMarkdown(convertToRaw(editorState.getCurrentContent()))
 
-const breadcrumb_items = [
+const breadcrumbItems = [
   {
     text: "MediaBlog®",
   },
@@ -44,14 +44,9 @@ export default function CreateNew() {
   }
 
   return (
-    <div className="content new-ticket">
-      <div>
-        <Breadcrumb items={breadcrumb_items} />
-      </div>
-
-      <div className="my-data container1">
-        <h1 className="title-1 m-0">Nueva novedad</h1>
-        <div className="mb-input-grid container1-content">
+    <Wrapper_1 breadcrumbItems={breadcrumbItems} title="Nueva novedad">
+      <div className="content-mobile-padding">
+        <div className="mb-input-grid">
           <div className="d-flex flex-column ">
             <label className="font-1">Título</label>
             <input
@@ -83,7 +78,10 @@ export default function CreateNew() {
           </div>
           <div className="d-flex flex-column">
             <label className="font-1">Imagen de portada</label>
-            <button className="image-picker-button small-font" onClick={getImageFile}>
+            <button
+              className="image-picker-button small-font"
+              onClick={getImageFile}
+            >
               AGREGAR IMAGEN (JPG, PNG 1200x900)
             </button>
             <input type="file" ref={inputImage} className="d-none" />
@@ -153,7 +151,7 @@ export default function CreateNew() {
           <button className="blue-button mt-3">Guardar</button>
         </div>
       </div>
-    </div>
+    </Wrapper_1>
   );
 }
 
@@ -168,7 +166,9 @@ function Checkbox({ is = false, text }) {
         onChange={() => setChecked(!checked)}
         className="checkbox me-1"
       />
-      <label className={`small-font  ${checked?"font-0":"font-1"}`}>{text}</label>
+      <label className={`small-font  ${checked ? "font-0" : "font-1"}`}>
+        {text}
+      </label>
     </div>
   );
 }

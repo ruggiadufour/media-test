@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import Breadcrumb from "../../Breadcrumb";
-
+import Wrapper_1 from "../../Wrapper_1";
 import PencilIcon from "../../../../assets/svgs/pencil-icon.svg";
 import Avatar from "../../../../assets/images/avatar.png";
 import Background from "../../../../assets/images/login-background.png";
@@ -18,7 +18,7 @@ export default function MyPersonalData() {
     aboutme: "",
   });
 
-  const breadcrumb_items = [
+  const breadcrumbItems = [
     {
       text: "Mi Perfil",
     },
@@ -41,44 +41,34 @@ export default function MyPersonalData() {
   }
 
   return (
-    <div className="content my-profile-content">
-      <div>
-        <Breadcrumb items={breadcrumb_items} />
-
-        <h1 className="title-1">Hola, Rubén!</h1>
-      </div>
-
-      <div className="my-data">
-        <div className="images-container">
+    <Wrapper_1 title="Hola, Rubén!" breadcrumbItems={breadcrumbItems}>
+      <div className="images-container">
+        <img
+          className="banner-image"
+          src={Background}
+          alt="perfil de usuario"
+          width="75px"
+        />
+        <button className="edit-banner" onClick={getFileBanner}>
+          <img src={PencilIcon} width="15px" alt="edit banner image icon" />
+        </button>
+        <div className="profile-wrapper">
           <img
-            className="banner-image"
-            src={Background}
+            className="profile-image"
+            src={Avatar}
             alt="perfil de usuario"
             width="75px"
           />
-          <button className="edit-banner" onClick={getFileBanner}>
-            <img src={PencilIcon} width="15px" alt="edit banner image icon" />
+          <button className="edit-profile" onClick={getFileProfile}>
+            <img src={PencilIcon} width="15px" alt="edit profile image icon" />
           </button>
-          <div className="profile-wrapper">
-            <img
-              className="profile-image"
-              src={Avatar}
-              alt="perfil de usuario"
-              width="75px"
-            />
-            <button className="edit-profile" onClick={getFileProfile}>
-              <img
-                src={PencilIcon}
-                width="15px"
-                alt="edit profile image icon"
-              />
-            </button>
-          </div>
-          <input type="file" ref={inputFileBanner} className="d-none" />
-          <input type="file" ref={inputFileProfile} className="d-none" />
         </div>
+        <input type="file" ref={inputFileBanner} className="d-none" />
+        <input type="file" ref={inputFileProfile} className="d-none" />
+      </div>
 
-        <div className="input-grid">
+      <div className="content-mobile-padding w-100p">
+        <div className="my-profile-input-grid">
           <div className="d-flex flex-column">
             <h2 className="title-2 text-gray-1 font-0">Datos personales</h2>
             <label className="no-display-tablet">Nombre y Apellido*</label>
@@ -163,6 +153,6 @@ export default function MyPersonalData() {
           <button className="blue-button">Guardar</button>
         </div>
       </div>
-    </div>
+    </Wrapper_1>
   );
 }

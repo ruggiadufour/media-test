@@ -1,0 +1,49 @@
+.mbroker-input-grid {
+  display: grid;
+  gap: 1rem;
+
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  @media (max-width: $break-laptop) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media (max-width: $break-tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.create-event-description {
+  display: flex;
+  border: solid thin $gray-4;
+  padding: 1rem;
+  border-radius: 5px;
+  gap: 1rem;
+  min-height: 150px;
+
+  & > textarea {
+    width: 60%;
+    border: none;
+    font-size: 13px;
+    color: $gray-9;
+    border-right: solid thin $gray-4;
+  }
+  & > button {
+    background-color: #fff;
+    border-radius: 5px;
+    color: $gray-4;
+    width: 40%;
+    height: 50px;
+    border: dotted thin $gray-4;
+  }
+
+  @media (max-width: $break-tablet) {
+    flex-wrap: wrap;
+    & > textarea {
+      width: 100%;
+      border: solid thin $gray-4;
+      border-radius: 5px;
+    }
+    & > button {
+      width: 100%;
+    }
+  }
+}

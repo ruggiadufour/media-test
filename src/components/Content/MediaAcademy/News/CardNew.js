@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../../../assets/svgs/brand-logo.svg";
-
+import Wrapper_2 from "../../Wrapper_2";
 export default function CardNew({
   image,
   title,

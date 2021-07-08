@@ -22,7 +22,7 @@ export default function Deployable({
       </button>
 
       {subButtons.length !== 0 && (
-        <div className={`deploy w-100 ${deploy ? "deployed" : "undeployed"}`}>
+        <div className={`w-100 ${deploy ? "h-animation-open" : "h-animation-close"}`}>
           {subButtons.map((btn, i) => (
             <SidebarButton key={i} {...btn} onClick={onClick} />
           ))}
