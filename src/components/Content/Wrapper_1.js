@@ -19,9 +19,9 @@ export default function Wrapper_1({
         <div className="wrapper-title d-flex flex-wrap justify-content-between align-items-center">
           <h1 className="title-1 m-0">{title}</h1>
 
-          {rightLink && (
+          {rightLink?.text && (
             <Link
-              to={`/clientes/mediacore/contenido${rightLink.route}`}
+              to={rightLink.route}
               className="text-decoration-none text-gray-9 d-flex justify-content-center align-items-center gap-2"
             >
               <img src={rightLink.icon} alt={rightLink.text} />

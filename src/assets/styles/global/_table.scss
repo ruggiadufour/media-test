@@ -1,7 +1,7 @@
 .tables-wrapper {
   width: 100%;
-  overflow: auto;
   margin: auto;
+  overflow: auto;
 
   @media (max-width: $break-desktop) {
     width: 700px;
@@ -17,23 +17,8 @@
 .common-table {
   text-align: center;
   font-family: "CircularStd-Book";
-  margin-bottom: 2rem;
-  width: 100% ;
-
-  //   Header
-  th {
-    border-top: solid thin $gray-4;
-    border-bottom: solid thin $gray-4;
-    padding: 0.5rem 25px;
-    font-weight: 400;
-    white-space: nowrap;
-    position: relative;
-
-    & button {
-      position: absolute;
-      left: 0;
-    }
-  }
+  width: 100%;
+  height: 50px;
 
   & td:nth-child(1),
   & th:nth-child(1) {
@@ -45,6 +30,26 @@
     padding: 1rem 5px;
     white-space: nowrap;
   }
+}
+
+.collapse-table {
+  border-top: solid thin $gray-4;
+  border-bottom: solid thin $gray-4;
+  padding: 0.5rem 25px;
+  font-weight: 400;
+  white-space: nowrap;
+  position: relative;
+  cursor: pointer;
+  min-height: 42px;
+
+  & button {
+    position: absolute;
+    left: 0;
+  }
+}
+.collapse-table-not-has-preheader {
+  position: absolute;
+  width: 100%;
 }
 
 .open-table-content {
@@ -70,4 +75,16 @@
 }
 .state-false {
   background-color: $gray-10;
+}
+
+// Transition
+.table-animation-close {
+  transition: max-height 0.5s;
+  overflow: hidden;
+  max-height: 42px;
+}
+.table-animation-open {
+  transition: max-height 1.5s;
+  max-height: 1000px;
+  overflow: hidden;
 }

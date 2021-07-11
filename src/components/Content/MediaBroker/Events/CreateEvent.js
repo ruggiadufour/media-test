@@ -1,21 +1,24 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Wrapper_1 from "../../Wrapper_1";
-import InputDate from "../../../Globals/InputDate";
+import InputDateTime from "../../../Globals/DateTimeInput";
+import { routes } from "../../../../static_data/routes";
 
 export default function CreateEvent() {
   const descriptionRef = useRef();
+  const [dateTime, setDateTime] = useState(new Date())
 
   const breadcrumbItems = [
     {
       text: "MediaBroker®",
-      route: "/media-broker/acerca",
+      route: routes.mediaBroker.about,
     },
     {
       text: "Eventos",
-      route: "/media-broker/eventos",
+      route: routes.mediaBroker.events,
     },
     {
       text: "Nuevo evento",
+      route: routes.mediaBroker.createEvent,
     },
   ];
   return (
@@ -51,23 +54,9 @@ export default function CreateEvent() {
           </div>
           <div className="d-flex flex-column w-100p">
             <label className="font-1">Fecha del Evento/Capacitación</label>
-            <input
-              className="common-input w-100p"
-              onChange={() => {}}
-              type="date"
-              name="event_name"
-            />
-            {/* <InputDate /> */}
+            <InputDateTime dateTime={dateTime} setDateTime={setDateTime} /> 
           </div>
-          <div className="d-flex flex-column w-100p">
-            <label className="font-1">Hora del Evento/Capacitación</label>
-            <input
-              className="common-input w-100"
-              onChange={() => {}}
-              type="time"
-              name="event_name"
-            />
-          </div>
+        
         </div>
 
         <div className="d-flex flex-column w-100p mt-1r">

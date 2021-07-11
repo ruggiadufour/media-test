@@ -6,6 +6,9 @@ import AddIcon from "../../../../assets/svgs/add-icon.svg";
 import SearchIcon from "../../../../assets/svgs/search-icon.svg";
 import Wrapper_2 from "../../Wrapper_2";
 import Avatar from "../../../../assets/images/avatar.png";
+import Table from "../../Table";
+
+import { routes } from "../../../../static_data/routes";
 
 // Mock data
 const events = [
@@ -55,10 +58,11 @@ export default function Events() {
   const breadcrumbItems = [
     {
       text: "MediaBroker®",
-      route:"/media-broker/acerca"
+      route: routes.mediaBroker.about,
     },
     {
       text: "Eventos",
+      route: routes.mediaBroker.events,
     },
   ];
   return (
@@ -66,7 +70,7 @@ export default function Events() {
       title="Eventos"
       breadcrumbItems={breadcrumbItems}
       rightLink={{
-        route: "/media-broker/eventos/crear-evento",
+        route: routes.mediaBroker.createEvent,
         text: "Nuevo evento",
         icon: AddIcon,
       }}
@@ -113,70 +117,47 @@ export default function Events() {
 }
 
 function EventsTable({ events, status }) {
-  const [open, setOpen] = useState(true);
-  function handleOpen() {
-    setOpen((o) => !o);
-  }
-
   return (
-    <table className="common-table mb-5">
-      <thead>
-        <tr onClick={handleOpen}>
-          <th className="width-100">
-            <button className="arrow-icon-button">
-              <img
-                className={`${open ? "" : "rotate-icon-180"}`}
-                src={ArrowUpIcon}
-                alt="abrir tabla"
-              />
+    <Table
+      TitleButton={
+        <>
+          {status} <span className="text-gray-4">( {events.length} )</span>
+        </>
+      }
+      hasPreHeader={true}
+      TableHeader={
+        <tr>
+          <th className="width-100">Evento</th>
+          <th>Sala</th>
+          <th>Nivel</th>
+          <th>Referente</th>
+          <th>Fecha</th>
+          <th>Acciones</th>
+        </tr>
+      }
+      TableRows={events.map((event, i) => (
+        <tr key={i} className="text-nowrap">
+          <td>{event.title}</td>
+          <td>{event.room}</td>
+          <td>{event.level}</td>
+          <td>
+            <img
+              src={Avatar}
+              alt="creador de la novedad"
+              className="me-2"
+              width="35px"
+            />
+            {event.host}
+          </td>
+          <td>{event.date}</td>
+          <td>
+            <button className="button-no-styled ">
+              <img src={EditIcon} alt="editar novedad" className="me-3" />
+              <img src={DeleteIcon} alt="editar novedad" />
             </button>
-            {status}
-            <span className="text-gray-4">{` ( ${events.length} )`}</span>
-          </th>
-          <th></th>
-          <th></th>
-          <th></th>
-          <th></th>
-          <th></th>
+          </td>
         </tr>
-      </thead>
-
-      <tbody
-        hidden={!open}
-        className={`${open ? "h-animation-open" : "h-animation-close"}`}
-      >
-        <tr className="text-nowrap">
-          <td>Evento</td>
-          <td>Sala</td>
-          <td>Nivel</td>
-          <td>Referente</td>
-          <td>Fecha</td>
-          <td>Acciones</td>
-        </tr>
-        {events.map((event, i) => (
-          <tr key={i} className="text-nowrap">
-            <td>{event.title}</td>
-            <td>{event.room}</td>
-            <td>{event.level}</td>
-            <td>
-              <img
-                src={Avatar}
-                alt="creador de la novedad"
-                className="me-2"
-                width="35px"
-              />
-              {event.host}
-            </td>
-            <td>{event.date}</td>
-            <td>
-              <button className="button-no-styled ">
-                <img src={EditIcon} alt="editar novedad" className="me-3" />
-                <img src={DeleteIcon} alt="editar novedad" />
-              </button>
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+      ))}
+    />
   );
 }

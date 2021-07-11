@@ -19,7 +19,7 @@ export default function Wrapper_2({
 
           {rightLink && (
             <Link
-              to={`/clientes/mediacore/contenido${rightLink.route}`}
+              to={rightLink.route}
               className="text-decoration-none text-gray-9 d-flex justify-content-center align-items-center gap-2"
             >
               <img src={rightLink.icon} alt={rightLink.text} />

@@ -1,26 +1,25 @@
 import React, { useState } from "react";
-import Breadcrumb from "../../Breadcrumb";
 
 import Wrapper_1 from "../../Wrapper_1";
 import { routes } from "../../../../static_data/routes";
 
-export default function NewFilter() {
+export default function CreateEntrepreneurship() {
   const breadcrumbItems = [
     {
-      text: "MediaBlog®",
-      route: routes.base,
+      text: "MediaInvestor®",
+      route: routes.mediaInvestor.about,
     },
     {
-      text: "Filtros",
-      route: routes.mediaBlog.filters,
+      text: "Emprendimientos",
+      route: routes.mediaInvestor.entrepreneurships,
     },
     {
-      text: "Nuevo filtro",
-      route: routes.mediaBlog.createFilter,
+      text: "Nuevo emprendimiento",
+      route: routes.mediaInvestor.createEntrepreneurship,
     },
   ];
   return (
-    <Wrapper_1 breadcrumbItems={breadcrumbItems} title="Nuevo filtro">
+    <Wrapper_1 breadcrumbItems={breadcrumbItems} title="Nuevo emprendimiento">
       <div className="content-mobile-padding w-100">
         <div className="d-flex flex-column align-items-start w-100">
           <label>Nombre</label>

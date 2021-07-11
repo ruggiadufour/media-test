@@ -14,12 +14,13 @@ import ArrowUpIcon from "../../assets/svgs/arrow-up-gray-icon.svg";
 import ArrowDownIcon from "../../assets/svgs/arrow-down-gray-icon.svg";
 import LabelIcon from "../../assets/svgs/label-icon.svg";
 import Gear2Icon from "../../assets/svgs/gear-2-icon.svg";
-import CalendarIcon from "../../assets/svgs/calendar-icon.svg";
+import CalendarIcon from "../../assets/svgs/checked-calendar-icon.svg";
 import RoomIcon from "../../assets/svgs/room-icon.svg";
 import PeopleIcon from "../../assets/svgs/people-icon.svg";
 
 import DeployableButton from "./DeployableButton";
 import { DeployableSettings } from "../Header/Header";
+import { routes } from "../../static_data/routes";
 
 const assets_path = "assets";
 
@@ -29,14 +30,14 @@ const DeployableButtons = [
     deployed: true,
     subButtons: [
       {
-        text: "Acerca de MH®",
-        rightIcon: AboutIcon,
-        route: "/clientes/mediacore/contenido/media-host/acerca",
-      },
-      {
         text: "Soporte",
         rightIcon: GearIcon,
-        route: "/clientes/mediacore/contenido/media-host/soporte",
+        route: routes.mediaHost.support,
+      },
+      {
+        text: "Acerca de MH®",
+        rightIcon: AboutIcon,
+        route: routes.mediaHost.about,
       },
     ],
   },
@@ -46,12 +47,12 @@ const DeployableButtons = [
       {
         text: "Novedades",
         rightIcon: DocIcon,
-        route: "/clientes/mediacore/contenido/media-academy/novedades",
+        route: routes.mediaAcademy.news,
       },
       {
         text: "Acerca de MA®",
         rightIcon: DocIcon,
-        route: "/clientes/mediacore/contenido/media-academy/acerca",
+        route: routes.mediaAcademy.about,
       },
     ],
   },
@@ -67,12 +68,12 @@ const DeployableButtons = [
       {
         text: "Novedades",
         rightIcon: DocIcon,
-        route: "/clientes/mediacore/contenido/media-blog/novedades",
+        route: routes.mediaBlog.news,
       },
       {
         text: "Filtros",
         rightIcon: LabelIcon,
-        route: "/clientes/mediacore/contenido/media-blog/filtros",
+        route: routes.mediaBlog.filters,
       },
     ],
   },
@@ -80,6 +81,28 @@ const DeployableButtons = [
     text: "MediaInvestor®",
     subButtons: [],
     rightIcon: LockIcon,
+    subButtons:[
+      {
+        text: "Novedades",
+        rightIcon: DocIcon,
+        route: routes.mediaInvestor.news,
+      },
+      {
+        text: "Emprendimientos",
+        rightIcon: LabelIcon,
+        route: routes.mediaInvestor.entrepreneurships,
+      },
+      {
+        text: "Inversores",
+        rightIcon: PeopleIcon,
+        route: routes.mediaInvestor.investors,
+      },
+      {
+        text: "Acerca de MI®",
+        rightIcon: DocIcon,
+        route: routes.mediaInvestor.about,
+      },
+    ]
   },
   {
     text: "MediaBroker®",
@@ -87,24 +110,24 @@ const DeployableButtons = [
     rightIcon: LockIcon,
     subButtons: [
       {
-        text: "Acerca de MB®",
-        rightIcon: DocIcon,
-        route: "/clientes/mediacore/contenido/media-broker/acerca",
-      },
-      {
         text: "Eventos",
         rightIcon: CalendarIcon,
-        route: "/clientes/mediacore/contenido/media-broker/eventos",
+        route: routes.mediaBroker.events,
       },
       {
         text: "Salas",
         rightIcon: RoomIcon,
-        route: "/clientes/mediacore/contenido/media-broker/salas",
+        route: routes.mediaBroker.rooms,
       },
       {
         text: "Usuarios",
         rightIcon: PeopleIcon,
-        route: "/clientes/mediacore/contenido/media-broker/usuarios",
+        route: routes.mediaBroker.users,
+      },
+      {
+        text: "Acerca de MB®",
+        rightIcon: DocIcon,
+        route: routes.mediaBroker.about,
       },
     ],
   },
@@ -120,7 +143,7 @@ export default function Sidebar({ setMenu }) {
 
   function pushUrl(url) {
     closeMenu();
-    router.push("/clientes/mediacore" + url);
+    router.push(url);
   }
   function closeMenu() {
     setMenu(false);
@@ -146,7 +169,7 @@ export default function Sidebar({ setMenu }) {
           floatIcon={ProfileIcon}
           text={"Mi perfil"}
           onClick={() => {
-            pushUrl("/contenido/mi-perfil/mis-datos");
+            pushUrl(routes.myProfile.myData);
           }}
         ></AccountButton>
         <AccountButton
@@ -167,14 +190,14 @@ export default function Sidebar({ setMenu }) {
             text="- Facturación"
             className="small-font mt-3"
             onClick={() => {
-              pushUrl("/contenido/facturacion/datos-de-facturacion");
+              pushUrl(routes.billing.billingData);
             }}
           ></AccountButton>
           <AccountButton
             className="mt-3 small-font"
             text="- Estado de cuenta"
             onClick={() => {
-              pushUrl("/contenido/facturacion/estado-de-cuenta");
+              pushUrl(routes.billing.accountState);
             }}
           ></AccountButton>
         </div>
@@ -197,7 +220,7 @@ export default function Sidebar({ setMenu }) {
           className="mt-4"
           text={"Cerrar sesión"}
           onClick={() => {
-            pushUrl("/login");
+            pushUrl(routes.session.login);
           }}
         ></AccountButton>
       </div>

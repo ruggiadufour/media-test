@@ -1,19 +1,22 @@
 import React, { useState } from "react";
 import Wrapper_1 from "../../Wrapper_1";
 
+import { routes } from "../../../../static_data/routes";
+
 export default function CreateRoom() {
-    const [modality, setModality] = useState(false)
+  const [modality, setModality] = useState(false);
   const breadcrumbItems = [
     {
       text: "MediaBroker®",
-      route: "/media-broker/acerca",
+      route: routes.mediaBroker.about,
     },
     {
       text: "Salas",
-      route: "/media-broker/salas",
+      route: routes.mediaBroker.rooms,
     },
     {
       text: "Nueva sala",
+      route: routes.mediaBroker.createRoom,
     },
   ];
   return (
@@ -23,7 +26,9 @@ export default function CreateRoom() {
           <label className="font-1">Modalidad</label>
           <div className="mt-2 mb-4 d-flex">
             <span
-              className={`font-1 small-font active-button-${modality ? "blue" : "gray"}`}
+              className={`font-1 small-font active-button-${
+                modality ? "blue" : "gray"
+              }`}
               onClick={() => {
                 setModality((m) => true);
               }}
@@ -31,7 +36,9 @@ export default function CreateRoom() {
               Presencial
             </span>
             <span
-              className={`font-1 small-font active-button-${modality ? "gray" : "blue"}`}
+              className={`font-1 small-font active-button-${
+                modality ? "gray" : "blue"
+              }`}
               onClick={() => {
                 setModality((m) => false);
               }}

@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../../../assets/svgs/brand-logo.svg";
 import Wrapper_2 from "../../Wrapper_2";
+
+import { routes } from "../../../../static_data/routes";
+
 export default function CardNew({
   image,
   title,
@@ -24,7 +27,7 @@ export default function CardNew({
         <div className="button-date-container">
           <div>
             <Link
-              to="/clientes/mediacore/contenido/media-academy/novedades/titulo-novedad"
+              to={routes.mediaAcademy.new}
               className="blue-button text-decoration-none"
             >
               Ver

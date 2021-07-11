@@ -9,16 +9,20 @@ import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 // import { draftToMarkdown } from "markdown-draft-js";
 // draftToMarkdown(convertToRaw(editorState.getCurrentContent()))
 
+import { routes } from "../../../../static_data/routes";
+
 const breadcrumbItems = [
   {
     text: "MediaBlog®",
+    route: routes.base
   },
   {
     text: "Novedades",
-    route: "/media-blog/novedades",
+    route: routes.mediaBlog.news,
   },
   {
     text: "Nueva novedad",
+    route: routes.mediaBlog.createNew
   },
 ];
 
@@ -131,7 +135,9 @@ export default function CreateNew() {
           <label className="font-1">Activo</label>
           <div className="mt-2 mb-4 d-flex">
             <span
-              className={`font-1 small-font active-button-${active ? "black" : "gray"}`}
+              className={`font-1 small-font active-button-${
+                active ? "black" : "gray"
+              }`}
               onClick={() => {
                 setActive((a) => true);
               }}
@@ -139,7 +145,9 @@ export default function CreateNew() {
               Si
             </span>
             <span
-              className={`font-1 small-font active-button-${active ? "gray" : "black"}`}
+              className={`font-1 small-font active-button-${
+                active ? "gray" : "black"
+              }`}
               onClick={() => {
                 setActive((a) => false);
               }}

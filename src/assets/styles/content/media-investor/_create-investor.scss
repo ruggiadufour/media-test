@@ -1,0 +1,9 @@
+.mi-grid-create-investor{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 2rem;
+
+    @media (max-width: $break-laptop){
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,20 +1,23 @@
 import React, { useState } from "react";
 import Wrapper_1 from "../../Wrapper_1";
 
+import { routes } from "../../../../static_data/routes";
+
 export default function CreateUser() {
   const [type, setType] = useState(1);
   const [active, setActive] = useState(false);
   const breadcrumbItems = [
     {
       text: "MediaBroker®",
-      route: "/media-broker/acerca",
+      route: routes.mediaBroker.about,
     },
     {
       text: "Usuarios",
-      route: "/media-broker/usuarios",
+      route: routes.mediaBroker.users,
     },
     {
       text: "Nuevo usuario",
+      route: routes.mediaBroker.createUser,
     },
   ];
   return (
@@ -58,12 +61,22 @@ export default function CreateUser() {
           </div>
 
           <div className="d-flex flex-column ">
-            <label className="font-1">Nivel</label>
-            <select disabled className="common-input " onChange={() => {}}>
+            <label className={`font-1 ${type !== 3 ? "text-gray-13" : ""}`}>
+              Nivel
+            </label>
+            <select
+              disabled={type !== 3}
+              className="common-input "
+              onChange={() => {}}
+            >
               <option value="value1">Inicial</option>
+              <option value="value2">Intermedio</option>
+              <option value="value3">Avanzado</option>
             </select>
           </div>
+        </div>
 
+        <div className="grid-3-col mt-3">
           <div className="d-flex flex-column ">
             <label className="font-1">Nombre*</label>
             <input className="common-input" onChange={() => {}} type="text" />
@@ -78,13 +91,15 @@ export default function CreateUser() {
             <label className="font-1">Teléfono/WhatsApp*</label>
             <input className="common-input" onChange={() => {}} type="text" />
           </div>
+        </div>
 
+        <div className="grid-3-col mt-3">
           <div className="d-flex flex-column ">
             <label className="font-1">Usuario*</label>
             <input className="common-input" onChange={() => {}} type="text" />
           </div>
 
-          <div className="d-flex flex-column ">
+          <div className="d-flex flex-column">
             <label className="font-1">Contraseña*</label>
             <input className="common-input" onChange={() => {}} type="text" />
           </div>

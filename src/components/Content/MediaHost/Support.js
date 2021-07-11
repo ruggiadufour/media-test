@@ -5,6 +5,10 @@ import SearchIcon from "../../../assets/svgs/search-icon.svg";
 import ArrowUpIcon from "../../../assets/svgs/arrow-up-icon.svg";
 import AddIcon from "../../../assets/svgs/add-icon.svg";
 import Wrapper_2 from "../Wrapper_2";
+import Table from "../Table";
+
+import { routes } from "../../../static_data/routes";
+
 // Mock data
 const tables = [
   [
@@ -45,10 +49,11 @@ export default function Support() {
   const breadcrumbItems = [
     {
       text: "MediaHost®",
-      route: "/media-host/acerca",
+      route: routes.mediaHost.about,
     },
     {
       text: "Soporte",
+      route: routes.mediaHost.support,
     },
   ];
   return (
@@ -56,7 +61,7 @@ export default function Support() {
       title="Soporte"
       breadcrumbItems={breadcrumbItems}
       rightLink={{
-        route: "/media-host/soporte/crear-ticket",
+        route: routes.mediaHost.createTicket,
         text: "Abrir nuevo Ticket",
         icon: AddIcon,
       }}
@@ -84,42 +89,29 @@ function TicketTable({ tickets }) {
   }
 
   return (
-    <table className="common-table">
-      <thead>
-        <tr onClick={handleOpen}>
-          <th className="width-100">
-            <button className="arrow-icon-button">
-              <img
-                className={`${open ? "" : "rotate-icon-180"}`}
-                src={ArrowUpIcon}
-                alt="abrir tabla"
-              />
-            </button>
-            Número de Ticket
-          </th>
+    <Table
+      TitleButton=""
+      hasPreHeader={false}
+      TableHeader={
+        <tr className="text-nowrap">
+          <th className="width-100">Número de Ticket</th>
           <th>Asunto</th>
           <th>Estado</th>
           <th>Última actualización</th>
         </tr>
-      </thead>
-
-      <tbody
-        hidden={!open}
-        className={`${open ? "open-table-content" : "close-table-content"}`}
-      >
-        {tickets.map((ticket, i) => (
-          <tr key={i}>
-            <td>{ticket.number}</td>
-            <td>{ticket.matter}</td>
-            <td>
-              <div className={`font-1 state-${ticket.state}`}>
-                {ticket.state ? "ABIERTO" : "PENDIENTE"}
-              </div>
-            </td>
-            <td>{ticket.last_update}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+      }
+      TableRows={tickets.map((ticket, i) => (
+        <tr key={i}>
+          <td>{ticket.number}</td>
+          <td>{ticket.matter}</td>
+          <td>
+            <div className={`font-1 state-${ticket.state}`}>
+              {ticket.state ? "ABIERTO" : "PENDIENTE"}
+            </div>
+          </td>
+          <td>{ticket.last_update}</td>
+        </tr>
+      ))}
+    />
   );
 }

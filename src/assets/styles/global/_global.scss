@@ -48,6 +48,10 @@ body {
     color: transparent;
   }
 
+  &:disabled{
+    color: $gray-12;
+  }
+
   @media (max-width: $break-tablet) {
     // color: $gray-6;
     font-size: 13px;
@@ -145,11 +149,11 @@ body {
 }
 
 .opacity-transition-0 {
-  transition: opacity 1.5s;
+  transition: opacity .5s;
   opacity: 0;
 }
 .opacity-transition-100 {
-  transition: opacity 1.5s;
+  transition: opacity .75s;
   opacity: 1;
 }
 

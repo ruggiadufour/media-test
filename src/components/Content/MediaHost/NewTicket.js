@@ -10,18 +10,21 @@ import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 // import { draftToMarkdown } from "markdown-draft-js";
 // draftToMarkdown(convertToRaw(editorState.getCurrentContent()))
 
+import { routes } from "../../../static_data/routes";
+
 export default function NewTicket() {
   const breadcrumbItems = [
     {
       text: "MediaHost®",
-      route: "/media-host/acerca",
+      route: routes.mediaHost.about,
     },
     {
       text: "Soporte",
-      route: "/media-host/soporte",
+      route: routes.mediaHost.support,
     },
     {
       text: "Crear nuevo Ticket",
+      route: routes.mediaHost.createTicket,
     },
   ];
 
@@ -32,7 +35,7 @@ export default function NewTicket() {
 
   return (
     <Wrapper_1 title="Crear nuevo Ticket" breadcrumbItems={breadcrumbItems}>
-      <div className="content-mobile-padding">
+      <div className="content-mobile-padding w-100p">
         <div className="grid-3-col">
           <div className="d-flex flex-column ">
             <label className="font-1">Creado por</label>

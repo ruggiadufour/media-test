@@ -7,6 +7,9 @@ import MarketingImage from "../../../../assets/images/temporal/marketing.png";
 import VideoImage from "../../../../assets/images/temporal/video.png";
 import SocialMediaImage from "../../../../assets/images/temporal/socialmedia.png";
 import Wrapper_2 from "../../Wrapper_2";
+
+import { routes } from "../../../../static_data/routes";
+
 // Mock data
 const news = [
   {
@@ -50,10 +53,11 @@ export default function News() {
   const breadcrumbItems = [
     {
       text: "MediaAcademy®",
-      route: "/media-academy/acerca",
+      route: routes.mediaAcademy.about,
     },
     {
       text: "Novedades",
+      route: routes.mediaAcademy.news,
     },
   ];
   return (

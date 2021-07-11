@@ -16,49 +16,42 @@ import { routes } from "../../../../static_data/routes";
 const news = [
   {
     title: "Media Haus 1",
-    important: false,
     creator: "Hernán Obarrio",
     date: "18/02/2021",
     finished: false,
   },
   {
     title: "Media Haus 2",
-    important: true,
     creator: "Hernán Obarrio",
     date: "18/02/2021",
     finished: false,
   },
   {
     title: "Media Haus 3",
-    important: true,
     creator: "Hernán Obarrio",
     date: "18/02/2021",
     finished: false,
   },
   {
     title: "Media Haus 4",
-    important: false,
     creator: "Hernán Obarrio",
     date: "18/02/2021",
     finished: false,
   },
   {
     title: "Media Haus 5",
-    important: false,
     creator: "Hernán Obarrio",
     date: "18/02/2021",
     finished: false,
   },
   {
     title: "Media Haus 6",
-    important: false,
     creator: "Hernán Obarrio",
     date: "18/02/2021",
     finished: false,
   },
   {
     title: "Media Haus 7",
-    important: false,
     creator: "Hernán Obarrio",
     date: "18/02/2021",
     finished: true,
@@ -68,12 +61,12 @@ const news = [
 export default function News() {
   const breadcrumbItems = [
     {
-      text: "MediaBlog®",
-      route: routes.base,
+      text: "MediaInvestor®",
+      route: routes.mediaInvestor.about,
     },
     {
       text: "Novedades",
-      route: routes.mediaBlog.news,
+      route: routes.mediaInvestor.news,
     },
   ];
   return (
@@ -83,7 +76,7 @@ export default function News() {
       rightLink={{
         text: "Nueva Novedad",
         icon: AddIcon,
-        route: routes.mediaBlog.createNew,
+        route: routes.mediaInvestor.createNew,
       }}
     >
       <div className="content-mobile-padding w-100p">
@@ -111,7 +104,7 @@ function NewsTable({ news, isFinished = false }) {
     <Table
       TitleButton={
         <>
-          {isFinished ? "Finalizadas" : "Actuales"}{" "}
+          {isFinished ? "Finalizadas " : "Actuales "}
           <span className="text-gray-4">( {news.length} )</span>
         </>
       }
@@ -119,7 +112,6 @@ function NewsTable({ news, isFinished = false }) {
       TableHeader={
         <tr className="text-nowrap">
           <th className="width-100">Título de la Nota</th>
-          <th>Nota Destacada</th>
           <th>Creador</th>
           <th>Fecha</th>
           <th>Acciones</th>
@@ -128,14 +120,6 @@ function NewsTable({ news, isFinished = false }) {
       TableRows={news.map((new_, i) => (
         <tr key={i} className="text-nowrap">
           <td>{new_.title}</td>
-          <td>
-            <input
-              type="checkbox"
-              className="checkbox"
-              checked={new_.important}
-              onChange={() => {}}
-            />
-          </td>
           <td>
             <img
               src={Avatar}

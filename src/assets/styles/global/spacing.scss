@@ -25,10 +25,20 @@
 }
 
 .width-100{
-  width: 100px;
+  width: 100px!important;
+}
+.width-200{
+  width: 200px;
+}
+.width-300{
+  width: 300px;
 }
 .miw-100{
   min-width: 100px;
+  width: 100%;
+}
+.miw-20{
+  min-width: 20px;
   width: 100%;
 }
 .mxw-200{
@@ -63,13 +73,26 @@
 
 
 // Margin
-@for $i from 1 through 10 {
+@for $i from 1 through 20 {
   .mt-#{$i}r {
     margin-top: #{$i}rem;
   }
 }
-@for $i from 1 through 10 {
+@for $i from 1 through 20 {
   .mb-#{$i}r {
     margin-bottom: #{$i}rem;
+  }
+}
+@for $i from 1 through 20 {
+  .my-#{$i}r {
+    margin-top: #{$i}rem;
+    margin-bottom: #{$i}rem;
+  }
+}
+
+// Padding
+@for $i from 1 through 20 {
+  .p-#{$i}r {
+    padding: #{$i}rem;
   }
 }

@@ -1,0 +1,32 @@
+.mi-create-new-step {
+  padding: 1rem;
+  background-color: $gray-14;
+
+  @media (max-width: $break-laptop) {
+    padding: 0;
+    margin-bottom: 1.5rem;
+    background-color: transparent;
+
+    > div {
+      min-width: 100%;
+    }
+  }
+}
+
+.mi-investor-checkboxes {
+  max-height: 100px;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $gray-15;
+    border-radius: 3px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $blue-1;
+    border-radius: 3px;
+  }
+}

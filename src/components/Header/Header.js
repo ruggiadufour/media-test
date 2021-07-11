@@ -12,6 +12,8 @@ import ArrowUpIcon from "../../assets/svgs/arrow-up-gray-icon.svg";
 import ArrowDownIcon from "../../assets/svgs/arrow-down-gray-icon.svg";
 import Gear2Icon from "../../assets/svgs/gear-2-icon.svg";
 
+import { routes } from "../../static_data/routes";
+
 export default function Header({ setMenu, menu }) {
   const [openSettings, setOpenSettings] = useState(false);
 
@@ -26,7 +28,7 @@ export default function Header({ setMenu, menu }) {
         <div></div>
       </div>
 
-      <NavLink className="brand text-decoration-none" to="/clientes/mediacore">
+      <NavLink className="brand text-decoration-none" to={routes.base}>
         MediaCore®
       </NavLink>
 
@@ -64,7 +66,7 @@ export function DeployableSettings({ openSettings, setOpenSettings }) {
   const [openAccount, setOpenAccount] = useState(false);
 
   function pushUrl(url) {
-    router.push("/clientes/mediacore" + url);
+    router.push(url);
   }
 
   function handleClick(url) {
@@ -84,7 +86,7 @@ export function DeployableSettings({ openSettings, setOpenSettings }) {
           icon={ProfileIcon}
           text={"Mi perfil"}
           className="text-gray-1 w-100"
-          onClick={() => handleClick("/contenido/mi-perfil/mis-datos")}
+          onClick={() => handleClick(routes.myProfile.myData)}
         ></AccountButton>
         <AccountButton
           icon={Gear2Icon}
@@ -107,7 +109,7 @@ export function DeployableSettings({ openSettings, setOpenSettings }) {
             className="text-gray-1 mt-3 small-font"
             text="Facturación"
             onClick={() => {
-              handleClick("/contenido/facturacion/datos-de-facturacion");
+              handleClick(routes.billing.billingData);
             }}
           ></AccountButton>
           <AccountButton
@@ -115,7 +117,7 @@ export function DeployableSettings({ openSettings, setOpenSettings }) {
             className="text-gray-1 small-font"
             text="Estado de cuenta"
             onClick={() => {
-              handleClick("/contenido/facturacion/estado-de-cuenta");
+              handleClick(routes.billing.accountState);
             }}
           ></AccountButton>
         </div>
@@ -124,7 +126,7 @@ export function DeployableSettings({ openSettings, setOpenSettings }) {
           icon={CloseIcon}
           text={"Cerrar sesión"}
           className="text-gray-1 pb-3"
-          onClick={() => pushUrl("/login")}
+          onClick={() => pushUrl(routes.session.login)}
         ></AccountButton>
       </div>
     </div>

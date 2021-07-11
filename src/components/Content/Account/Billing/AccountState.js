@@ -10,6 +10,7 @@ import ArrowDownIcon from "../../../../assets/svgs/arrow-down-icon.svg";
 import SearchIcon from "../../../../assets/svgs/search-icon.svg";
 import CheckedIcon from "../../../../assets/svgs/checked-icon.svg";
 import Wrapper_2 from "../../Wrapper_2";
+import Table from "../../Table";
 
 // mock data
 const periods = [
@@ -134,18 +135,12 @@ function PeriodTable({ period }) {
   }
 
   return (
-    <table className="common-table">
-      <thead>
-        <tr onClick={handleOpen}>
+    <Table
+      TitleButton={``}
+      TableHeader={
+        <tr className="text-nowrap">
           <th>
-            <button className="arrow-icon-button">
-              <img
-                className={`${open ? "" : "rotate-icon-180"}`}
-                src={ArrowUpIcon}
-                alt="abrir tabla"
-              />
-            </button>
-            Período <span className="text-gray-4">( 4 )</span>
+            Período <span className="text-gray-4">( {period.length} )</span>
           </th>
           <th>Monto Final</th>
           <th>Estado</th>
@@ -154,49 +149,43 @@ function PeriodTable({ period }) {
           <th>Fecha Imputación</th>
           <th>Acciones</th>
         </tr>
-      </thead>
-
-      <tbody
-        hidden={!open}
-        className={`${open ? "open-table-content" : "close-table-content"}`}
-      >
-        {period.map((data, i) => (
-          <tr key={i}>
-            <td className={`${data.state ? "" : "text-blue-1 fw-bold"}`}>
-              {data.period}
-            </td>
-            <td>{data.price}</td>
-            <td>
-              <div className={`state-${data.state}`}>
-                {data.state ? "PAGADA" : "PENDIENTE"}
-              </div>
-            </td>
-            <td>{data.date}</td>
-            <td>{data.expiration}</td>
-            <td>{data.imputation}</td>
-            <td>
-              <button
-                disabled={!data.state}
-                className="arrow-icon-button disabled={data.state} me-2"
-              >
-                {data.state ? (
-                  <img src={EyeIcon} alt="mirar facturacion" />
-                ) : (
-                  <img src={EyeGrayIcon} alt="mirar facturacion" />
-                )}
-              </button>
-              <button disabled={!data.state} className="arrow-icon-button">
-                {data.state ? (
-                  <img src={DownloadIcon} alt="mirar facturacion" />
-                ) : (
-                  <img src={DownloadGrayIcon} alt="mirar facturacion" />
-                )}
-              </button>
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+      }
+      TableRows={period.map((data, i) => (
+        <tr key={i}>
+          <td className={`${data.state ? "" : "text-blue-1 fw-bold"}`}>
+            {data.period}
+          </td>
+          <td>{data.price}</td>
+          <td>
+            <div className={`state-${data.state}`}>
+              {data.state ? "PAGADA" : "PENDIENTE"}
+            </div>
+          </td>
+          <td>{data.date}</td>
+          <td>{data.expiration}</td>
+          <td>{data.imputation}</td>
+          <td>
+            <button
+              disabled={!data.state}
+              className="arrow-icon-button disabled={data.state} me-2"
+            >
+              {data.state ? (
+                <img src={EyeIcon} alt="mirar facturacion" />
+              ) : (
+                <img src={EyeGrayIcon} alt="mirar facturacion" />
+              )}
+            </button>
+            <button disabled={!data.state} className="arrow-icon-button">
+              {data.state ? (
+                <img src={DownloadIcon} alt="mirar facturacion" />
+              ) : (
+                <img src={DownloadGrayIcon} alt="mirar facturacion" />
+              )}
+            </button>
+          </td>
+        </tr>
+      ))}
+    />
   );
 }
 

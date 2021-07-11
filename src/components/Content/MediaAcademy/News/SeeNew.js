@@ -7,13 +7,22 @@ import ImageVideo from "../../../../assets/images/temporal/video.png";
 import ImageBuilding from "../../../../assets/images/temporal/build.png";
 import Logo from "../../../../assets/svgs/brand-logo.svg";
 import DownloadIcon from "../../../../assets/svgs/download-icon.svg";
+
+import { routes } from "../../../../static_data/routes";
+
 export default function SeeNew() {
   const breadcrumb_items = [
     {
       text: "MediaAcademy®",
+      route: routes.mediaAcademy.about,
     },
     {
       text: "Novedades",
+      route: routes.mediaAcademy.news,
+    },
+    {
+      text: "Ultimas tendencias",
+      route: routes.mediaAcademy.new,
     },
   ];
 
@@ -91,7 +100,7 @@ export default function SeeNew() {
 
               <Link
                 className="text-decoration-none text-gray-1 position-absolute go-back-link "
-                to="/clientes/mediacore/contenido/media-academy/novedades"
+                to={routes.mediaAcademy.news}
               >
                 {"< Volver"}
               </Link>

@@ -8,6 +8,9 @@ import EditIcon from "../../../../assets/svgs/edit-icon.svg";
 import DeleteIcon from "../../../../assets/svgs/delete-icon.svg";
 import Avatar from "../../../../assets/images/avatar.png";
 import Wrapper_2 from "../../Wrapper_2";
+import Table from '../../Table'
+
+import { routes } from "../../../../static_data/routes";
 
 // Mock data
 const users = [
@@ -45,10 +48,11 @@ export default function News() {
   const breadcrumbItems = [
     {
       text: "MediaBroker®",
-      route: "/media-broker/acerca",
+      route: routes.mediaBroker.about,
     },
     {
       text: "Usuarios",
+      route: routes.mediaBroker.users,
     },
   ];
   return (
@@ -58,7 +62,7 @@ export default function News() {
       rightLink={{
         text: "Nuevo Usuario",
         icon: AddIcon,
-        route: "/media-broker/usuarios/crear-usuario",
+        route: routes.mediaBroker.createUser,
       }}
     >
       <div className="content-mobile-padding w-100p">
@@ -85,38 +89,35 @@ export default function News() {
 
 function UsersTable({ users }) {
   return (
-    <table className="common-table">
-      <thead>
+    <Table
+      TableHeader={
         <tr>
-          <th className="width-100">Usuario</th>
+          <th className="width-200">Usuario</th>
           <th>Nombre</th>
           <th>Tipo de Usuario</th>
           <th>Email</th>
           <th>Registrado</th>
           <th>Acciones</th>
         </tr>
-      </thead>
-
-      <tbody>
-        {users.map((user, i) => (
-          <tr key={i} className="text-nowrap">
-            <td>
-              <img src={Avatar} alt="usuario" className="me-2" width="35px" />
-              {user.username}
-            </td>
-            <td>{user.name}</td>
-            <td>{user.type}</td>
-            <td>{user.email}</td>
-            <td>{user.registration}</td>
-            <td>
-              <button className="button-no-styled ">
-                <img src={EditIcon} alt="editar novedad" className="me-3" />
-                <img src={DeleteIcon} alt="editar novedad" />
-              </button>
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+      }
+      TableRows={users.map((user, i) => (
+        <tr key={i} className="text-nowrap">
+          <td>
+            <img src={Avatar} alt="usuario" className="me-2" width="35px" />
+            {user.username}
+          </td>
+          <td>{user.name}</td>
+          <td>{user.type}</td>
+          <td>{user.email}</td>
+          <td>{user.registration}</td>
+          <td>
+            <button className="button-no-styled ">
+              <img src={EditIcon} alt="editar novedad" className="me-3" />
+              <img src={DeleteIcon} alt="editar novedad" />
+            </button>
+          </td>
+        </tr>
+      ))}
+    />
   );
 }

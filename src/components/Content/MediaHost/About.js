@@ -1,13 +1,17 @@
 import React from "react";
 import Breadcrumb from "../Breadcrumb";
 
+import { routes } from "../../../static_data/routes";
+
 export default function About() {
   const breadcrumb_items = [
     {
       text: "MediaHost®",
+      route: routes.mediaHost.about
     },
     {
       text: "Acerca de MediaHost®",
+      route: routes.mediaHost.about
     },
   ];
   return (

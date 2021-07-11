@@ -2,8 +2,10 @@ import React from "react";
 import AddIcon from "../../../../assets/svgs/add-icon.svg";
 import EditIcon from "../../../../assets/svgs/edit-icon.svg";
 import DeleteIcon from "../../../../assets/svgs/delete-icon.svg";
-import Avatar from "../../../../assets/images/avatar.png";
 import Wrapper_2 from "../../Wrapper_2";
+import Table from '../../Table'
+
+import { routes } from "../../../../static_data/routes";
 
 // Mock data
 const rooms = [
@@ -37,10 +39,11 @@ export default function Rooms() {
   const breadcrumbItems = [
     {
       text: "MediaBroker®",
-      route: "/media-broker/acerca",
+      route: routes.mediaBroker.about,
     },
     {
       text: "Salas",
+      route: routes.mediaBroker.rooms,
     },
   ];
   return (
@@ -50,7 +53,7 @@ export default function Rooms() {
       rightLink={{
         text: "Nueva Sala",
         icon: AddIcon,
-        route: "/media-broker/salas/crear-sala",
+        route: routes.mediaBroker.createRoom,
       }}
     >
       <div className="content-mobile-padding w-100">
@@ -64,8 +67,8 @@ export default function Rooms() {
 
 function RoomsTable({ rooms }) {
   return (
-    <table className="common-table">
-      <thead>
+    <Table
+      TableHeader={
         <tr>
           <th className="width-100">ID</th>
           <th>Nombre</th>
@@ -73,24 +76,21 @@ function RoomsTable({ rooms }) {
           <th>Activo</th>
           <th>Acciones</th>
         </tr>
-      </thead>
-
-      <tbody>
-        {rooms.map((room, i) => (
-          <tr key={i} className="text-nowrap">
-            <td>{room.id}</td>
-            <td>{room.name}</td>
-            <td>{room.type}</td>
-            <td>{room.active}</td>
-            <td>
-              <button className="button-no-styled ">
-                <img src={EditIcon} alt="editar novedad" className="me-3" />
-                <img src={DeleteIcon} alt="editar novedad" />
-              </button>
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+      }
+      TableRows={rooms.map((room, i) => (
+        <tr key={i} className="text-nowrap">
+          <td>{room.id}</td>
+          <td>{room.name}</td>
+          <td>{room.type}</td>
+          <td>{room.active}</td>
+          <td>
+            <button className="button-no-styled ">
+              <img src={EditIcon} alt="editar novedad" className="me-3" />
+              <img src={DeleteIcon} alt="editar novedad" />
+            </button>
+          </td>
+        </tr>
+      ))}
+    />
   );
 }
