@@ -3,9 +3,7 @@
   background-color: $gray-14;
 
   @media (max-width: $break-laptop) {
-    padding: 0;
-    margin-bottom: 1.5rem;
-    background-color: transparent;
+    padding: 15px;
 
     > div {
       min-width: 100%;

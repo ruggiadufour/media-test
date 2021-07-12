@@ -17,7 +17,7 @@ const entrs = [
 
 export default function CreateInvestor() {
   const [type, setType] = useState(1);
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState(true);
   const breadcrumbItems = [
     {
       text: "MediaInvestor®",
@@ -66,7 +66,7 @@ export default function CreateInvestor() {
 
           <div className="d-flex flex-column mb-1r">
             <label className="font-1">Emprendimientos</label>
-            <div className="grid-checkboxes w-100p mt-1r justify-content-center">
+            <div className="grid-checkboxes w-100p mt-1r gap-4">
               {entrs.map((entr, i) => (
                 <Checkbox key={i} text={entr} />
               ))}

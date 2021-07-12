@@ -17,6 +17,9 @@ import Gear2Icon from "../../assets/svgs/gear-2-icon.svg";
 import CalendarIcon from "../../assets/svgs/checked-calendar-icon.svg";
 import RoomIcon from "../../assets/svgs/room-icon.svg";
 import PeopleIcon from "../../assets/svgs/people-icon.svg";
+import NewsIcon from "../../assets/svgs/new-icon.svg";
+import InfoIcon from "../../assets/svgs/info-icon.svg";
+import SupportIcon from "../../assets/svgs/support-icon.svg";
 
 import DeployableButton from "./DeployableButton";
 import { DeployableSettings } from "../Header/Header";
@@ -31,12 +34,12 @@ const DeployableButtons = [
     subButtons: [
       {
         text: "Soporte",
-        rightIcon: GearIcon,
+        rightIcon: SupportIcon,
         route: routes.mediaHost.support,
       },
       {
         text: "Acerca de MH®",
-        rightIcon: AboutIcon,
+        rightIcon: InfoIcon,
         route: routes.mediaHost.about,
       },
     ],
@@ -46,12 +49,12 @@ const DeployableButtons = [
     subButtons: [
       {
         text: "Novedades",
-        rightIcon: DocIcon,
+        rightIcon: NewsIcon,
         route: routes.mediaAcademy.news,
       },
       {
         text: "Acerca de MA®",
-        rightIcon: DocIcon,
+        rightIcon: InfoIcon,
         route: routes.mediaAcademy.about,
       },
     ],
@@ -67,7 +70,7 @@ const DeployableButtons = [
     subButtons: [
       {
         text: "Novedades",
-        rightIcon: DocIcon,
+        rightIcon: NewsIcon,
         route: routes.mediaBlog.news,
       },
       {
@@ -84,7 +87,7 @@ const DeployableButtons = [
     subButtons:[
       {
         text: "Novedades",
-        rightIcon: DocIcon,
+        rightIcon: NewsIcon,
         route: routes.mediaInvestor.news,
       },
       {
@@ -99,7 +102,7 @@ const DeployableButtons = [
       },
       {
         text: "Acerca de MI®",
-        rightIcon: DocIcon,
+        rightIcon: InfoIcon,
         route: routes.mediaInvestor.about,
       },
     ]
@@ -126,7 +129,7 @@ const DeployableButtons = [
       },
       {
         text: "Acerca de MB®",
-        rightIcon: DocIcon,
+        rightIcon: InfoIcon,
         route: routes.mediaBroker.about,
       },
     ],

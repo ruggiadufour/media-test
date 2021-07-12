@@ -43,16 +43,22 @@
   transform: scale(0);
 }
 
-.brand {
-  color: $gray-3 !important;
-  font-size: 1.5rem;
-  font-weight: 700;
-  cursor: pointer;
+
+.brand-wrapper{
+  min-width: calc(230px - 3rem);
+  text-align: center;
   margin-left: 0;
 
   @media (max-width: $break-tablet) {
     margin-left: auto;
   }
+}
+.brand {
+  color: $gray-3 !important;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer; 
+  
 }
 
 .avatar {

@@ -28,9 +28,11 @@ export default function Header({ setMenu, menu }) {
         <div></div>
       </div>
 
-      <NavLink className="brand text-decoration-none" to={routes.base}>
-        MediaCore®
-      </NavLink>
+      <div className="brand-wrapper">
+        <NavLink className="brand text-decoration-none" to={routes.base}>
+          MediaCore®
+        </NavLink>
+      </div>
 
       <div className="d-flex gap-3 align-items-center right-elements">
         <img src={BellIcon} alt="avatar administrador" />

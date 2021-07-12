@@ -14,7 +14,7 @@
   color: $gray-4;
   background-color: transparent;
   border: none;
-  padding: 0 1rem;
+  padding: 0;
   display: flex;
   gap: 15px;
   justify-content: left;
@@ -91,13 +91,13 @@
 }
 
 .account-buttons {
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   display: flex;
   flex-direction: column;
-  padding-right: 1.5rem;
+  // padding-right: 1.5rem;
 
   @media (max-width: $break-tablet) {
     align-items: left;
-    padding-left: 3rem;
+    padding-left: 4rem;
   }
 }

@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import Breadcrumb from "../../Breadcrumb";
-import Wrapper_1 from "../../Wrapper_2";
+import Wrapper_2 from "../../Wrapper_2";
 import { EditorState, convertToRaw } from "draft-js";
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
@@ -11,7 +11,7 @@ import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import H2 from "../../../Globals/H2";
 import FileInput from "../../../Globals/FileInput";
 import InputDateTime from "../../../Globals/DateTimeInput";
-import SearchInput from '../../../Globals/SearchInput'
+import SearchInput from "../../../Globals/SearchInput";
 import { routes } from "../../../../static_data/routes";
 
 const breadcrumbItems = [
@@ -64,7 +64,7 @@ export default function CreateNew() {
   const [active, setActive] = useState(false);
 
   return (
-    <Wrapper_1 breadcrumbItems={breadcrumbItems} title="Alta nueva novedad">
+    <Wrapper_2 breadcrumbItems={breadcrumbItems} title="Alta nueva novedad">
       <div className="content-mobile-padding">
         <div className="grid-3-bigbreak">
           <div className="mi-create-new-step">
@@ -80,6 +80,15 @@ export default function CreateNew() {
             />
             <hr />
             <div className="d-flex flex-column ">
+              <label className="font-1">Título</label>
+              <input
+                className="common-input"
+                onChange={() => {}}
+                type="text"
+                placeholder="Subtítulo"
+              />
+            </div>
+            <div className="d-flex flex-column mt-1r">
               <label className="font-1">Subtítulo</label>
               <input
                 className="common-input"
@@ -111,23 +120,25 @@ export default function CreateNew() {
             </div>
           </div>
 
-          <div className="mi-create-new-step">
+          <div className="mi-create-new-step d-flex flex-column align-items-start ">
             <H2
               font="font-1"
               color="text-black-1"
-              className="text-center"
+              className="text-center w-100p mb-0"
               text={
                 <>
                   <strong>PASO 2</strong> - Contenido de la novedad
                 </>
               }
             />
-            <hr />
-            <div className="d-flex flex-column">
-              <div className="common-input py-3">
+            <hr className="w-100 mt-1r mb-1r" />
+
+            <div className="d-flex flex-column h-100">
+              <div className="common-input py-3 h-100 d-flex flex-column">
                 <Editor
-                  editorClassName="common-input mb-2 mh-200"
+                  wrapperClassName="w-100 flex-1 d-flex flex-column"
                   toolbarClassName="mb-2"
+                  editorClassName="common-input mh-200 mt-1 flex-1 h-auto"
                   onEditorStateChange={onEditorStateChange}
                   editorState={editorState}
                 />
@@ -165,12 +176,12 @@ export default function CreateNew() {
                 </div>
               </div>
 
-              <hr className="mb-1r"/>
+              <hr className="mb-1r" />
 
               <div className="d-flex flex-column">
                 <label className="font-1">
                   Novedad exclusiva para todos los inversores
-                </label> 
+                </label>
                 <div className="grid-3-col mt-1r">
                   {["Oportunidades"].map((group, i) => (
                     <Checkbox key={i} text={group} />
@@ -184,7 +195,7 @@ export default function CreateNew() {
                 <label className="font-1">
                   Novedad exclusiva para un inversor
                 </label>
-                <SearchInput className="mt-1r"/>
+                <SearchInput className="mt-1r" />
                 <div className="mi-investor-checkboxes grid-2-col mt-1r">
                   {investors.map((investor, i) => (
                     <Checkbox key={i} text={investor} />
@@ -209,13 +220,13 @@ export default function CreateNew() {
           <div className="w-50p m-auto">
             <hr />
             <div className="d-flex flex-row justify-content-center align-items-center gap-4">
-              <button className="blue-button">Publicar</button>
-              <button className="blue-button">Borrador</button>
+              <button className="blue-button px-4">Publicar</button>
+              <button className="blue-button px-4">Borrador</button>
             </div>
           </div>
         </div>
       </div>
-    </Wrapper_1>
+    </Wrapper_2>
   );
 }
 

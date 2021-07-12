@@ -8,6 +8,7 @@ import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 // import { draftToMarkdown } from "markdown-draft-js";
 // draftToMarkdown(convertToRaw(editorState.getCurrentContent()))
+import DateTimeInput from '../../../Globals/DateTimeInput'
 
 import { routes } from "../../../../static_data/routes";
 
@@ -41,7 +42,8 @@ export default function CreateNew() {
   const onEditorStateChange = (editorState) => {
     setEditorState(editorState);
   };
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState(true);
+  const [dateTime, setDateTime] = useState(new Date());
 
   function getImageFile() {
     inputImage.current.click();
@@ -73,12 +75,13 @@ export default function CreateNew() {
           </div>
           <div className="d-flex flex-column ">
             <label className="font-1">Fecha de la nota</label>
-            <input
+            {/* <input
               className="common-input w-100p"
               onChange={() => {}}
               type="date"
               name="date"
-            />
+            /> */}
+            <DateTimeInput dateTime={dateTime} setDateTime={setDateTime} />
           </div>
           <div className="d-flex flex-column">
             <label className="font-1">Imagen de portada</label>
