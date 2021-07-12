@@ -40,5 +40,10 @@
   border: dotted thin $gray-4;
   min-height: 33px;
   border-radius: 5px;
-  color: $gray-4;
+  color: $gray-4; 
+
+  &:focus {
+    border: solid 2px $blue-1;
+    outline: none;
+  }
 }

@@ -8,11 +8,17 @@ export default function SearchInput({
   const [search, setSearch] = useState("");
 
   function handleChange(e) {
-      setSearch(e.target.value)
+    setSearch(e.target.value);
   }
   return (
-    <div className={`input-search-period ${className}`}>
-      <input type="text" placeholder={placeholder} value={search} onChange={handleChange} />
+    <div className={`input-search-period hover-border-blue-1 ${className}`}>
+      <input
+        className="focus-outline-none"
+        type="text"
+        placeholder={placeholder}
+        value={search}
+        onChange={handleChange}
+      />
       <img src={SearchIcon} alt="buscar periodo" width="15px" />
     </div>
   );

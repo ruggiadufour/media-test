@@ -86,9 +86,9 @@ export default function News() {
         route: routes.mediaBlog.createNew,
       }}
     >
-      <div className="content-mobile-padding w-100p">
-        <div className="input-search-period w-50p mb-2r">
-          <input type="text" placeholder="Palabra clave" />
+      <div className="content-mobile-padding w-100p ">
+        <div className="input-search-period w-50p mb-2r hover-border-blue-1">
+          <input type="text" placeholder="Palabra clave" className="focus-outline-none" />
           <img src={SearchIcon} alt="buscar periodo" width="15px" />
         </div>
 

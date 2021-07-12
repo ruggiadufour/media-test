@@ -8,7 +8,7 @@ import EditIcon from "../../../../assets/svgs/edit-icon.svg";
 import DeleteIcon from "../../../../assets/svgs/delete-icon.svg";
 import Avatar from "../../../../assets/images/avatar.png";
 import Wrapper_2 from "../../Wrapper_2";
-import Table from '../../Table'
+import Table from "../../Table";
 
 import { routes } from "../../../../static_data/routes";
 
@@ -67,8 +67,12 @@ export default function News() {
     >
       <div className="content-mobile-padding w-100p">
         <div className="d-flex flex-wrap gap-3 mb-2r">
-          <div className="input-search-period w-50p">
-            <input type="text" placeholder="Palabra clave" />
+          <div className="input-search-period w-50p hover-border-blue-1">
+            <input
+              type="text"
+              placeholder="Palabra clave"
+              className="focus-outline-none"
+            />
             <img src={SearchIcon} alt="buscar periodo" width="15px" />
           </div>
           <select

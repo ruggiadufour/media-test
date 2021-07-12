@@ -67,9 +67,10 @@ export default function Support() {
       }}
     >
       <div className="content-mobile-padding w-100p">
-        <div className="input-search-period w-50p mb-2r">
-          <input type="text" placeholder="Buscar" />
+        <div className="input-search-period w-50p mb-2r hover-border-blue-1">
+          <input type="text" placeholder="Buscar" className="focus-outline-none" />
           <img src={SearchIcon} alt="buscar periodo" width="15px" />
+          
         </div>
 
         <div className="tables-wrapper">

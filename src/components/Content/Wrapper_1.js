@@ -22,7 +22,7 @@ export default function Wrapper_1({
           {rightLink?.text && (
             <Link
               to={rightLink.route}
-              className="text-decoration-none text-gray-9 d-flex justify-content-center align-items-center gap-2"
+              className="text-decoration-none text-gray-9 hover-text-blue-1 d-flex justify-content-center align-items-center gap-2"
             >
               <img src={rightLink.icon} alt={rightLink.text} />
               <p className="font-1 p-0 m-0">{rightLink.text}</p>

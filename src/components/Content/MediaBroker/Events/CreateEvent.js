@@ -5,7 +5,7 @@ import { routes } from "../../../../static_data/routes";
 
 export default function CreateEvent() {
   const descriptionRef = useRef();
-  const [dateTime, setDateTime] = useState(new Date())
+  const [dateTime, setDateTime] = useState(new Date());
 
   const breadcrumbItems = [
     {
@@ -54,16 +54,16 @@ export default function CreateEvent() {
           </div>
           <div className="d-flex flex-column w-100p">
             <label className="font-1">Fecha del Evento/Capacitación</label>
-            <InputDateTime dateTime={dateTime} setDateTime={setDateTime} /> 
+            <InputDateTime dateTime={dateTime} setDateTime={setDateTime} />
           </div>
-        
         </div>
 
         <div className="d-flex flex-column w-100p mt-1r">
           <label className="font-1">Descripción</label>
           <div className="create-event-description">
-            <textarea />
+            <textarea className="common-input-focus" />
             <button
+              className="common-input-focus"
               onClick={() => {
                 descriptionRef.current.click();
               }}

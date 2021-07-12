@@ -35,7 +35,8 @@ body {
   }
 }
 
-.common-input {
+.common-input,
+.common-input-style-no-input {
   color: $gray-9;
   border-radius: 5px;
   border: solid thin $gray-4;
@@ -48,7 +49,7 @@ body {
     color: transparent;
   }
 
-  &:disabled{
+  &:disabled {
     color: $gray-12;
   }
 
@@ -56,6 +57,12 @@ body {
     // color: $gray-6;
     font-size: 13px;
   }
+}
+
+.common-input:focus, .common-input-focus:focus {
+  border: solid 2px $blue-1;
+  border-radius: 5px;
+  outline: none;
 }
 
 .input-with-placeholder {
@@ -149,11 +156,11 @@ body {
 }
 
 .opacity-transition-0 {
-  transition: opacity .5s;
+  transition: opacity 0.5s;
   opacity: 0;
 }
 .opacity-transition-100 {
-  transition: opacity .75s;
+  transition: opacity 0.75s;
   opacity: 1;
 }
 
@@ -167,8 +174,20 @@ body {
   overflow: hidden;
 }
 
-
 // Flex
-.flex-1{
+.flex-1 {
   flex: 1;
+}
+
+//
+.hover-text-blue-1:hover {
+  color: $blue-1 !important;
+}
+
+.hover-border-blue-1:focus-within  {
+  border: solid 1px $blue-1;
+  border-radius: 5px;
+}
+.focus-outline-none:focus{
+  outline: none;
 }

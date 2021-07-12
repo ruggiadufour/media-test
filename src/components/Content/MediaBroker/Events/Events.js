@@ -77,8 +77,12 @@ export default function Events() {
     >
       <div className="container2-content">
         <div className="mbroker-input-grid mb-2r">
-          <div className="input-search-period">
-            <input type="text" placeholder="Palabra clave" />
+          <div className="input-search-period hover-border-blue-1">
+            <input
+              type="text"
+              placeholder="Palabra clave"
+              className="focus-outline-none"
+            />
             <img src={SearchIcon} alt="buscar periodo" width="15px" />
           </div>
 
